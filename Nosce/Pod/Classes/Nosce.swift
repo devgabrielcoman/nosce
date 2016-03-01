@@ -54,7 +54,7 @@ public class Nosce: NSObject {
         
         // print object type
         if let alias = _alias {
-            print(alias)
+            print(tabs + alias)
         } else {
             print(tabs + "\(subject.dynamicType)")
         }

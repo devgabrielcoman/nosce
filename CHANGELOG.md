@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.1.3
+ - fix tabs issue when displaying object name, not type
+
 0.1.2
  - fields order in Nosce generic function parameter matter
  - added comments
