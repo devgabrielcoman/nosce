@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Dollar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Nosce-Nosce.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Nosce.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Nosce_Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Nosce_Tests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>157DA8D34EAC2C8B3625CC23CD7760B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DD78F79BA3CAFC075D8E84624224590</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DB7233EC356F85BE43733B5596FFFD6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6258805616AB87E5A80BA8D79786D3F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>788EDC738B7C741A7FC8ED1C63A1ED7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
