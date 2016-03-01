@@ -3,3 +3,5 @@ Nosce/Example/Nosce.xcworkspace/*
 Nosce/Example/Pods/Colors/*
 Nosce/Example/Pods/Dollar/*
 Nosce/Example/Pods/Target Support Files/Dollar/**
+Nosce/Example/Nosce/Headers/Private/Dollar/*
+Nosce/.travis.yml
