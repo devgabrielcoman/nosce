@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/devgabrielcoman/nosce.git",
-    "tag": "0.1.0"
+    "branch": "master"
   },
   "platforms": {
     "ios": "8.0"

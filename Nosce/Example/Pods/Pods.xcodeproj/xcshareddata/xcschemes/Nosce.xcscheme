@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21920F7EAF13269252219E91"
+               BlueprintIdentifier = "61F2F0B8477549FBC03EBBC3"
                BuildableName = "Nosce.framework"
                BlueprintName = "Nosce"
                ReferencedContainer = "container:Pods.xcodeproj">
