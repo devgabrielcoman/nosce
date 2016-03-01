@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         let m: TestModel = TestModel(var1: 32, var2: "abc")
         Nosce.printObject(reflecting: m)
-        Nosce.printObject(reflecting: m, alias: "test", tab: 3, fields: ["var1"])
+        Nosce.printObject(reflecting: m, alias: "test", tab: 3, fields: ["var2", "var1"])
     }
 
     override func didReceiveMemoryWarning() {

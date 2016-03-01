@@ -9,11 +9,20 @@
 import UIKit
 import Dollar
 
+// 
+// Nosce is a small library that uses reflection to print out the contents of
+// model-type object
+// ideal candidates are classes in the form:
+//
+//  class SomeModel {
+//      var name: String;
+//      var points: Int;
+//  }
+//
 public class Nosce: NSObject {
     
-    //
-    // the simplest printObject function, that just takes a subject and lists
-    // its members and values
+    // 
+    // succession of more specific printObject functions
     public static func printObject(reflecting subject: Any) {
         printObject(reflecting: subject, alias: nil, tab: 0, fields: nil)
     }
@@ -27,8 +36,14 @@ public class Nosce: NSObject {
     }
     
     //
-    // main print object function
+    // this is the most generic of the printObject series function, and the one
+    // that all the other rely on
+    // @param subject - the reflecting "Any" type object that's going to be printed
+    // @param alies - a human readable name for the Model being presented
+    // @param tab - the number of indents to add
+    // @param fields - the fields to take into account
     public static func printObject(reflecting subject: Any, alias _alias: String?, tab _tab: Int, fields _fields: [String]?) {
+        // create the mirror
         let mirrored = Mirror(reflecting: subject)
         
         // sort out the tabs
@@ -44,16 +59,21 @@ public class Nosce: NSObject {
             print(tabs + "\(subject.dynamicType)")
         }
         
-        // print its members
+        // case #1: when the fields object is not nil
+        // in this case print the members, in the order they are given
         if let fields = _fields {
-            for (_, attr) in mirrored.children.enumerate() {
-                if let property_name = attr.label as String! {
-                    if $.contains(fields, value: property_name) {
-                        print(tabs + "\t\(property_name) = \(attr.value)")
+            $.each(fields) { (i, field: String) in
+                for (_, attr) in mirrored.children.enumerate() {
+                    if let property_name = attr.label as String! {
+                        if property_name == field {
+                            print(tabs + "\t\(property_name) = \(attr.value)")
+                        }
                     }
                 }
             }
-        } else {
+        }
+        // case #2: just iterate over the fields and print the members
+        else {
             for (_, attr) in mirrored.children.enumerate() {
                 if let property_name = attr.label as String! {
                     print(tabs + "\t\(property_name) = \(attr.value)")
