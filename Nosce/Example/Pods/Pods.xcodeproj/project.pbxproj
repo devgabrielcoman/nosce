@@ -7,67 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0026C16F20890F3971DF9784AF558D04 /* Nosce.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B9468CC5BC83049728F098769DA1AA1 /* Nosce.bundle */; };
 		0BC276F99262F6A3406734129E55140F /* Pods-Nosce_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C8811BCEFB7C4D493D192879B7DFF /* Pods-Nosce_Example-dummy.m */; };
-		4126311CE5CEA1873BA0747F5F3E13CE /* Nosce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246AD79E1ED35B09EC92CD92EF5CD40 /* Nosce.swift */; };
-		439FF2EC51BB93E5CEBE8D9CE2E95395 /* AutoCurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8B4C655682D6F86D01A2634994463 /* AutoCurry.swift */; };
+		16817FEFDE68F25333E0349CD7C8F8F1 /* Nosce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60CDC4A90FFBD99612817F5DB23E1E3 /* Nosce.swift */; };
+		191846EF1D0EE21B315C62A7879DC91E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265F9A42374C8C42EDBD580DBC5A6C0A /* Foundation.framework */; };
+		1A3BC97B2022F0D846775F36207E186E /* Nosce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6165518EC7B1FE2004A48257B5307F /* Nosce-dummy.m */; };
+		25921BF4F444611947227ACB8D432CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265F9A42374C8C42EDBD580DBC5A6C0A /* Foundation.framework */; };
+		274476E877F7D545D9104E155399184B /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43B9515F6E11284A48A3B50E1202D4 /* Dollar.swift */; };
+		3EFD326628CFA23CB1E9A7E5E4E2B432 /* AutoCurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCCDB7F5FE1353BDDE6179B414AFA7 /* AutoCurry.swift */; };
+		4A6C426028BEFAEA623A790F6A037D62 /* Dollar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF806D330235C79CE840089932387495 /* Dollar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		836A17DE581C20D4F4188D8FC17905B0 /* Pods-Nosce_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B5A70EE6D5FB7A2E3BAED99CFBB7D52 /* Pods-Nosce_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84118654DF640004D4550DEFEF353CC8 /* Dollar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 587EE9D6EC3237D079A89190397B1F92 /* Dollar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		853194B1CB895FD08A232E267C5F6A9C /* Dollar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F99B1BA2F4ACEEC2A756D5DFED5FD40F /* Dollar-dummy.m */; };
+		9E6A8427900202D1013BB0339A5787BF /* Nosce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DDB22111CEBE077BDE67FA744BDBCCAD /* Nosce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A52AC99CA2F8C2E409235BD85C9E885C /* Pods-Nosce_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DE3FFC6052BB14BB6C44E8B4B926A0 /* Pods-Nosce_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7F92CFA265091249137C7FC6629A7B1 /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDF53799648C877E9695926AE3200DC /* Dollar.swift */; };
-		CAE2FE769CDBE92E75FD2B6675F6E4E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32F3837CAA836F66810EA9A5049E7A5 /* Foundation.framework */; };
-		CCD2ADE905D2D2E91D52DB14F3D5D39B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32F3837CAA836F66810EA9A5049E7A5 /* Foundation.framework */; };
-		F0BB578DC76B02100FAB3EF298B472CE /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B586F80C5D28BF1BE0462D8CBCB180 /* Dollar.framework */; };
+		B16A0D45CDAEC3F95DC2E4ACDFC84500 /* Dollar.h in Headers */ = {isa = PBXBuildFile; fileRef = A2D636725B26763C45318A2CC5D7DC83 /* Dollar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAE2FE769CDBE92E75FD2B6675F6E4E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265F9A42374C8C42EDBD580DBC5A6C0A /* Foundation.framework */; };
+		E2099AE59A8ED9F3A6171ABA80F94139 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CC7437DD1D8D46D91B20C7D74A6041 /* Dollar.framework */; };
+		E86BDC8F205F2953F23A0B2A18A40375 /* Nosce.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA386C341B957B0246E13D1CEF1756D4 /* Nosce.bundle */; };
 		F0F98A7E1155E370290C1AFB9DC8208E /* Pods-Nosce_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7D59D5A0DAC1396C12B5B98F62C186 /* Pods-Nosce_Tests-dummy.m */; };
-		F378CCBE1D8A3848A38C35F24533ACE6 /* Nosce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D89DB93F27D56D81FD003DEF720AD463 /* Nosce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F72AC2CF0B70144DFBD514EDA3EDC39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32F3837CAA836F66810EA9A5049E7A5 /* Foundation.framework */; };
-		F8F6AFC71EBDAB8F022D645DE0E3020B /* Nosce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4526B359E3CB72E7A60C012BB7B37EF /* Nosce-dummy.m */; };
-		FB7F47910AFA6E7C17DF85D2450987AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32F3837CAA836F66810EA9A5049E7A5 /* Foundation.framework */; };
-		FEA831D4F52D73009519F466D38D667A /* Dollar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC18244C2BAAF353D5BCEDA69BC25AC5 /* Dollar-dummy.m */; };
-		FF42E2A79CD237B191A75DE6DA5DF1F6 /* Dollar.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F02B7811443B72ECB62C5FC7BFB619 /* Dollar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB7F47910AFA6E7C17DF85D2450987AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265F9A42374C8C42EDBD580DBC5A6C0A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		228913B8D5539E6109D2A3BFE31962A2 /* PBXContainerItemProxy */ = {
+		06B18E510E379F6A43762B81A2A50F31 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 788EDC738B7C741A7FC8ED1C63A1ED7C;
+			remoteGlobalIDString = 3083CCF0C3DE53CC39705DA3C06E949A;
+			remoteInfo = Dollar;
+		};
+		1F4CE11F5CBE79EF50ED92526DE952F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5F69A0F2FBEB27017BDA066FF7C73E;
 			remoteInfo = "Nosce-Nosce";
 		};
-		334564DA6713B3516923101ABE407345 /* PBXContainerItemProxy */ = {
+		2746A2D0E60B09B03410C6A5FCFD3260 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3DD78F79BA3CAFC075D8E84624224590;
-			remoteInfo = Dollar;
-		};
-		81C78E65966933CA16D4E46904CCBF3A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 157DA8D34EAC2C8B3625CC23CD7760B5;
+			remoteGlobalIDString = E27101C7B2CCC0BCC2DBE7F231F87D2F;
 			remoteInfo = Nosce;
 		};
-		8F22471BD432CE393E5C19C144E20602 /* PBXContainerItemProxy */ = {
+		6AC38A1284FE9AA6F8EB130F7CF0EB61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3DD78F79BA3CAFC075D8E84624224590;
-			remoteInfo = Dollar;
-		};
-		B3531636B5D848972D0A380C17E39BB0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 157DA8D34EAC2C8B3625CC23CD7760B5;
+			remoteGlobalIDString = E27101C7B2CCC0BCC2DBE7F231F87D2F;
 			remoteInfo = Nosce;
 		};
-		E1163C6B515333931634F586138A13FB /* PBXContainerItemProxy */ = {
+		9AEB33C1FB891E8A5D4090A4ED35B121 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3DD78F79BA3CAFC075D8E84624224590;
+			remoteGlobalIDString = 3083CCF0C3DE53CC39705DA3C06E949A;
+			remoteInfo = Dollar;
+		};
+		9E79DDF213655EE5C08C3BB17AA62F00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3083CCF0C3DE53CC39705DA3C06E949A;
 			remoteInfo = Dollar;
 		};
 /* End PBXContainerItemProxy section */
@@ -77,26 +77,23 @@
 		04DE3FFC6052BB14BB6C44E8B4B926A0 /* Pods-Nosce_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nosce_Tests-umbrella.h"; sourceTree = "<group>"; };
 		086EF58B77C53377FC48EC866E15482C /* Pods-Nosce_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1C8EAE8243205D342F2051654E8A4C56 /* Dollar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dollar.xcconfig; sourceTree = "<group>"; };
+		20CCCDB7F5FE1353BDDE6179B414AFA7 /* AutoCurry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoCurry.swift; path = Sources/AutoCurry.swift; sourceTree = "<group>"; };
 		2375ED3987CE49BD83E4A561F04B69E3 /* Pods-Nosce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		23F02B7811443B72ECB62C5FC7BFB619 /* Dollar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Dollar.h; path = Sources/Dollar.h; sourceTree = "<group>"; };
-		2B9468CC5BC83049728F098769DA1AA1 /* Nosce.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nosce.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DF8B4C655682D6F86D01A2634994463 /* AutoCurry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoCurry.swift; path = Sources/AutoCurry.swift; sourceTree = "<group>"; };
+		265F9A42374C8C42EDBD580DBC5A6C0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		36A66117EEDF86BF1A28238C5D524B15 /* Dollar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dollar-prefix.pch"; sourceTree = "<group>"; };
-		41B586F80C5D28BF1BE0462D8CBCB180 /* Dollar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dollar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E393F8FE5D1B84C4B234CE63274CBAF /* Nosce-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Nosce-Private.xcconfig"; sourceTree = "<group>"; };
+		40BEFFE50D3A89C3ECDEB06408FB33F7 /* Dollar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dollar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E4B865A5B7BFFA0867D8D5CB39BE55 /* Dollar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Dollar-Private.xcconfig"; sourceTree = "<group>"; };
 		4EA7418D8A31544674ECBA82612DCF58 /* Pods-Nosce_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Example-frameworks.sh"; sourceTree = "<group>"; };
 		523E85A6D2434FB0028729BEEFCAD4E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		587EE9D6EC3237D079A89190397B1F92 /* Dollar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dollar-umbrella.h"; sourceTree = "<group>"; };
 		5B8644996AA9315AE1E4E28D42E23E73 /* Pods-Nosce_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nosce_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		5CDF53799648C877E9695926AE3200DC /* Dollar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dollar.swift; path = Sources/Dollar.swift; sourceTree = "<group>"; };
 		60CC257AB45F01CBC7448B357129A140 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64F9C3E15D3A47CF629A0197AB9507A3 /* Nosce-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Nosce-Private.xcconfig"; sourceTree = "<group>"; };
 		6B5A70EE6D5FB7A2E3BAED99CFBB7D52 /* Pods-Nosce_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nosce_Example-umbrella.h"; sourceTree = "<group>"; };
 		6BA732049F95739B1CFBBAE4D0F9D8FD /* Pods-Nosce_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nosce_Example.modulemap"; sourceTree = "<group>"; };
 		6C10144F805D4A59BCE3BF1E841A05B2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A203C7CF087ADFAB4781E3FE9301004 /* Pods-Nosce_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nosce_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8246AD79E1ED35B09EC92CD92EF5CD40 /* Nosce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Nosce.swift; sourceTree = "<group>"; };
+		7A6165518EC7B1FE2004A48257B5307F /* Nosce-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nosce-dummy.m"; sourceTree = "<group>"; };
 		826D362E8A87CF4272A5042488FA8D8B /* Pods-Nosce_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nosce_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8B8F84713979EBB3A23F5FCCB5112E01 /* Dollar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dollar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4916796B26321841A31FBCE07779F2 /* Pods-Nosce_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Example.release.xcconfig"; sourceTree = "<group>"; };
 		947FD4B78E74A97EFA7184D4485B0085 /* Nosce-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nosce-prefix.pch"; sourceTree = "<group>"; };
 		9646E6DEFDFC781D56AF2A4BCE0E8453 /* Pods-Nosce_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nosce_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -104,28 +101,32 @@
 		97E1D0FAB6597E00FE03437C93D5F607 /* Pods_Nosce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nosce_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9903A0CCFFDB55DF659051D5FA9EA398 /* Pods-Nosce_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		99D1B339AC419F2ACE6AA1058021F4CC /* Nosce.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nosce.xcconfig; sourceTree = "<group>"; };
+		9D43B9515F6E11284A48A3B50E1202D4 /* Dollar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dollar.swift; path = Sources/Dollar.swift; sourceTree = "<group>"; };
 		9D7D59D5A0DAC1396C12B5B98F62C186 /* Pods-Nosce_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nosce_Tests-dummy.m"; sourceTree = "<group>"; };
-		A4526B359E3CB72E7A60C012BB7B37EF /* Nosce-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nosce-dummy.m"; sourceTree = "<group>"; };
+		A2D636725B26763C45318A2CC5D7DC83 /* Dollar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Dollar.h; path = Sources/Dollar.h; sourceTree = "<group>"; };
 		A789016A97301C1169AA76282A7E85A9 /* Pods-Nosce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D201A9CAF0F8E5E5C4615D4FA2F435 /* Dollar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Dollar.modulemap; sourceTree = "<group>"; };
-		B32F3837CAA836F66810EA9A5049E7A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BC18244C2BAAF353D5BCEDA69BC25AC5 /* Dollar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dollar-dummy.m"; sourceTree = "<group>"; };
 		C1F52E3155662034F58607462383C45F /* Pods-Nosce_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Tests-resources.sh"; sourceTree = "<group>"; };
 		D14B52ED951E3B446122F4B2EA40C407 /* Nosce.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nosce.modulemap; sourceTree = "<group>"; };
 		D42AA976B8BE2B364FC8AD341C29AD05 /* Pods-Nosce_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Example-resources.sh"; sourceTree = "<group>"; };
-		D89DB93F27D56D81FD003DEF720AD463 /* Nosce-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nosce-umbrella.h"; sourceTree = "<group>"; };
-		DEFE0AB681CCBF38A8F9A16C757BD43D /* Dollar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Dollar-Private.xcconfig"; sourceTree = "<group>"; };
+		DDB22111CEBE077BDE67FA744BDBCCAD /* Nosce-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nosce-umbrella.h"; sourceTree = "<group>"; };
+		DF806D330235C79CE840089932387495 /* Dollar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dollar-umbrella.h"; sourceTree = "<group>"; };
 		E05515E205A61FAE2377413BD657EBAE /* Pods_Nosce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nosce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA70E31A3C9BE423520AC8D13BFC46B3 /* Nosce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nosce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3CC7437DD1D8D46D91B20C7D74A6041 /* Dollar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dollar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D4111163BA8254AE1A68B4C5EDA6BE /* Nosce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nosce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60CDC4A90FFBD99612817F5DB23E1E3 /* Nosce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Nosce.swift; sourceTree = "<group>"; };
 		F85DB5EC4AD36B5A8567D3F3EF71FDC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F99B1BA2F4ACEEC2A756D5DFED5FD40F /* Dollar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dollar-dummy.m"; sourceTree = "<group>"; };
+		FA386C341B957B0246E13D1CEF1756D4 /* Nosce.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nosce.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		15F39ABFF765A959D24756A55914BFBC /* Frameworks */ = {
+		27B34894045F6E4BA4273239CD991C6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191846EF1D0EE21B315C62A7879DC91E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,11 +138,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53497F8D0D94CB450D255C56D378F412 /* Frameworks */ = {
+		92C228297D2C991819B4B62F6A60F359 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD2ADE905D2D2E91D52DB14F3D5D39B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,12 +153,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A29372463FC1E56C035A0A9140706679 /* Frameworks */ = {
+		EA5BDCCB506253E47606E720B410288D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0BB578DC76B02100FAB3EF298B472CE /* Dollar.framework in Frameworks */,
-				F72AC2CF0B70144DFBD514EDA3EDC39A /* Foundation.framework in Frameworks */,
+				E2099AE59A8ED9F3A6171ABA80F94139 /* Dollar.framework in Frameworks */,
+				25921BF4F444611947227ACB8D432CEC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,10 +171,10 @@
 				523E85A6D2434FB0028729BEEFCAD4E0 /* Info.plist */,
 				D14B52ED951E3B446122F4B2EA40C407 /* Nosce.modulemap */,
 				99D1B339AC419F2ACE6AA1058021F4CC /* Nosce.xcconfig */,
-				64F9C3E15D3A47CF629A0197AB9507A3 /* Nosce-Private.xcconfig */,
-				A4526B359E3CB72E7A60C012BB7B37EF /* Nosce-dummy.m */,
+				3E393F8FE5D1B84C4B234CE63274CBAF /* Nosce-Private.xcconfig */,
+				7A6165518EC7B1FE2004A48257B5307F /* Nosce-dummy.m */,
 				947FD4B78E74A97EFA7184D4485B0085 /* Nosce-prefix.pch */,
-				D89DB93F27D56D81FD003DEF720AD463 /* Nosce-umbrella.h */,
+				DDB22111CEBE077BDE67FA744BDBCCAD /* Nosce-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Nosce";
@@ -183,7 +183,7 @@
 		23D9DC30E1472DCE9C1F3B4E4DB226F0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8246AD79E1ED35B09EC92CD92EF5CD40 /* Nosce.swift */,
+				F60CDC4A90FFBD99612817F5DB23E1E3 /* Nosce.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -203,10 +203,10 @@
 			children = (
 				B0D201A9CAF0F8E5E5C4615D4FA2F435 /* Dollar.modulemap */,
 				1C8EAE8243205D342F2051654E8A4C56 /* Dollar.xcconfig */,
-				DEFE0AB681CCBF38A8F9A16C757BD43D /* Dollar-Private.xcconfig */,
-				BC18244C2BAAF353D5BCEDA69BC25AC5 /* Dollar-dummy.m */,
+				46E4B865A5B7BFFA0867D8D5CB39BE55 /* Dollar-Private.xcconfig */,
+				F99B1BA2F4ACEEC2A756D5DFED5FD40F /* Dollar-dummy.m */,
 				36A66117EEDF86BF1A28238C5D524B15 /* Dollar-prefix.pch */,
-				587EE9D6EC3237D079A89190397B1F92 /* Dollar-umbrella.h */,
+				DF806D330235C79CE840089932387495 /* Dollar-umbrella.h */,
 				6C10144F805D4A59BCE3BF1E841A05B2 /* Info.plist */,
 			);
 			name = "Support Files";
@@ -216,9 +216,9 @@
 		2A493877AF9C813DD86925FB94EFF8B8 /* Dollar */ = {
 			isa = PBXGroup;
 			children = (
-				2DF8B4C655682D6F86D01A2634994463 /* AutoCurry.swift */,
-				23F02B7811443B72ECB62C5FC7BFB619 /* Dollar.h */,
-				5CDF53799648C877E9695926AE3200DC /* Dollar.swift */,
+				20CCCDB7F5FE1353BDDE6179B414AFA7 /* AutoCurry.swift */,
+				A2D636725B26763C45318A2CC5D7DC83 /* Dollar.h */,
+				9D43B9515F6E11284A48A3B50E1202D4 /* Dollar.swift */,
 				29B08906FA90F20CC0E3483097128628 /* Support Files */,
 			);
 			path = Dollar;
@@ -253,7 +253,7 @@
 		47EC8CE8BF00D94F16425AE1F59F63A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41B586F80C5D28BF1BE0462D8CBCB180 /* Dollar.framework */,
+				E3CC7437DD1D8D46D91B20C7D74A6041 /* Dollar.framework */,
 				7032B02334F9EC10CE9B68868AF3C2BD /* iOS */,
 			);
 			name = Frameworks;
@@ -297,7 +297,7 @@
 		7032B02334F9EC10CE9B68868AF3C2BD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B32F3837CAA836F66810EA9A5049E7A5 /* Foundation.framework */,
+				265F9A42374C8C42EDBD580DBC5A6C0A /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -317,9 +317,9 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B8F84713979EBB3A23F5FCCB5112E01 /* Dollar.framework */,
-				2B9468CC5BC83049728F098769DA1AA1 /* Nosce.bundle */,
-				EA70E31A3C9BE423520AC8D13BFC46B3 /* Nosce.framework */,
+				40BEFFE50D3A89C3ECDEB06408FB33F7 /* Dollar.framework */,
+				FA386C341B957B0246E13D1CEF1756D4 /* Nosce.bundle */,
+				F0D4111163BA8254AE1A68B4C5EDA6BE /* Nosce.framework */,
 				E05515E205A61FAE2377413BD657EBAE /* Pods_Nosce_Example.framework */,
 				97E1D0FAB6597E00FE03437C93D5F607 /* Pods_Nosce_Tests.framework */,
 			);
@@ -337,20 +337,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1530422FABB313E581BE8BFCA67F438A /* Headers */ = {
+		4FD466C323588FD58767E706AC28A253 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84118654DF640004D4550DEFEF353CC8 /* Dollar-umbrella.h in Headers */,
-				FF42E2A79CD237B191A75DE6DA5DF1F6 /* Dollar.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7393901B29E75F6AF6EDE2DAD4A91F59 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F378CCBE1D8A3848A38C35F24533ACE6 /* Nosce-umbrella.h in Headers */,
+				9E6A8427900202D1013BB0339A5787BF /* Nosce-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +350,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				836A17DE581C20D4F4188D8FC17905B0 /* Pods-Nosce_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF758E9E865F96A07A611C1B0DD5A349 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A6C426028BEFAEA623A790F6A037D62 /* Dollar-umbrella.h in Headers */,
+				B16A0D45CDAEC3F95DC2E4ACDFC84500 /* Dollar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,33 +373,30 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		157DA8D34EAC2C8B3625CC23CD7760B5 /* Nosce */ = {
+		0F5F69A0F2FBEB27017BDA066FF7C73E /* Nosce-Nosce */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B781607052C38E08675020810E2FECA9 /* Build configuration list for PBXNativeTarget "Nosce" */;
+			buildConfigurationList = 65F778C2D8C18964F86964A7B446AE65 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */;
 			buildPhases = (
-				56A0531DE19D3E5361E3028E04496740 /* Sources */,
-				A29372463FC1E56C035A0A9140706679 /* Frameworks */,
-				A18449E393B7D56337690E4F46257AAF /* Resources */,
-				7393901B29E75F6AF6EDE2DAD4A91F59 /* Headers */,
+				23B555E45158987AF471B028BA49993E /* Sources */,
+				92C228297D2C991819B4B62F6A60F359 /* Frameworks */,
+				6B1D2011E6B3BB7B9D3050FEC7F7F16C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				33E02525A21F1E31C2EE4E65C50075A9 /* PBXTargetDependency */,
-				958D5D00C4AD6496E16BB00E81945A55 /* PBXTargetDependency */,
 			);
-			name = Nosce;
-			productName = Nosce;
-			productReference = EA70E31A3C9BE423520AC8D13BFC46B3 /* Nosce.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "Nosce-Nosce";
+			productName = "Nosce-Nosce";
+			productReference = FA386C341B957B0246E13D1CEF1756D4 /* Nosce.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
-		3DD78F79BA3CAFC075D8E84624224590 /* Dollar */ = {
+		3083CCF0C3DE53CC39705DA3C06E949A /* Dollar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E79897D58F6CB2BB09F2E41A67487B7E /* Build configuration list for PBXNativeTarget "Dollar" */;
+			buildConfigurationList = 9FDAE583BCECF585CE114F0B190EC306 /* Build configuration list for PBXNativeTarget "Dollar" */;
 			buildPhases = (
-				82237DDEA8B3803F7085772453DA35DE /* Sources */,
-				53497F8D0D94CB450D255C56D378F412 /* Frameworks */,
-				1530422FABB313E581BE8BFCA67F438A /* Headers */,
+				60EAD761C45F2F66AC8691A029898D7C /* Sources */,
+				27B34894045F6E4BA4273239CD991C6B /* Frameworks */,
+				AF758E9E865F96A07A611C1B0DD5A349 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -407,7 +404,7 @@
 			);
 			name = Dollar;
 			productName = Dollar;
-			productReference = 8B8F84713979EBB3A23F5FCCB5112E01 /* Dollar.framework */;
+			productReference = 40BEFFE50D3A89C3ECDEB06408FB33F7 /* Dollar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5DB7233EC356F85BE43733B5596FFFD6 /* Pods-Nosce_Example */ = {
@@ -421,8 +418,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				9B566D4F41741F029EAB1EBE2944A85F /* PBXTargetDependency */,
-				09B206A6DD510F411ECE6D7EBAB1FF56 /* PBXTargetDependency */,
+				AA249569C00AC0C7D98FB57355CD7AC6 /* PBXTargetDependency */,
+				58BB771CE2749345A01B0DA86B720594 /* PBXTargetDependency */,
 			);
 			name = "Pods-Nosce_Example";
 			productName = "Pods-Nosce_Example";
@@ -440,30 +437,33 @@
 			buildRules = (
 			);
 			dependencies = (
-				13537AB26F32BCF1E857C4E793EA1ED4 /* PBXTargetDependency */,
-				03DE9A4417DFF462C7280EED1E21DF18 /* PBXTargetDependency */,
+				0943C85A6E9917ED569335C5517111B9 /* PBXTargetDependency */,
+				70B691D9DD6684BB1E9725B89BB4C179 /* PBXTargetDependency */,
 			);
 			name = "Pods-Nosce_Tests";
 			productName = "Pods-Nosce_Tests";
 			productReference = 97E1D0FAB6597E00FE03437C93D5F607 /* Pods_Nosce_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		788EDC738B7C741A7FC8ED1C63A1ED7C /* Nosce-Nosce */ = {
+		E27101C7B2CCC0BCC2DBE7F231F87D2F /* Nosce */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45A58A8D47184BC55A3DAC4939BC0751 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */;
+			buildConfigurationList = D3B1FD461133E4D9A78A2F0B5C97F2F9 /* Build configuration list for PBXNativeTarget "Nosce" */;
 			buildPhases = (
-				605397382BDAE243B6B2972C718AD531 /* Sources */,
-				15F39ABFF765A959D24756A55914BFBC /* Frameworks */,
-				FB9C44F85FFAE448B45B8198B61A742D /* Resources */,
+				CC09767386CD0AC343E6A57F21919A50 /* Sources */,
+				EA5BDCCB506253E47606E720B410288D /* Frameworks */,
+				DB5548163B99149F0E007B6F265BCE3D /* Resources */,
+				4FD466C323588FD58767E706AC28A253 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5AE2DB0E0F9697603757D280DC7E9357 /* PBXTargetDependency */,
+				00EB621E0B2C9DB55E6164441931E0C4 /* PBXTargetDependency */,
 			);
-			name = "Nosce-Nosce";
-			productName = "Nosce-Nosce";
-			productReference = 2B9468CC5BC83049728F098769DA1AA1 /* Nosce.bundle */;
-			productType = "com.apple.product-type.bundle";
+			name = Nosce;
+			productName = Nosce;
+			productReference = F0D4111163BA8254AE1A68B4C5EDA6BE /* Nosce.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -486,9 +486,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3DD78F79BA3CAFC075D8E84624224590 /* Dollar */,
-				157DA8D34EAC2C8B3625CC23CD7760B5 /* Nosce */,
-				788EDC738B7C741A7FC8ED1C63A1ED7C /* Nosce-Nosce */,
+				3083CCF0C3DE53CC39705DA3C06E949A /* Dollar */,
+				E27101C7B2CCC0BCC2DBE7F231F87D2F /* Nosce */,
+				0F5F69A0F2FBEB27017BDA066FF7C73E /* Nosce-Nosce */,
 				5DB7233EC356F85BE43733B5596FFFD6 /* Pods-Nosce_Example */,
 				6258805616AB87E5A80BA8D79786D3F1 /* Pods-Nosce_Tests */,
 			);
@@ -496,18 +496,18 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A18449E393B7D56337690E4F46257AAF /* Resources */ = {
+		6B1D2011E6B3BB7B9D3050FEC7F7F16C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0026C16F20890F3971DF9784AF558D04 /* Nosce.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB9C44F85FFAE448B45B8198B61A742D /* Resources */ = {
+		DB5548163B99149F0E007B6F265BCE3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86BDC8F205F2953F23A0B2A18A40375 /* Nosce.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,74 +530,102 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56A0531DE19D3E5361E3028E04496740 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8F6AFC71EBDAB8F022D645DE0E3020B /* Nosce-dummy.m in Sources */,
-				4126311CE5CEA1873BA0747F5F3E13CE /* Nosce.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		605397382BDAE243B6B2972C718AD531 /* Sources */ = {
+		23B555E45158987AF471B028BA49993E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82237DDEA8B3803F7085772453DA35DE /* Sources */ = {
+		60EAD761C45F2F66AC8691A029898D7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				439FF2EC51BB93E5CEBE8D9CE2E95395 /* AutoCurry.swift in Sources */,
-				FEA831D4F52D73009519F466D38D667A /* Dollar-dummy.m in Sources */,
-				C7F92CFA265091249137C7FC6629A7B1 /* Dollar.swift in Sources */,
+				3EFD326628CFA23CB1E9A7E5E4E2B432 /* AutoCurry.swift in Sources */,
+				853194B1CB895FD08A232E267C5F6A9C /* Dollar-dummy.m in Sources */,
+				274476E877F7D545D9104E155399184B /* Dollar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC09767386CD0AC343E6A57F21919A50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A3BC97B2022F0D846775F36207E186E /* Nosce-dummy.m in Sources */,
+				16817FEFDE68F25333E0349CD7C8F8F1 /* Nosce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03DE9A4417DFF462C7280EED1E21DF18 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nosce;
-			target = 157DA8D34EAC2C8B3625CC23CD7760B5 /* Nosce */;
-			targetProxy = B3531636B5D848972D0A380C17E39BB0 /* PBXContainerItemProxy */;
-		};
-		09B206A6DD510F411ECE6D7EBAB1FF56 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nosce;
-			target = 157DA8D34EAC2C8B3625CC23CD7760B5 /* Nosce */;
-			targetProxy = 81C78E65966933CA16D4E46904CCBF3A /* PBXContainerItemProxy */;
-		};
-		13537AB26F32BCF1E857C4E793EA1ED4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Dollar;
-			target = 3DD78F79BA3CAFC075D8E84624224590 /* Dollar */;
-			targetProxy = 8F22471BD432CE393E5C19C144E20602 /* PBXContainerItemProxy */;
-		};
-		33E02525A21F1E31C2EE4E65C50075A9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Dollar;
-			target = 3DD78F79BA3CAFC075D8E84624224590 /* Dollar */;
-			targetProxy = 334564DA6713B3516923101ABE407345 /* PBXContainerItemProxy */;
-		};
-		958D5D00C4AD6496E16BB00E81945A55 /* PBXTargetDependency */ = {
+		00EB621E0B2C9DB55E6164441931E0C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Nosce-Nosce";
-			target = 788EDC738B7C741A7FC8ED1C63A1ED7C /* Nosce-Nosce */;
-			targetProxy = 228913B8D5539E6109D2A3BFE31962A2 /* PBXContainerItemProxy */;
+			target = 0F5F69A0F2FBEB27017BDA066FF7C73E /* Nosce-Nosce */;
+			targetProxy = 1F4CE11F5CBE79EF50ED92526DE952F2 /* PBXContainerItemProxy */;
 		};
-		9B566D4F41741F029EAB1EBE2944A85F /* PBXTargetDependency */ = {
+		0943C85A6E9917ED569335C5517111B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Dollar;
-			target = 3DD78F79BA3CAFC075D8E84624224590 /* Dollar */;
-			targetProxy = E1163C6B515333931634F586138A13FB /* PBXContainerItemProxy */;
+			target = 3083CCF0C3DE53CC39705DA3C06E949A /* Dollar */;
+			targetProxy = 06B18E510E379F6A43762B81A2A50F31 /* PBXContainerItemProxy */;
+		};
+		58BB771CE2749345A01B0DA86B720594 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nosce;
+			target = E27101C7B2CCC0BCC2DBE7F231F87D2F /* Nosce */;
+			targetProxy = 6AC38A1284FE9AA6F8EB130F7CF0EB61 /* PBXContainerItemProxy */;
+		};
+		5AE2DB0E0F9697603757D280DC7E9357 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dollar;
+			target = 3083CCF0C3DE53CC39705DA3C06E949A /* Dollar */;
+			targetProxy = 9AEB33C1FB891E8A5D4090A4ED35B121 /* PBXContainerItemProxy */;
+		};
+		70B691D9DD6684BB1E9725B89BB4C179 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nosce;
+			target = E27101C7B2CCC0BCC2DBE7F231F87D2F /* Nosce */;
+			targetProxy = 2746A2D0E60B09B03410C6A5FCFD3260 /* PBXContainerItemProxy */;
+		};
+		AA249569C00AC0C7D98FB57355CD7AC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dollar;
+			target = 3083CCF0C3DE53CC39705DA3C06E949A /* Dollar */;
+			targetProxy = 9E79DDF213655EE5C08C3BB17AA62F00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		00EEF5AC079FE231F49F4FC9428D5DAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46E4B865A5B7BFFA0867D8D5CB39BE55 /* Dollar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5.0.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 5;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Dollar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -632,9 +660,9 @@
 			};
 			name = Release;
 		};
-		23EF1BD892F3BB4D04D9EBC8F586E90A /* Debug */ = {
+		19E8A4976DB724CF93576C4F813B3DA4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64F9C3E15D3A47CF629A0197AB9507A3 /* Nosce-Private.xcconfig */;
+			baseConfigurationReference = 3E393F8FE5D1B84C4B234CE63274CBAF /* Nosce-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0.1.0;
@@ -649,16 +677,42 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Nosce/Nosce.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Nosce;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		40EE091323E69151B8861FFDA89B8F27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46E4B865A5B7BFFA0867D8D5CB39BE55 /* Dollar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5.0.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 5;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Dollar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		47C5C03A8B33D243D85D114F13024711 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -681,6 +735,34 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_Nosce_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		521985DEA8C5B105779C1D90607CFB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E393F8FE5D1B84C4B234CE63274CBAF /* Nosce-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Nosce/Nosce-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nosce/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nosce/Nosce.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Nosce;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -758,9 +840,9 @@
 			};
 			name = Release;
 		};
-		890F866928BB7339C266545FF680551D /* Debug */ = {
+		B24CCC4A483A980A01F3707A55953F1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64F9C3E15D3A47CF629A0197AB9507A3 /* Nosce-Private.xcconfig */;
+			baseConfigurationReference = 3E393F8FE5D1B84C4B234CE63274CBAF /* Nosce-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Nosce;
@@ -769,45 +851,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
-		};
-		8B2545FDBFEEAD6751477FCBBC7DDAB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEFE0AB681CCBF38A8F9A16C757BD43D /* Dollar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 5.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 5;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Dollar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		93C23055D341D1E35C07EF4B477EEA51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64F9C3E15D3A47CF629A0197AB9507A3 /* Nosce-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Nosce;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
 		};
 		B5D7320AC1C57C62B822A0B6E116294B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -839,30 +882,15 @@
 			};
 			name = Debug;
 		};
-		C4C625F6435DDEE6D23954F4AF069E4F /* Release */ = {
+		B7B4F9C49770E1155DD3C99420D55A3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64F9C3E15D3A47CF629A0197AB9507A3 /* Nosce-Private.xcconfig */;
+			baseConfigurationReference = 3E393F8FE5D1B84C4B234CE63274CBAF /* Nosce-Private.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Nosce/Nosce-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Nosce/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Nosce/Nosce.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Nosce;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -895,34 +923,6 @@
 			};
 			name = Release;
 		};
-		D74941987384DA580427D38828164F2D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEFE0AB681CCBF38A8F9A16C757BD43D /* Dollar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 5.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 5;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Dollar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -935,11 +935,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45A58A8D47184BC55A3DAC4939BC0751 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */ = {
+		65F778C2D8C18964F86964A7B446AE65 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				890F866928BB7339C266545FF680551D /* Debug */,
-				93C23055D341D1E35C07EF4B477EEA51 /* Release */,
+				B24CCC4A483A980A01F3707A55953F1A /* Debug */,
+				B7B4F9C49770E1155DD3C99420D55A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FDAE583BCECF585CE114F0B190EC306 /* Build configuration list for PBXNativeTarget "Dollar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00EEF5AC079FE231F49F4FC9428D5DAA /* Debug */,
+				40EE091323E69151B8861FFDA89B8F27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -953,15 +962,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B781607052C38E08675020810E2FECA9 /* Build configuration list for PBXNativeTarget "Nosce" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				23EF1BD892F3BB4D04D9EBC8F586E90A /* Debug */,
-				C4C625F6435DDEE6D23954F4AF069E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BE03E58FC18E99D0170787850B5BDEE6 /* Build configuration list for PBXNativeTarget "Pods-Nosce_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -971,11 +971,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E79897D58F6CB2BB09F2E41A67487B7E /* Build configuration list for PBXNativeTarget "Dollar" */ = {
+		D3B1FD461133E4D9A78A2F0B5C97F2F9 /* Build configuration list for PBXNativeTarget "Nosce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D74941987384DA580427D38828164F2D /* Debug */,
-				8B2545FDBFEEAD6751477FCBBC7DDAB0 /* Release */,
+				521985DEA8C5B105779C1D90607CFB48 /* Debug */,
+				19E8A4976DB724CF93576C4F813B3DA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,18 +10,20 @@
   },
   "source": {
     "git": "https://github.com/devgabrielcoman/nosce.git",
-    "branch": "master"
+    "branch": "master",
+    "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
+  "source_files": "Pod/Classes/*",
   "resource_bundles": {
     "Nosce": [
       "Pod/Assets/*.png"
     ]
   },
+  "public_header_files": "Pod/Classes/*.h",
   "dependencies": {
     "Dollar": [
 

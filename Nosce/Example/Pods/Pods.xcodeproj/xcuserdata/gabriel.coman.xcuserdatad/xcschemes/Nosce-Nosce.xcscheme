@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "973850D98576B17FB8F0D202"
+               BlueprintIdentifier = "3C1BB7B49FE517DDF29EA6DC"
                BuildableName = "Nosce.bundle"
                BlueprintName = "Nosce-Nosce"
                ReferencedContainer = "container:Pods.xcodeproj">
