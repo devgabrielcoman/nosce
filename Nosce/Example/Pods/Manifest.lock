@@ -1,0 +1,17 @@
+PODS:
+  - Colors (0.1)
+  - Nosce (0.1.0):
+    - Colors
+
+DEPENDENCIES:
+  - Nosce (from `../`)
+
+EXTERNAL SOURCES:
+  Nosce:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Colors: 69e15d597490c3d17d8264412c42fc4c293c88e5
+  Nosce: 7fcd72e584194a7b759dcdeed75207531253e679
+
+COCOAPODS: 0.38.2
