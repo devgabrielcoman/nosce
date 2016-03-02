@@ -12,6 +12,7 @@ class TestModel: NSObject {
     
     var var1: Int = 0
     var var2: String! = nil
+    var var3: Int?
     
     init(var1 v1: Int, var2 v2: String) {
         super.init()

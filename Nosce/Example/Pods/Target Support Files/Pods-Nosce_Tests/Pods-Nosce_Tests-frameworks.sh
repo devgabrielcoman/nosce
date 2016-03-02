@@ -53,9 +53,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Nosce_Tests/Dollar.framework'
-  install_framework 'Pods-Nosce_Tests/Nosce.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Nosce_Tests/Dollar.framework'
-  install_framework 'Pods-Nosce_Tests/Nosce.framework'
 fi

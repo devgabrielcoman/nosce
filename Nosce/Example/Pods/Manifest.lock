@@ -1,6 +1,6 @@
 PODS:
   - Dollar (5.0.0)
-  - Nosce (0.1.0):
+  - Nosce (0.1.4):
     - Dollar
 
 DEPENDENCIES:
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
-  Nosce: 284d7b0cf7157e607c2dd14084cb71501b3f1ebe
+  Nosce: 0b2cbde813b038c5b8104b59e2aa2d463782c542
 
 COCOAPODS: 0.38.2

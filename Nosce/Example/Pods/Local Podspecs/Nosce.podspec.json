@@ -1,8 +1,8 @@
 {
   "name": "Nosce",
-  "version": "0.1.0",
-  "summary": "Nosce is a swift utility library that prints out the insides of model type objects",
-  "description": "",
+  "version": "0.1.4",
+  "summary": "Nosce - print your models",
+  "description": "Nosce is a swift utility library that prints out the insides of model type objects",
   "homepage": "https://github.com/devgabrielcoman/nosce",
   "license": "https://github.com/devgabrielcoman/nosce/blob/master/LICENSE",
   "authors": {
@@ -11,19 +11,18 @@
   "source": {
     "git": "https://github.com/devgabrielcoman/nosce.git",
     "branch": "master",
-    "tag": "0.1.0"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/*",
+  "source_files": "Nosce/Pod/Classes/*",
   "resource_bundles": {
     "Nosce": [
       "Pod/Assets/*.png"
     ]
   },
-  "public_header_files": "Pod/Classes/*.h",
   "dependencies": {
     "Dollar": [
 

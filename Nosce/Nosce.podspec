@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Nosce"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "Nosce - print your models"
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'https://github.com/devgabrielcoman/nosce/blob/master/LICENSE'
   s.author           = { "Gabriel Coman" => "dev.gabriel.coman@gmail.com" }
-  s.source           = { :git => "https://github.com/devgabrielcoman/nosce.git", :branch => "master", :tag => "0.1.3" }
+  s.source           = { :git => "https://github.com/devgabrielcoman/nosce.git", :branch => "master", :tag => "0.1.4" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'

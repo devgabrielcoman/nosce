@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Nosce.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Nosce_Example.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F5F69A0F2FBEB27017BDA066FF7C73E</key>
+		<key>AD7D43C8E37044218014C55066AB464B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3083CCF0C3DE53CC39705DA3C06E949A</key>
+		<key>C8EAD7D140E6B5B4A7BA52E8A8230BEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DB7233EC356F85BE43733B5596FFFD6</key>
+		<key>D8FA7AB033934C2DE6A818EFAF495520</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6258805616AB87E5A80BA8D79786D3F1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E27101C7B2CCC0BCC2DBE7F231F87D2F</key>
+		<key>E95FC436496904A0D0DE9462DCF85A91</key>
 		<dict>
 			<key>primary</key>
 			<true/>

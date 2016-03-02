@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.1.4
+ - added exclusion method
+
 0.1.3
  - fix tabs issue when displaying object name, not type
 
