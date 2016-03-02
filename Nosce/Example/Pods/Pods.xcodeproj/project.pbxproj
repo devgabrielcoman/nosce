@@ -7,47 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BFD876A2EA5CA636D7F6828D46B984C /* Dollar.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D284D19A0C1026E235BB4EC4270202 /* Dollar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21993E831CC6BE7C37381B072F932504 /* Dollar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E58FFE769D0A89F80262C0F3D67C89F3 /* Dollar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24CD596D50143B3A57175AA121663A3E /* Dollar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E98C7725A2B3EDE7980105DC0D8E3112 /* Dollar-dummy.m */; };
-		5427CDCAC1395EFDDFC19DAB7B475DE2 /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61803EF9BA77940478F68865CE83E331 /* Dollar.swift */; };
-		758F993144FEE5C60AA40FF55ABCE6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA81DC654F532E909271B231DCB670F1 /* Foundation.framework */; };
-		7C6C37FA86DA36E7EC4F23AFDBE4F028 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA81DC654F532E909271B231DCB670F1 /* Foundation.framework */; };
+		1BAADDFC1C86683600EBA320 /* Nosce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAADDFA1C86680F00EBA320 /* Nosce.swift */; };
+		42FDFFE41C0F3E14F5A35BBAE23A32B1 /* Dollar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 637C8AFC2E4829E41D02CC500A09D351 /* Dollar-dummy.m */; };
+		452B8E886730CF2F6355D8891FB2FB0E /* Dollar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 278665F0FEEB8A5ADC992F586998E618 /* Dollar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		758F993144FEE5C60AA40FF55ABCE6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D857889BDEF33FC7CB758FB38262E /* Foundation.framework */; };
 		86133D3156695BA7557A2631DE5507BF /* Pods-Nosce_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC6358205B1BA0C8E0A7F1717BE6051 /* Pods-Nosce_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BC7A63A533320DE30E1926844CF87C4 /* Dollar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F31609470E5E1CF70EB595D18E8FF4A /* Dollar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F4D5E6A91470CDDEF9A66013B7236D4 /* Pods-Nosce_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A06CE1C9A9BB1508489FF82268827D56 /* Pods-Nosce_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C0A907B736AB4BD87ED14A49DC5DF78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D857889BDEF33FC7CB758FB38262E /* Foundation.framework */; };
 		9CED643361D0A7E3C1AC22C1C16260AA /* Pods-Nosce_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3279446F3B36167FB503535FF901B6 /* Pods-Nosce_Tests-dummy.m */; };
-		C08A8002D503FE978626E7C21747F086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA81DC654F532E909271B231DCB670F1 /* Foundation.framework */; };
+		C08A8002D503FE978626E7C21747F086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D32D857889BDEF33FC7CB758FB38262E /* Foundation.framework */; };
 		C7A1CD478D50406E9B7977C75BE76FEA /* Pods-Nosce_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EECBF3F0455C0033DE8962028363A /* Pods-Nosce_Example-dummy.m */; };
-		C8F91228CE236E746BB9D7B3867FE5DC /* AutoCurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5333CE10492B048840C780874845106 /* AutoCurry.swift */; };
+		CD30038EFCB0E64BD82E859897BE89A4 /* AutoCurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D540C2452ADDF50404763C5F12BCCC /* AutoCurry.swift */; };
+		EEA06C4D54F790CF8A94404CE22CF7E9 /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A202276D6CA34C3D360268865E935F3 /* Dollar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0BC13A4E13DC5C65DAAC0205F4D4C468 /* PBXContainerItemProxy */ = {
+		7E6CE2B1509484DCCD2BB20AB184D0C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AD7D43C8E37044218014C55066AB464B;
+			remoteGlobalIDString = E8A5BBE3610AAD5278CA55166363BD1A;
 			remoteInfo = "Nosce-Nosce";
 		};
-		2DEE6B6AA40B1E1ABF0484000D03E3B5 /* PBXContainerItemProxy */ = {
+		D6F084D1AAC0DD2A90EBD8281B4E48F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D8FA7AB033934C2DE6A818EFAF495520;
+			remoteGlobalIDString = E8A5BBE3610AAD5278CA55166363BD1A;
+			remoteInfo = "Nosce-Nosce";
+		};
+		F48D02C5466C6D9C6FC8A02925D3B563 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2087ED103CA3F1D3927504EB1EEF18D;
 			remoteInfo = Dollar;
 		};
-		5F16EEC4636AC19CB02F8F4700205AE8 /* PBXContainerItemProxy */ = {
+		FD4EEBC91163637DEB5DF37A8523664B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AD7D43C8E37044218014C55066AB464B;
-			remoteInfo = "Nosce-Nosce";
-		};
-		F461DE36399D4C5CF56A63119193B0FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D8FA7AB033934C2DE6A818EFAF495520;
+			remoteGlobalIDString = A2087ED103CA3F1D3927504EB1EEF18D;
 			remoteInfo = Dollar;
 		};
 /* End PBXContainerItemProxy section */
@@ -55,40 +56,41 @@
 /* Begin PBXFileReference section */
 		04C8242790009CEE2616CF0970F1FD29 /* Pods-Nosce_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nosce_Tests.modulemap"; sourceTree = "<group>"; };
 		086EF58B77C53377FC48EC866E15482C /* Pods-Nosce_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		0F31609470E5E1CF70EB595D18E8FF4A /* Dollar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Dollar.h; path = Sources/Dollar.h; sourceTree = "<group>"; };
+		1BAADDFA1C86680F00EBA320 /* Nosce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nosce.swift; path = Pod/Classes/Nosce.swift; sourceTree = "<group>"; };
 		1C8EAE8243205D342F2051654E8A4C56 /* Dollar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Dollar.xcconfig; sourceTree = "<group>"; };
+		20D540C2452ADDF50404763C5F12BCCC /* AutoCurry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoCurry.swift; path = Sources/AutoCurry.swift; sourceTree = "<group>"; };
+		278665F0FEEB8A5ADC992F586998E618 /* Dollar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dollar-umbrella.h"; sourceTree = "<group>"; };
+		2A202276D6CA34C3D360268865E935F3 /* Dollar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dollar.swift; path = Sources/Dollar.swift; sourceTree = "<group>"; };
 		36A66117EEDF86BF1A28238C5D524B15 /* Dollar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dollar-prefix.pch"; sourceTree = "<group>"; };
 		4EA7418D8A31544674ECBA82612DCF58 /* Pods-Nosce_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Example-frameworks.sh"; sourceTree = "<group>"; };
 		5B8644996AA9315AE1E4E28D42E23E73 /* Pods-Nosce_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nosce_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		60CC257AB45F01CBC7448B357129A140 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6121CD8D1A3E253A5B82B1FE6676659C /* Pods-Nosce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		61803EF9BA77940478F68865CE83E331 /* Dollar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dollar.swift; path = Sources/Dollar.swift; sourceTree = "<group>"; };
+		637C8AFC2E4829E41D02CC500A09D351 /* Dollar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dollar-dummy.m"; sourceTree = "<group>"; };
 		6BA732049F95739B1CFBBAE4D0F9D8FD /* Pods-Nosce_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nosce_Example.modulemap"; sourceTree = "<group>"; };
 		6C10144F805D4A59BCE3BF1E841A05B2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		722C7016C81CCF9662C40F1865244B40 /* Pods-Nosce_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Example.release.xcconfig"; sourceTree = "<group>"; };
-		77D284D19A0C1026E235BB4EC4270202 /* Dollar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Dollar.h; path = Sources/Dollar.h; sourceTree = "<group>"; };
 		7A203C7CF087ADFAB4781E3FE9301004 /* Pods-Nosce_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nosce_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7FD1F6F9098607EA3FCD8E72755723A4 /* Nosce.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nosce.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		826D362E8A87CF4272A5042488FA8D8B /* Pods-Nosce_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nosce_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		83FA9BF191BEC0AE473F2DA7B882A7AE /* Dollar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dollar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8498A2B47D7060E8AE69C9587E13ACDA /* Pods-Nosce_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F352586BECBC840F73B5B18CAD07F5E /* Pods_Nosce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nosce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93FAB451A64C0947EFDCB65505BF5715 /* Pods-Nosce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nosce_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9646E6DEFDFC781D56AF2A4BCE0E8453 /* Pods-Nosce_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nosce_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9A8EECBF3F0455C0033DE8962028363A /* Pods-Nosce_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nosce_Example-dummy.m"; sourceTree = "<group>"; };
 		A06CE1C9A9BB1508489FF82268827D56 /* Pods-Nosce_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nosce_Tests-umbrella.h"; sourceTree = "<group>"; };
-		AA81DC654F532E909271B231DCB670F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B0D201A9CAF0F8E5E5C4615D4FA2F435 /* Dollar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Dollar.modulemap; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAC6358205B1BA0C8E0A7F1717BE6051 /* Pods-Nosce_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nosce_Example-umbrella.h"; sourceTree = "<group>"; };
 		C1F52E3155662034F58607462383C45F /* Pods-Nosce_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Tests-resources.sh"; sourceTree = "<group>"; };
-		C5333CE10492B048840C780874845106 /* AutoCurry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoCurry.swift; path = Sources/AutoCurry.swift; sourceTree = "<group>"; };
-		CD38C90701C4AF5D6E7C56267E59A48C /* Dollar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Dollar-Private.xcconfig"; sourceTree = "<group>"; };
+		D32D857889BDEF33FC7CB758FB38262E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D42AA976B8BE2B364FC8AD341C29AD05 /* Pods-Nosce_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nosce_Example-resources.sh"; sourceTree = "<group>"; };
 		D90373D0D885F77A5C96D59102C98008 /* Pods_Nosce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nosce_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3279446F3B36167FB503535FF901B6 /* Pods-Nosce_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nosce_Tests-dummy.m"; sourceTree = "<group>"; };
-		E58FFE769D0A89F80262C0F3D67C89F3 /* Dollar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dollar-umbrella.h"; sourceTree = "<group>"; };
-		E98C7725A2B3EDE7980105DC0D8E3112 /* Dollar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dollar-dummy.m"; sourceTree = "<group>"; };
+		E4A2B4F0229FA7ACEE75BD0A8805DC60 /* Dollar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dollar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85DB5EC4AD36B5A8567D3F3EF71FDC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8FBC3E6C143035B27061D2F73BB0E00 /* Nosce.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nosce.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC9DC278D84A881B9AE5B79DF4E4FCDE /* Dollar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Dollar-Private.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,15 +110,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9132E5C6D3127592DC7C0B83E916C9E5 /* Frameworks */ = {
+		7D755E2AA51A2E1369B0BEFE69544F7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C6C37FA86DA36E7EC4F23AFDBE4F028 /* Foundation.framework in Frameworks */,
+				9C0A907B736AB4BD87ED14A49DC5DF78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B89125DECB00835E233B0B969DFD36A6 /* Frameworks */ = {
+		E660AEBE037A86C92220562596C0CAD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,10 +133,10 @@
 			children = (
 				B0D201A9CAF0F8E5E5C4615D4FA2F435 /* Dollar.modulemap */,
 				1C8EAE8243205D342F2051654E8A4C56 /* Dollar.xcconfig */,
-				CD38C90701C4AF5D6E7C56267E59A48C /* Dollar-Private.xcconfig */,
-				E98C7725A2B3EDE7980105DC0D8E3112 /* Dollar-dummy.m */,
+				FC9DC278D84A881B9AE5B79DF4E4FCDE /* Dollar-Private.xcconfig */,
+				637C8AFC2E4829E41D02CC500A09D351 /* Dollar-dummy.m */,
 				36A66117EEDF86BF1A28238C5D524B15 /* Dollar-prefix.pch */,
-				E58FFE769D0A89F80262C0F3D67C89F3 /* Dollar-umbrella.h */,
+				278665F0FEEB8A5ADC992F586998E618 /* Dollar-umbrella.h */,
 				6C10144F805D4A59BCE3BF1E841A05B2 /* Info.plist */,
 			);
 			name = "Support Files";
@@ -144,9 +146,9 @@
 		2A493877AF9C813DD86925FB94EFF8B8 /* Dollar */ = {
 			isa = PBXGroup;
 			children = (
-				C5333CE10492B048840C780874845106 /* AutoCurry.swift */,
-				77D284D19A0C1026E235BB4EC4270202 /* Dollar.h */,
-				61803EF9BA77940478F68865CE83E331 /* Dollar.swift */,
+				20D540C2452ADDF50404763C5F12BCCC /* AutoCurry.swift */,
+				0F31609470E5E1CF70EB595D18E8FF4A /* Dollar.h */,
+				2A202276D6CA34C3D360268865E935F3 /* Dollar.swift */,
 				29B08906FA90F20CC0E3483097128628 /* Support Files */,
 			);
 			path = Dollar;
@@ -182,7 +184,7 @@
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AA81DC654F532E909271B231DCB670F1 /* Foundation.framework */,
+				D32D857889BDEF33FC7CB758FB38262E /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -228,6 +230,7 @@
 		85E6C832996392AAB063C6AF05227BE8 /* Nosce */ = {
 			isa = PBXGroup;
 			children = (
+				1BAADDFA1C86680F00EBA320 /* Nosce.swift */,
 			);
 			name = Nosce;
 			path = ../..;
@@ -244,8 +247,8 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83FA9BF191BEC0AE473F2DA7B882A7AE /* Dollar.framework */,
-				F8FBC3E6C143035B27061D2F73BB0E00 /* Nosce.bundle */,
+				E4A2B4F0229FA7ACEE75BD0A8805DC60 /* Dollar.framework */,
+				7FD1F6F9098607EA3FCD8E72755723A4 /* Nosce.bundle */,
 				8F352586BECBC840F73B5B18CAD07F5E /* Pods_Nosce_Example.framework */,
 				D90373D0D885F77A5C96D59102C98008 /* Pods_Nosce_Tests.framework */,
 			);
@@ -279,34 +282,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBD02107912E05387545DB55D5F0A4C1 /* Headers */ = {
+		D37DB8E1150B561321C3D3AB9E74357A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21993E831CC6BE7C37381B072F932504 /* Dollar-umbrella.h in Headers */,
-				1BFD876A2EA5CA636D7F6828D46B984C /* Dollar.h in Headers */,
+				452B8E886730CF2F6355D8891FB2FB0E /* Dollar-umbrella.h in Headers */,
+				8BC7A63A533320DE30E1926844CF87C4 /* Dollar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AD7D43C8E37044218014C55066AB464B /* Nosce-Nosce */ = {
+		A2087ED103CA3F1D3927504EB1EEF18D /* Dollar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39BBAD4D7B178DD033E27848073E59F7 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */;
+			buildConfigurationList = 3340E6D7453D85C20359AC616CB87CC9 /* Build configuration list for PBXNativeTarget "Dollar" */;
 			buildPhases = (
-				CA0BB0AB347C63FEB3785466D68BFDA4 /* Sources */,
-				B89125DECB00835E233B0B969DFD36A6 /* Frameworks */,
-				92243E513DE98BA7967BE337D2B2123A /* Resources */,
+				13C77DBB64419A94626D5E4C7844E528 /* Sources */,
+				7D755E2AA51A2E1369B0BEFE69544F7D /* Frameworks */,
+				D37DB8E1150B561321C3D3AB9E74357A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Nosce-Nosce";
-			productName = "Nosce-Nosce";
-			productReference = F8FBC3E6C143035B27061D2F73BB0E00 /* Nosce.bundle */;
-			productType = "com.apple.product-type.bundle";
+			name = Dollar;
+			productName = Dollar;
+			productReference = E4A2B4F0229FA7ACEE75BD0A8805DC60 /* Dollar.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		C8EAD7D140E6B5B4A7BA52E8A8230BEE /* Pods-Nosce_Tests */ = {
 			isa = PBXNativeTarget;
@@ -319,30 +322,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				31950B61E428072521F1ABEE4B34034F /* PBXTargetDependency */,
-				EA058F5A3DF912DDE8F54D43569F6176 /* PBXTargetDependency */,
+				9DA8038741A4EB424A182488CD4CF698 /* PBXTargetDependency */,
+				0805AD382395D9D88405FD484108E846 /* PBXTargetDependency */,
 			);
 			name = "Pods-Nosce_Tests";
 			productName = "Pods-Nosce_Tests";
 			productReference = D90373D0D885F77A5C96D59102C98008 /* Pods_Nosce_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8FA7AB033934C2DE6A818EFAF495520 /* Dollar */ = {
+		E8A5BBE3610AAD5278CA55166363BD1A /* Nosce-Nosce */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65AEC2253579BEC8388CAB68B97DEE71 /* Build configuration list for PBXNativeTarget "Dollar" */;
+			buildConfigurationList = DD3396B34B5185950779AE2DD890FB18 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */;
 			buildPhases = (
-				9EBD3954A4A13B857205BA707EC7BF4B /* Sources */,
-				9132E5C6D3127592DC7C0B83E916C9E5 /* Frameworks */,
-				CBD02107912E05387545DB55D5F0A4C1 /* Headers */,
+				E432605DB077DB83F5BA06B7C74A70DD /* Sources */,
+				E660AEBE037A86C92220562596C0CAD6 /* Frameworks */,
+				246DCB8D7D59A9284226B7129CCC33C2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Dollar;
-			productName = Dollar;
-			productReference = 83FA9BF191BEC0AE473F2DA7B882A7AE /* Dollar.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "Nosce-Nosce";
+			productName = "Nosce-Nosce";
+			productReference = 7FD1F6F9098607EA3FCD8E72755723A4 /* Nosce.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		E95FC436496904A0D0DE9462DCF85A91 /* Pods-Nosce_Example */ = {
 			isa = PBXNativeTarget;
@@ -355,8 +358,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				F9F877E4CF827735E049A913AA6542F7 /* PBXTargetDependency */,
-				0C6595CA017F374B98FB615EC8190539 /* PBXTargetDependency */,
+				0FE0520542CA30FE4F4AD7DB93211ACB /* PBXTargetDependency */,
+				C7FCEE057103BB9D6A1F6D4D9B3C886B /* PBXTargetDependency */,
 			);
 			name = "Pods-Nosce_Example";
 			productName = "Pods-Nosce_Example";
@@ -384,8 +387,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8FA7AB033934C2DE6A818EFAF495520 /* Dollar */,
-				AD7D43C8E37044218014C55066AB464B /* Nosce-Nosce */,
+				A2087ED103CA3F1D3927504EB1EEF18D /* Dollar */,
+				E8A5BBE3610AAD5278CA55166363BD1A /* Nosce-Nosce */,
 				E95FC436496904A0D0DE9462DCF85A91 /* Pods-Nosce_Example */,
 				C8EAD7D140E6B5B4A7BA52E8A8230BEE /* Pods-Nosce_Tests */,
 			);
@@ -393,7 +396,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		92243E513DE98BA7967BE337D2B2123A /* Resources */ = {
+		246DCB8D7D59A9284226B7129CCC33C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,13 +406,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9EBD3954A4A13B857205BA707EC7BF4B /* Sources */ = {
+		13C77DBB64419A94626D5E4C7844E528 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8F91228CE236E746BB9D7B3867FE5DC /* AutoCurry.swift in Sources */,
-				24CD596D50143B3A57175AA121663A3E /* Dollar-dummy.m in Sources */,
-				5427CDCAC1395EFDDFC19DAB7B475DE2 /* Dollar.swift in Sources */,
+				CD30038EFCB0E64BD82E859897BE89A4 /* AutoCurry.swift in Sources */,
+				42FDFFE41C0F3E14F5A35BBAE23A32B1 /* Dollar-dummy.m in Sources */,
+				EEA06C4D54F790CF8A94404CE22CF7E9 /* Dollar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,43 +432,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA0BB0AB347C63FEB3785466D68BFDA4 /* Sources */ = {
+		E432605DB077DB83F5BA06B7C74A70DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAADDFC1C86683600EBA320 /* Nosce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C6595CA017F374B98FB615EC8190539 /* PBXTargetDependency */ = {
+		0805AD382395D9D88405FD484108E846 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Nosce-Nosce";
-			target = AD7D43C8E37044218014C55066AB464B /* Nosce-Nosce */;
-			targetProxy = 5F16EEC4636AC19CB02F8F4700205AE8 /* PBXContainerItemProxy */;
+			target = E8A5BBE3610AAD5278CA55166363BD1A /* Nosce-Nosce */;
+			targetProxy = 7E6CE2B1509484DCCD2BB20AB184D0C5 /* PBXContainerItemProxy */;
 		};
-		31950B61E428072521F1ABEE4B34034F /* PBXTargetDependency */ = {
+		0FE0520542CA30FE4F4AD7DB93211ACB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Dollar;
-			target = D8FA7AB033934C2DE6A818EFAF495520 /* Dollar */;
-			targetProxy = 2DEE6B6AA40B1E1ABF0484000D03E3B5 /* PBXContainerItemProxy */;
+			target = A2087ED103CA3F1D3927504EB1EEF18D /* Dollar */;
+			targetProxy = FD4EEBC91163637DEB5DF37A8523664B /* PBXContainerItemProxy */;
 		};
-		EA058F5A3DF912DDE8F54D43569F6176 /* PBXTargetDependency */ = {
+		9DA8038741A4EB424A182488CD4CF698 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dollar;
+			target = A2087ED103CA3F1D3927504EB1EEF18D /* Dollar */;
+			targetProxy = F48D02C5466C6D9C6FC8A02925D3B563 /* PBXContainerItemProxy */;
+		};
+		C7FCEE057103BB9D6A1F6D4D9B3C886B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Nosce-Nosce";
-			target = AD7D43C8E37044218014C55066AB464B /* Nosce-Nosce */;
-			targetProxy = 0BC13A4E13DC5C65DAAC0205F4D4C468 /* PBXContainerItemProxy */;
-		};
-		F9F877E4CF827735E049A913AA6542F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Dollar;
-			target = D8FA7AB033934C2DE6A818EFAF495520 /* Dollar */;
-			targetProxy = F461DE36399D4C5CF56A63119193B0FB /* PBXContainerItemProxy */;
+			target = E8A5BBE3610AAD5278CA55166363BD1A /* Nosce-Nosce */;
+			targetProxy = D6F084D1AAC0DD2A90EBD8281B4E48F5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		07B7F997C8ECC849CF49E16C8702BDC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Nosce;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -530,6 +545,34 @@
 			};
 			name = Debug;
 		};
+		3F4EFA9E1B4E79B33C258C8E081B9B32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC9DC278D84A881B9AE5B79DF4E4FCDE /* Dollar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5.0.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 5;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Dollar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -569,61 +612,6 @@
 			};
 			name = Debug;
 		};
-		618388118A0493AB96A282FDCA3D9C96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD38C90701C4AF5D6E7C56267E59A48C /* Dollar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 5.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 5;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Dollar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6FF314D93663F9C1951E5DA815C6D4C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD38C90701C4AF5D6E7C56267E59A48C /* Dollar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 5.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 5;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Dollar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		93E708B7450D8A94ACCC5E967C3A3AA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 722C7016C81CCF9662C40F1865244B40 /* Pods-Nosce_Example.release.xcconfig */;
@@ -645,6 +633,33 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_Nosce_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		969232702FA40528519F0686F7E82301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC9DC278D84A881B9AE5B79DF4E4FCDE /* Dollar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 5.0.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 5;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Dollar/Dollar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Dollar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Dollar/Dollar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Dollar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -712,7 +727,7 @@
 			};
 			name = Debug;
 		};
-		EBA7638E68905EF9F86DFF6B0B9835DE /* Release */ = {
+		EEFC20F2C1DAC89BC60A53E48FF3449E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -722,17 +737,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		EC359ACAEDE7D5D0A2F0C94491C05516 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = Nosce;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -755,20 +759,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39BBAD4D7B178DD033E27848073E59F7 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */ = {
+		3340E6D7453D85C20359AC616CB87CC9 /* Build configuration list for PBXNativeTarget "Dollar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC359ACAEDE7D5D0A2F0C94491C05516 /* Debug */,
-				EBA7638E68905EF9F86DFF6B0B9835DE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65AEC2253579BEC8388CAB68B97DEE71 /* Build configuration list for PBXNativeTarget "Dollar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6FF314D93663F9C1951E5DA815C6D4C5 /* Debug */,
-				618388118A0493AB96A282FDCA3D9C96 /* Release */,
+				3F4EFA9E1B4E79B33C258C8E081B9B32 /* Debug */,
+				969232702FA40528519F0686F7E82301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -778,6 +773,15 @@
 			buildConfigurations = (
 				D898308ECA9CA4A7F87F3906F59E62F6 /* Debug */,
 				97A204BF6AEF1FA8159E392DEEF2EF33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD3396B34B5185950779AE2DD890FB18 /* Build configuration list for PBXNativeTarget "Nosce-Nosce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07B7F997C8ECC849CF49E16C8702BDC6 /* Debug */,
+				EEFC20F2C1DAC89BC60A53E48FF3449E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
