@@ -1,7 +1,6 @@
-Nosce/Example/Nosce.xcodeproj/*
-Nosce/Example/Nosce.xcworkspace/*
-Nosce/Example/Pods/Colors/*
-Nosce/Example/Pods/Dollar/*
-Nosce/Example/Pods/Target Support Files/Dollar/**
-Nosce/Example/Nosce/Headers/Private/Dollar/*
+Example/Nosce.xcodeproj/*
+Example/Nosce.xcworkspace/*
+Example/Pods/*
+Example/Pods/Target Support Files/*
+Example/Nosce/Headers/*
 Nosce/.travis.yml
