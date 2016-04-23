@@ -1,4 +1,12 @@
-# nosce
-Nosce is a swift utility library that prints out the insides of model type objects
+Nosce
+=====
 
-Current version is 0.1.4
+Nosce is a Swift utility library that takes all types of objects:
+
+* arrays
+* dictionaries
+* custom model objects
+
+and can transform them into JSON
+
+Current version is 0.1.6 (Beta)

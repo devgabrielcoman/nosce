@@ -1,7 +1,5 @@
 PODS:
-  - Dollar (5.0.0)
-  - Nosce (0.1.4):
-    - Dollar
+  - Nosce (0.1.6)
 
 DEPENDENCIES:
   - Nosce (from `../`)
@@ -11,7 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
-  Nosce: 3d1d20981f95fe9e7b0cebfde2f00444891bcaa5
+  Nosce: 908bb5c7bdf8433603cfde0df2f2d54c19d877fa
 
 COCOAPODS: 0.38.2

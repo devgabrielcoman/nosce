@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.1.6
+ - Updated to real object-to-JSON parsing model
+
+0.1.5
 0.1.4
  - added exclusion method
 
