@@ -5,7 +5,7 @@
 //  Created by Gabriel Coman on 23/04/2016.
 //  You can contact me at dev.gabriel.coman@gmail.com
 //
-//  A module containing aux functions
+//  A module containing Aux functions
 //
 
 import UIKit
@@ -22,25 +22,46 @@ public func getClassNameAsString(any: Any) -> String {
 }
 
 /**
- Function that prints out the detected type of a value and compares it to
- the printed class name (as given by Swift's reflection mechanism)
+ Function that forcibly unwraps an array of optionals
  
- - parameter v: value conforming to Any
+ - parameter any: an "Any" object that's going to be handled like an array
+ 
+ - returns: an array of "Any" objects
  */
-public func printType(v:Any) {
+public func unwrapArray(any: Any) -> [Any] {
+    let mi = Mirror(reflecting: any)
+    var array:[Any] = []
+    for (_, attr) in mi.children.enumerate() {
+        
+        if let result = unwrap(attr.value) as? AnyObject {
+            array.append(result)
+        }
+    }
     
-    var t = ""
-    if isBoolType(v) { t = "Bool type" }
-    else if isIntType(v) { t = "Int type" }
-    else if isFloatType(v) { t = "Float type" }
-    else if isDoubleType(v) { t = "Double type" }
-    else if isStringType(v) { t = "String type" }
-    else if isNSNullType(v) { t = "NSNull type" }
-    else if isNSValueType(v) { t = "NSValue type" }
-    else if isArrayType(v) { t = "Array type" }
-    else if isDictionaryType(v) { t = "Dictionary type" }
-    else if isSetType(v) { t = "Set type" }
-    else { t = "\(getClassNameAsString(v)) type" }
-    let expected = getClassNameAsString(v)
-    print("Expected \(expected) and got \(t)")
+    return array
+}
+
+/**
+ Force unwrap an optional
+ Based on solution provided by
+ http://stackoverflow.com/users/4045472/bubuxu
+ to this question
+ http://stackoverflow.com/questions/27989094/how-to-unwrap-an-optional-value-from-any-type
+ 
+ - parameter any: force unwrap an optional
+ 
+ - returns: an "Any" value or NSNull()
+ */
+public func unwrap(any:Any) -> Any {
+    
+    if let mi = Mirror(reflecting: any) as? Mirror {
+        if mi.displayStyle != .Optional {
+            return any
+        }
+        
+        if mi.children.count == 0 { return NSNull() }
+        let (_, some) = mi.children.first!
+        return some
+    }
+    return NSNull()
 }

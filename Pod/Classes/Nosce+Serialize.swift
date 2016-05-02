@@ -37,7 +37,6 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
     // in case it's an Int, Bool, etc, just return the unwrapped value
     case .NonHandledType:
         return any
-        break
     // in case of array
     case .ArrayType, .SetType:
         // unwrap all optional values in the array
@@ -52,7 +51,6 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
             }
         }
         return array
-        break
     // in case of dictionary
     case .DictionaryType:
         // check if the dictionary is a "simple" nsdictionary
@@ -82,7 +80,7 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
         
         // use mirroring to create a dictionary from the object
         let mirroredAny = Mirror(reflecting: any)
-        var dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
         
         for (_, attr) in mirroredAny.children.enumerate() {
             
@@ -98,7 +96,6 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
             }
         }
         return dictionary
-        break
     }
     
     return any

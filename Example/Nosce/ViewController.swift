@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         let mediaFile2 = MediaFile(name: "example.mp4", width: 240, height: 180)
         let creative = Creative(name: "First creative", order: 0, mediaFiles: [mediaFile1, mediaFile2])
         let ad = AdUnit(name: "Zinger's costo play", creative: creative)
+        let restaurant = Restaurant(name: "Papa John's", rating:3.5, location: Location(lat: 0.789212, lng: -12.92219))
+        let restaurantArray = [restaurant]
         
         //
         // perform simple test
@@ -54,6 +56,8 @@ class ViewController: UIViewController {
         print(dictionaryRepresentation(mediaFile2))
         print(dictionaryRepresentation(creative))
         print(dictionaryRepresentation(ad))
+        print(dictionaryRepresentation(restaurant))
+        print(dictionaryRepresentation(restaurantArray))
         print("--------------------------------------------------------------")
         print("Test 2")
         print("--------------------------------------------------------------")
@@ -73,13 +77,29 @@ class ViewController: UIViewController {
         print(jsonStringPrettyRepresentation(mediaFile2))
         print(jsonStringPrettyRepresentation(creative))
         print(jsonStringPrettyRepresentation(ad))
+        print(jsonStringPrettyRepresentation(restaurant))
+        print(jsonStringPrettyRepresentation(restaurantArray))
+    
+        print("--------------------------------------------------------------")
+        print("Test 2")
+        print("--------------------------------------------------------------")
+        
+        let networkDict = dictionaryRepresentation(restaurant) as! NSDictionary
+        let networkDict2 = dictionaryRepresentation(ad) as! NSDictionary
+        let networkArray = dictionaryRepresentation(restaurantArray)
+        
+        let deserialized = deserialize(Restaurant(), json: networkDict)
+        let deserialized2 = deserialize([Restaurant()], json: networkArray)
+        let deserialized3 = deserialize(AdUnit(), json: networkDict2)
+        
+        print(jsonStringPrettyRepresentation(deserialized))
+        print(jsonStringPrettyRepresentation(deserialized2))
+        print(jsonStringPrettyRepresentation(deserialized3))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-        
     }
 
 }
