@@ -53,28 +53,36 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
         return array
     // in case of dictionary
     case .DictionaryType:
-        // check if the dictionary is a "simple" nsdictionary
-        if let anyDictionary = any as? NSDictionary {
+        
+        let mirroredAny = Mirror(reflecting: any)
+        var dictionary = NSMutableDictionary()
+        
+        for (_, attribute) in mirroredAny.children.enumerate() {
             
-            // for the return value
-            var dictionary = NSMutableDictionary()
+            // get inner mirror
+            let mirroredValue = Mirror(reflecting: attribute.value)
             
-            for key in anyDictionary.allKeys {
-                // get the new key as string (even if into or other type), 
-                // so that it goes well with JSON
-                let setKey = "\(key)" as String
-                
-                // get the initial value
-                let value = anyDictionary.objectForKey(key)
-                
-                // and set the result
-                if let result = dictionaryRepresentation(value) as? AnyObject {
-                    dictionary.setValue(result, forKey: setKey)
+            // the key
+            var setKey: String = ""
+            var value: Any = 0
+            
+            for (i, attr) in mirroredValue.children.enumerate() {
+                if (i % 2 == 0){
+                    setKey = "\(attr.value)"
+                }
+                if (i % 2 == 1) {
+                    value = unwrap(attr.value)
                 }
             }
-            return dictionary
+            
+            // set the final result
+            if let result = dictionaryRepresentation(value) as? AnyObject {
+                dictionary.setValue(result, forKey: setKey)
+            }
         }
-        break
+        
+        // return
+        return dictionary
     // in case of more complex object
     case .CustomObjectType:
         

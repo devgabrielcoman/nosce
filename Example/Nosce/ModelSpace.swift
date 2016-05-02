@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import EVReflection
 
-class AdUnit: NSObject {
+public class AdUnit: NSObject {
     var name: String = ""
     var creative: Creative = Creative()
     
-    required override init(){
+    required override public init(){
         super.init()
     }
     
@@ -24,12 +23,12 @@ class AdUnit: NSObject {
     }
 }
 
-class Creative: NSObject {
+public class Creative: NSObject {
     var name: String = ""
     var order: Int = 0
     var mediaFiles: [MediaFile] = []
     
-    required override init(){
+    required override public  init(){
         super.init()
     }
     
@@ -41,12 +40,12 @@ class Creative: NSObject {
     }
 }
 
-class MediaFile: NSObject {
+public class MediaFile: NSObject {
     var name: String = ""
     var width: Int = 0
     var height: Int = 0
     
-    required override init() {
+    required override public init() {
         super.init()
     }
     
@@ -58,11 +57,11 @@ class MediaFile: NSObject {
     }
 }
 
-class Location: NSObject {
+public class Location: NSObject {
     var lat: Double = 0
     var lng: Double = 0
     
-    required override init() {
+    required override public init() {
         super.init()
     }
     
@@ -73,12 +72,12 @@ class Location: NSObject {
     }
 }
 
-class Restaurant: NSObject {
+public class Restaurant: NSObject {
     var name: String = ""
     var rating: Float = 0
     var location: Location = Location()
     
-    required override init() {
+    required override public init() {
         super.init()
     }
     
