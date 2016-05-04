@@ -364,4 +364,23 @@ class SerializationTests: XCTestCase {
         let result = serialize(given, format: .toDictionary)
         print(result)
     }
+    
+    func testTuple() {
+        //
+        // given
+        let given1 = (name: "John", surname: "Pal", age: 32)
+        let given2 = ("Absinth", "Vodka")
+        
+        //
+        // when
+        let expected1 = ["John", "Pal", 32]
+        let expected2 = ["Absinth", "Vodka"]
+        
+        //
+        // then
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 1 failed"); return; }
+        XCTAssertEqual(result1, expected1)
+        XCTAssertEqual(result2, expected2)
+    }
 }

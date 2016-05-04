@@ -43,6 +43,11 @@ class ViewController: UIViewController {
 //        print(displayStyle(y))
 //        print(displayStyle(ubu))
 //        print(displayStyle(xoxo))
+        
+        let bbb: Format = Format.XML
+        let p: Process = Process.Indirect
+        print(printEnum(bbb))
+        print(printEnum(p))
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,8 +59,11 @@ class ViewController: UIViewController {
         return E(rawValue: rawValue)
     }
     
-    func printEnum<E: RawRepresentable>(value: E) {
-        print(value.rawValue)
+    func printEnum<E: RawRepresentable>(value: E) -> AnyObject {
+        if let result = value.rawValue as? AnyObject {
+            return result
+        }
+        return NSNull()
     }
 
 }

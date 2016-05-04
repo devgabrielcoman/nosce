@@ -48,7 +48,6 @@ public func serialize<T>(any: T, format: SerializationFormat) -> Any {
     case .toPreetyJSON: return jsonStringPrettyRepresentation(any)
     case .toNSData: return jsonDataRepresentation(any)
     }
-    return any
 }
 
 /**
@@ -88,7 +87,7 @@ func jsonDictionaryRepresentation<T>(any: T) -> Any {
     case .Dictionary:
         
         let mirroredAny = Mirror(reflecting: any)
-        var dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
         
         for (_, attribute) in mirroredAny.children.enumerate() {
             
@@ -124,29 +123,33 @@ func jsonDictionaryRepresentation<T>(any: T) -> Any {
         
         for (_, attr) in mirroredAny.children.enumerate() {
             
-            // must have a string type label
-            // an unwrapped value (so as to either return the value or NSNull for
-            // the destination dictionary)
-            // and then go recurevely
-            if let label = attr.label as? String!,
-                let value = unwrap(attr.value) as? AnyObject,
-                let result = jsonDictionaryRepresentation(value) as? AnyObject {
-                // finally set the value
-                dictionary.setValue(result, forKey: label)
+            if let label = attr.label as? String! {
+                let value = unwrap(attr.value)
+                if let result = jsonDictionaryRepresentation(value) as? AnyObject {
+                    dictionary.setValue(result, forKey: label)
+                }
             }
         }
         return dictionary
     case .Enum:
-        print("Found nasty enum type")
-        break
+        return any // enumToNSObject(any)
     case .Tuple:
-        print("Found nasty tuple type")
-        break
+        
+        // base data
+        let mirroredAny = Mirror(reflecting: any)
+        var array:[AnyObject] = []
+        
+        for (_, attr) in mirroredAny.children.enumerate() {
+            if let value = unwrap(attr.value) as? AnyObject,
+                let result = jsonDictionaryRepresentation(value) as? AnyObject {
+                array.append(result)
+            }
+        }
+        
+        return array
     case .Optional, .Unknown:
-        break
+        return any
     }
-    
-    return any
 }
 
 /**

@@ -66,9 +66,17 @@ public func unwrap(any:Any) -> Any {
     return NSNull()
 }
 
-public func displayStyle(any:Any) -> Any {
-    if let mi = Mirror(reflecting: any) as? Mirror {
-        return mi.displayStyle
+/**
+ Function that converts an Swift Enum type to it's raw value (either Int or String)
+ for storage in JSON data structures
+ 
+ - parameter any: an template T parameter that implements the RawRepresentable protocol
+ 
+ - returns: an AnyObject or NSNull() object
+ */
+public func enumToNSObject<T: RawRepresentable> (any: T) -> AnyObject {
+    if let result = any.rawValue as? AnyObject {
+        return result
     }
     return NSNull()
 }

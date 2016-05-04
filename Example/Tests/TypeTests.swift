@@ -199,5 +199,24 @@ class TypeTests: XCTestCase {
         //
         // when
         let result = getDisplayType(given)
-        XCTAssertEqual(result, expected)    }
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testTupe() {
+        //
+        // given
+        let given1 = ("John", "Mayer")
+        let given2 = (name: "James", surname: "Kilgo", age: 32)
+        
+        //
+        // then
+        let expected = DisplayType.Tuple
+        
+        //
+        // when
+        let result1 = getDisplayType(given1)
+        let result2 = getDisplayType(given2)
+        XCTAssertEqual(result1, expected)
+        XCTAssertEqual(result2, expected)
+    }
 }
