@@ -358,11 +358,12 @@ class SerializationTests: XCTestCase {
         
         //
         // when
+        let expected = ["format": "XML"]
         
         //
         // then
-        let result = serialize(given, format: .toDictionary)
-        print(result)
+        guard let result = serialize(given, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
+        XCTAssertEqual(result, expected)
     }
     
     func testTuple() {

@@ -44,10 +44,26 @@ class ViewController: UIViewController {
 //        print(displayStyle(ubu))
 //        print(displayStyle(xoxo))
         
-        let bbb: Format = Format.XML
-        let p: Process = Process.Indirect
-        print(printEnum(bbb))
-        print(printEnum(p))
+//        let bbb: Format = Format.XML
+//        let p: Process = Process.Indirect
+//        
+//        if let p = p.rawValue as? AnyObject {
+//            
+//        }
+//        
+//        for f in iterateEnum(p.dynamicType) {
+//            print(f.rawValue)
+//            
+//            if f == p {
+//                print("Found it!")
+//            }
+//        }
+//        
+//        let t = Process.Indirect
+//        let u = t.dynamicType
+//        for f in iterateEnum(u) {
+//            print(f.rawValue)
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +81,13 @@ class ViewController: UIViewController {
         }
         return NSNull()
     }
-
+    
+    func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+        var i = 0
+        return AnyGenerator {
+            let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
+            return next.hashValue == i++ ? next : nil
+        }
+    }
 }
 

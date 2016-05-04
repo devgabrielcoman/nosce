@@ -58,7 +58,7 @@ public func serialize<T>(any: T, format: SerializationFormat) -> Any {
  - returns: any type - but should end in a dictionary
  */
 func jsonDictionaryRepresentation<T>(any: T) -> Any {
-
+    
     // first unwrap the value
     let any = unwrap(any)
     
@@ -132,7 +132,7 @@ func jsonDictionaryRepresentation<T>(any: T) -> Any {
         }
         return dictionary
     case .Enum:
-        return any // enumToNSObject(any)
+        return "\(any)" as AnyObject
     case .Tuple:
         
         // base data
