@@ -1,233 +1,175 @@
 //
-//  Nosce+Types.swift
+//  Nosce+Types2.swift
 //  Pods
 //
-//  Created by Gabriel Coman on 23/04/2016.
-//  You can contact me at dev.gabriel.coman@gmail.com
+//  Created by Gabriel Coman on 04/05/2016.
 //
-//  This module contains aux functions that are used to detect what type an
-//  object is and also try to place it into a generic bucket (e.g. basic types,
-//  arrays, custom objects, etc)
 //
 
 import UIKit
 
 /**
- Enum with all types of condensed into usable ones
+ An enum holding all major display types
  
- - NonHandledType:   All types like Int, Float, String, NSNull, NSValue, etc
- - ArrayType:        All types like Array, NSArray, NSMutableArray
- - DictionaryType:   All types like NSDictionary, Dictionary, NSMutableDictionary
- - SetType:          All types like NSSet
- - CustomObjectType: All custom class types
+ - Unknown:    Worst case scenario - don't know what type is
+ - Bool:       A bool type
+ - Int:        An Int type
+ - Float:      A Float type
+ - Double:     A Double type
+ - String:     A String / NSString type
+ - NSNull:     A NSNull type
+ - NSValue:    A NSValue type
+ - Struct:     A Struct type
+ - Class:      A generic Class type
+ - Enum:       An Enum Type
+ - Tuple:      A Tuple Type
+ - Array:      An Array Type
+ - Dictionary: A Dictionary Type
+ - Set:        A Set Type
+ - Optional:   An Optional Type
  */
-public enum DetectedType {
-    case NonHandledType
-    case ArrayType
-    case DictionaryType
-    case SetType
-    case CustomObjectType
+public enum DisplayType: Int {
+    case Unknown = 0
+    case Bool
+    case Int
+    case Float
+    case Double
+    case String
+    case NSNull
+    case NSValue
+    case Array
+    case Set
+    case Dictionary
+    case Class
+    case Struct
+    case Enum
+    case Tuple
+    case Optional
 }
 
 /**
- *  Generic nested type protocol
- */
-protocol NosceNestedType {}
-extension Array: NosceNestedType {}
-extension Set: NosceNestedType {}
-extension Dictionary: NosceNestedType {}
-extension NSDictionary: NosceNestedType {}
-extension NSSet: NosceNestedType {}
-
-/**
- *  Generic array type protocol
- */
-protocol NosceArrayType {}
-extension Array: NosceArrayType {}
-extension NSArray: NosceArrayType {}
-
-/**
- *  Generic dictionary type protocol
- */
-protocol NosceDictionaryType {}
-extension Dictionary: NosceDictionaryType {}
-extension NSDictionary: NosceDictionaryType {}
-
-/**
- *  Generic set type protocol
- */
-protocol NosceSetType {}
-extension NSSet: NosceSetType {}
-
-/**
- Checks whether a given value is a Bool
+ get the Display type
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
- - returns: true or false
+ - returns: a value from the enum defined above
  */
-public func isBoolType(any: Any) -> Bool {
-    return (
-        any is Bool || any is BooleanType
-    )
+public func getDisplayType<T>(any: T) -> DisplayType {
+    
+    if let mirror = Mirror(reflecting: any) as? Mirror {
+        
+        // if I can get the mirror's display type safely
+        // then do something with that
+        if let style: Mirror.DisplayStyle = mirror.displayStyle {
+            switch style {
+            case .Struct: return .Struct
+            case .Enum: return .Enum
+            case .Tuple: return .Tuple
+            case .Collection: return .Array
+            case .Dictionary: return .Dictionary
+            case .Set: return .Set
+            case .Optional: return .Optional
+            case .Class:
+                if isNSNullType(any) { return .NSNull }
+                if isNSValueType(any) { return .NSValue }
+                return .Class
+            }
+        }
+        // else it's probably a base type (int, bool, etc) and have to
+        // use my custom functions to do it
+        else {
+            if isBoolType(any) { return .Bool }
+            if isIntType(any) { return .Int }
+            if isDoubleType(any) { return .Double }
+            if isFloatType(any) { return .Float }
+            if isStringType(any) { return .String }
+            if isNSNullType(any) { return .NSNull }
+            if isNSValueType(any) { return .NSValue }
+        }
+    }
+    
+    return .Unknown
 }
 
 /**
- Checks whether a given value is a Int
+ Determine whether a type is Bool or not
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isIntType(any: Any) -> Bool {
-    return (
-        any is Int || any is UInt ||
-            any is Int8 || any is UInt8 ||
-            any is Int16 || any is UInt16 ||
-            any is Int32 || any is UInt32 ||
-            any is Int64 || any is UInt64
-    )
+public func isBoolType<T>(any: T) -> Bool {
+    return any is Bool || any is BooleanType
 }
 
 /**
- Checks whether a given value is a Float
+ Determine whether a type is Int or not
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isFloatType(any: Any) -> Bool {
-    return (
-        any is Float ||
-            any is Float32 ||
-            any is Float64 ||
-            any is Float80
-    )
+public func isIntType<T>(any: T) -> Bool {
+    return any is Int || any is UInt || any is Int8 || any is UInt8 || any is Int16 || any is UInt16 || any is Int32 || any is UInt32 || any is Int64 || any is UInt64
 }
 
 /**
- Checks whether a given value is a Double
+ Determine whether a type is Float or not
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isDoubleType(any: Any) -> Bool {
-    return (
-        any is Double ||
-            any is double_t ||
-            any is CDouble
-    )
+public func isFloatType<T>(any: T) -> Bool {
+    return any is Float || any is Float32 || any is Float64 || any is Float80
 }
 
 /**
- Checks whether a given value is a String
+ Determine whether a type is Double or not
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isStringType(any: Any) -> Bool {
-    return (
-        any is String
-    )
+public func isDoubleType<T>(any: T) -> Bool {
+    return any is Double || any is double_t || any is CDouble
 }
 
 /**
- Checks whether a given value is an Array
+ Determine whether a type is String or not
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isArrayType(any: Any) -> Bool {
-    return (
-        any is NosceArrayType
-    )
+public func isStringType<T>(any: T) -> Bool {
+    return any is String
 }
 
 /**
- Checks whether a given value is a Dictionary
+ Determine whether a type is NSNull or not
  
- - parameter any: value conforming to Any
- 
- - returns: true or false
- */
-public func isDictionaryType(any: Any) -> Bool {
-    return (
-        any is NosceDictionaryType
-    )
-}
-
-/**
- Checks whether a given value is a Set / NSSet
- 
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isSetType(any: Any) -> Bool {
-    return (
-        any is NosceSetType
-    )
-}
-
-/**
- Checks whether a given value is a NSNull
- 
- - parameter any: value conforming to Any
- 
- - returns: true or false
- */
-public func isNSNullType(any: Any) -> Bool {
+public func isNSNullType<T>(any: T) -> Bool {
     if let any = any as? NSObject {
-        return (
-            any.isKindOfClass(NSNull.classForCoder())
-        )
+        return any.isKindOfClass(NSNull.classForCoder())
     }
     return false
 }
 
 /**
- Checks whether a given value is a NSValue
+ Determine whether a type is a NSValue or not
  
- - parameter any: value conforming to Any
+ - parameter any: any type of value
  
  - returns: true or false
  */
-public func isNSValueType(any: Any) -> Bool {
+public func isNSValueType<T>(any: T) -> Bool {
     if let any = any as? NSObject {
-        return (
-            !any.isKindOfClass(NSNull.classForCoder()) &&
-                any.isKindOfClass(NSValue.classForCoder())
-        )
+        return !any.isKindOfClass(NSNull.classForCoder()) && any.isKindOfClass(NSValue.classForCoder())
     }
     return false
-}
-
-/**
- Function that gets a value of a certain type, finds out the type and condenses
- it into a way that's easy to handle for the parser
- 
- - parameter any: a value of Any type
- 
- - returns: a Detected Type enum
- */
-public func getDetectedType(any: Any) -> DetectedType {
-    
-    if isBoolType(any) || isIntType(any) || isFloatType(any) || isDoubleType(any) ||
-        isStringType(any) || isNSNullType(any) || isNSValueType(any) {
-        return .NonHandledType
-    }
-    else if isArrayType(any) {
-        return .ArrayType
-    }
-    else if isDictionaryType(any) {
-        return .DictionaryType
-    }
-    else if isSetType(any) {
-        return .SetType
-    }
-    
-    return .CustomObjectType
 }

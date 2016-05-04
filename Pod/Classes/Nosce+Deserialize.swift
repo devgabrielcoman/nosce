@@ -7,13 +7,14 @@
 //
 //  This module contains functions meant to transform a valid JSON string into
 //  a predefined model
+//  The main function is deserialize
 //
 
 import UIKit
 
 public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     
-    let modelType = getDetectedType(model)
+    let modelType = getDisplayType(model)
     let modelClass = getClassNameAsString(model)
     
     //
@@ -21,7 +22,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     //  - "model" is a NSObject
     //  - "json" is a NSDictionary
     if let modelClassName = NSClassFromString("Nosce_Example.\(modelClass)") as? NSObject.Type,
-        let json = json as? NSDictionary where modelType == .CustomObjectType
+        let json = json as? NSDictionary where modelType == .Class
     {
         // init a new instance
         let instance = modelClassName.init()
@@ -42,7 +43,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     // Handled Case #2:
     //  - "model" is an Array Type
     //  - "json" is a NSArray
-    else if let array = json as? NSArray where modelType == .ArrayType {
+    else if let array = json as? NSArray where modelType == .Array {
         
         let elementClass = getArrayContentType(modelClass)
         var newArray = [].mutableCopy()
@@ -71,7 +72,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     // Handled Case #3:
     //  - "model" is an Int, Float, etc, Type
     //  - "json" doesn't really matter
-    else if modelType == .NonHandledType {
+    else if (modelType == .Bool || modelType == .Int || modelType == .Float || modelType == .Double || modelType == .String || modelType == .NSNull || modelType == .NSValue) {
         // @todo: this might cause problems
         return json as! AnyObject
     }

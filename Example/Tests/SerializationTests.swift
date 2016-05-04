@@ -35,7 +35,7 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result = dictionaryRepresentation(given) as? Bool else { XCTFail("Bool test failed"); return; }
+        guard let result = serialize(given, format: .toDictionary) as? Bool else { XCTFail("Bool test failed"); return; }
         XCTAssertEqual(result, expected)
         XCTAssertNotEqual(result, invalid)
     }
@@ -52,7 +52,7 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result = dictionaryRepresentation(given) as? Int else { XCTFail("Int test failed"); return; }
+        guard let result = serialize(given, format: .toDictionary) as? Int else { XCTFail("Int test failed"); return; }
         XCTAssertEqual(result, expected)
         XCTAssertNotEqual(result, invalid)
     }
@@ -69,7 +69,7 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result = dictionaryRepresentation(given) as? Float else { XCTFail("Float test failed"); return; }
+        guard let result = serialize(given, format: .toDictionary) as? Float else { XCTFail("Float test failed"); return; }
         XCTAssertEqual(result, expected)
         XCTAssertNotEqual(result, invalid)
     }
@@ -86,7 +86,7 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result = dictionaryRepresentation(given) as? NSNumber else { XCTFail("NSNumber test failed"); return; }
+        guard let result = serialize(given, format: .toDictionary) as? NSNumber else { XCTFail("NSNumber test failed"); return; }
         XCTAssertEqual(result, expected)
         XCTAssertNotEqual(result, invalid)
     }
@@ -103,7 +103,7 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result = dictionaryRepresentation(given) as? NSValue else { XCTFail("NSValue test failed"); return; }
+        guard let result = serialize(given, format: .toDictionary) as? NSValue else { XCTFail("NSValue test failed"); return; }
         XCTAssertEqual(result, expected)
         XCTAssertNotEqual(result, invalid)
     }
@@ -138,9 +138,9 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result1 = dictionaryRepresentation(given1) as? NSArray else { XCTFail("NSArray test 1 failed"); return; }
-        guard let result2 = dictionaryRepresentation(given2) as? NSArray else { XCTFail("NSArray test 2 failed"); return; }
-        guard let result3 = dictionaryRepresentation(given3) as? NSArray else { XCTFail("NSArray test 3 failed"); return; }
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 2 failed"); return; }
+        guard let result3 = serialize(given3, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 3 failed"); return; }
         XCTAssertEqual(result1, expected1)
         XCTAssertEqual(result2, expected2)
         XCTAssertEqual(result3, expected3)
@@ -170,12 +170,30 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result1 = dictionaryRepresentation(given1) as? NSDictionary else { XCTFail("NSDictionary test 1 failed"); return; }
-        guard let result2 = dictionaryRepresentation(given2) as? NSDictionary else { XCTFail("NSDictionary test 2 failed"); return; }
-        guard let result3 = dictionaryRepresentation(given3) as? NSDictionary else { XCTFail("NSDictionary test 3 failed"); return; }
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSDictionary else { XCTFail("NSDictionary test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSDictionary else { XCTFail("NSDictionary test 2 failed"); return; }
+        guard let result3 = serialize(given3, format: .toDictionary) as? NSDictionary else { XCTFail("NSDictionary test 3 failed"); return; }
         XCTAssertEqual(result1, expected1)
         XCTAssertEqual(result2, expected2)
         XCTAssertEqual(result3, expected3)
+    }
+    
+    func testStruct1() {
+        //
+        // given
+        let given = Temp(name: "Jimmy", startDate: 2016, willBePerm: true)
+        
+        // when
+        let expected = [
+            "name": "Jimmy",
+            "startDate": 2016,
+            "willBePerm": true
+        ]
+        
+        //
+        // then
+        guard let result = serialize(given, format: .toDictionary) as? NSDictionary else { XCTFail("Struct test failed"); return; }
+        XCTAssertEqual(result, expected)
     }
     
     func testModels1() {
@@ -210,10 +228,10 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result1 = dictionaryRepresentation(given1) as? NSDictionary else { XCTFail("Model test 1 failed"); return; }
-        guard let result2 = dictionaryRepresentation(given2) as? NSDictionary else { XCTFail("Model test 2 failed"); return; }
-        guard let result3 = dictionaryRepresentation(given3) as? NSDictionary else { XCTFail("Model test 3 failed"); return; }
-        guard let result4 = dictionaryRepresentation(given4) as? NSDictionary else { XCTFail("Model test 4 failed"); return; }
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 2 failed"); return; }
+        guard let result3 = serialize(given3, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 3 failed"); return; }
+        guard let result4 = serialize(given4, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 4 failed"); return; }
         XCTAssertEqual(result1, expected1)
         XCTAssertEqual(result2, expected2)
         XCTAssertEqual(result3, expected3)
@@ -240,8 +258,8 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result1 = dictionaryRepresentation(given1) as? NSDictionary else { XCTFail("Model test 1 failed"); return; }
-        guard let result2 = dictionaryRepresentation(given2) as? NSDictionary else { XCTFail("Model test 2 failed"); return; }
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 2 failed"); return; }
         XCTAssertEqual(result1, expected1)
         XCTAssertEqual(result2, expected2)
     }
@@ -279,9 +297,71 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result1 = dictionaryRepresentation(given1) as? NSDictionary else { XCTFail("Model test 1 failed"); return; }
-        guard let result2 = dictionaryRepresentation(given2) as? NSDictionary else { XCTFail("Model test 2 failed"); return; }
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSDictionary else { XCTFail("Model test 2 failed"); return; }
         XCTAssertEqual(result1, expected1)
         XCTAssertEqual(result2, expected2)
+    }
+    
+    func testModel4()  {
+        //
+        // given
+        let given1 = Employment(name: "Startup Ltd.", address: nil)
+        let given2 = Employment(name: "Corporation Ltd.", address: "Embankment No. 1")
+        let given3 = TimeFrame(startYear: 2006, endYear: 2010, isCurrent: false)
+        let given4 = TimeFrame(startYear: 2010, endYear: nil, isCurrent: true)
+        let given5 = Employee(name: "John Smith", salary: 30000)
+        given5.addHistory(given1, time: given3)
+        given5.addHistory(given2, time: given4)
+        
+        //
+        // when
+        let expected = [
+            "name": "John Smith",
+            "salary": 30000,
+            "history": [
+                [
+                    "employer": [
+                        "name":"Startup Ltd.",
+                        "address": NSNull()
+                    ],
+                    "time":[
+                        "endYear": 2010,
+                        "isCurrent": false,
+                        "startYear": 2006
+                    ]
+                ],
+                [
+                    "employer": [
+                        "name":"Corporation Ltd.",
+                        "address":"Embankment No. 1"
+                    ],
+                    "time":[
+                        "startYear": 2010,
+                        "isCurrent": true,
+                        "endYear": NSNull()
+                    ]
+                ]
+            ]
+        ]
+        
+        //
+        // then
+        guard let result = serialize(given5, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testModel5() {
+        //
+        // given
+        let given = TextFormatter(format: .XML)
+        
+        //
+        // when
+        
+        //
+        // then
+        let result = serialize(given, format: .toDictionary)
+        print(result)
     }
 }

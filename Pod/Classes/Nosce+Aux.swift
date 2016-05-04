@@ -65,3 +65,10 @@ public func unwrap(any:Any) -> Any {
     }
     return NSNull()
 }
+
+public func displayStyle(any:Any) -> Any {
+    if let mi = Mirror(reflecting: any) as? Mirror {
+        return mi.displayStyle
+    }
+    return NSNull()
+}

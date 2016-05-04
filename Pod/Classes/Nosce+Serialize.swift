@@ -8,8 +8,8 @@
 //  This module contains some functionat that make it easy to transform
 //  custom objects into dictionaries and into Json
 //  
-//  with the "dictionaryRepresentation<T>(any: T)" function you can take any
-//  model object and have it's dictionary representation generated
+//  with the "serialize<T>(any: T, format: SerializationFormat)" function you 
+//  can take any model object and have it's dictionary representation generated
 //
 //  with the "jsonStringRepresentation<T>(any:T)" function you can take that
 //  dictionary representation and transform it into a valid Json, if the
@@ -19,40 +19,73 @@
 import UIKit
 
 /**
+ Describes the serialization options available
+ 
+ - toDictionary:  the main function returns a Dictionary
+ - toCompactJSON: the main function returns a compact JSON string
+ - toPreetyJSON:  the main function returns a preety JSON string
+ - toNSData:      the main function returns a NSData object
+ */
+public enum SerializationFormat {
+    case toDictionary
+    case toCompactJSON
+    case toPreetyJSON
+    case toNSData
+}
+
+/**
+ Main module function that interfaces with the user
+ 
+ - parameter any:    the data / models that need to be serialized
+ - parameter format: the format
+ 
+ - returns: a dictionary or string or whatnot
+ */
+public func serialize<T>(any: T, format: SerializationFormat) -> Any {
+    switch format {
+    case .toDictionary: return jsonDictionaryRepresentation(any)
+    case .toCompactJSON: return jsonStringCompactRepresentation(any)
+    case .toPreetyJSON: return jsonStringPrettyRepresentation(any)
+    case .toNSData: return jsonDataRepresentation(any)
+    }
+    return any
+}
+
+/**
  Create a purely dictionary representation of an array, int, complex object, etc
  
  - parameter any: any type
  
  - returns: any type - but should end in a dictionary
  */
-public func dictionaryRepresentation<T>(any: T) -> Any {
+func jsonDictionaryRepresentation<T>(any: T) -> Any {
 
     // first unwrap the value
     let any = unwrap(any)
     
-    // then detect the type
-    let type: DetectedType = getDetectedType(any)
+    // detect the type
+    let type: DisplayType = getDisplayType(any)
     
     switch type {
-    // in case it's an Int, Bool, etc, just return the unwrapped value
-    case .NonHandledType:
+    case .Bool, .Int, .Float, .Double, .String, .NSNull, .NSValue:
         return any
-    // in case of array
-    case .ArrayType, .SetType:
+    case .Array, .Set:
+        
         // unwrap all optional values in the array
         let unwrapped = unwrapArray(any)
         var array:[AnyObject] = []
         
-        // and form a new, array; 
+        // and form a new, array;
         // also go recurevly if it needs to be
         for object in unwrapped {
-            if let result = dictionaryRepresentation(object) as? AnyObject {
+            if let result = jsonDictionaryRepresentation(object) as? AnyObject {
                 array.append(result)
             }
         }
+        
+        // return value
         return array
-    // in case of dictionary
-    case .DictionaryType:
+    case .Dictionary:
         
         let mirroredAny = Mirror(reflecting: any)
         var dictionary = NSMutableDictionary()
@@ -76,15 +109,14 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
             }
             
             // set the final result
-            if let result = dictionaryRepresentation(value) as? AnyObject {
+            if let result = jsonDictionaryRepresentation(value) as? AnyObject {
                 dictionary.setValue(result, forKey: setKey)
             }
         }
         
         // return
         return dictionary
-    // in case of more complex object
-    case .CustomObjectType:
+    case .Class, .Struct:
         
         // use mirroring to create a dictionary from the object
         let mirroredAny = Mirror(reflecting: any)
@@ -97,13 +129,21 @@ public func dictionaryRepresentation<T>(any: T) -> Any {
             // the destination dictionary)
             // and then go recurevely
             if let label = attr.label as? String!,
-               let value = unwrap(attr.value) as? AnyObject,
-               let result = dictionaryRepresentation(value) as? AnyObject {
+                let value = unwrap(attr.value) as? AnyObject,
+                let result = jsonDictionaryRepresentation(value) as? AnyObject {
                 // finally set the value
                 dictionary.setValue(result, forKey: label)
             }
         }
         return dictionary
+    case .Enum:
+        print("Found nasty enum type")
+        break
+    case .Tuple:
+        print("Found nasty tuple type")
+        break
+    case .Optional, .Unknown:
+        break
     }
     
     return any
@@ -125,7 +165,7 @@ func jsonStringRepresentation<T>(any: T, options: NSJSONWritingOptions) -> Strin
     var dataJson: NSData? = nil
     
     // go through all the motions of the parsing
-    if let dictionary = dictionaryRepresentation(any) as? AnyObject where
+    if let dictionary = jsonDictionaryRepresentation(any) as? AnyObject where
        NSJSONSerialization.isValidJSONObject(dictionary) {
         
         // finally try to parse
@@ -156,7 +196,7 @@ func jsonStringRepresentation<T>(any: T, options: NSJSONWritingOptions) -> Strin
  
  - returns: a preety printed Json String
  */
-public func jsonStringPrettyRepresentation<T>(any: T) -> String {
+func jsonStringPrettyRepresentation<T>(any: T) -> String {
     return jsonStringRepresentation(any, options: NSJSONWritingOptions.PrettyPrinted)
 }
 
@@ -167,7 +207,7 @@ public func jsonStringPrettyRepresentation<T>(any: T) -> String {
  
  - returns: a compactly printed Json String
  */
-public func jsonStringCompactRepresentation<T>(any: T) -> String {
+func jsonStringCompactRepresentation<T>(any: T) -> String {
     return jsonStringRepresentation(any, options: NSJSONWritingOptions.init(rawValue: 0))
 }
 
@@ -178,6 +218,6 @@ public func jsonStringCompactRepresentation<T>(any: T) -> String {
  
  - returns: a nsdata object
  */
-public func jsonDataRepresentation<T>(any: T) -> NSData? {
+func jsonDataRepresentation<T>(any: T) -> NSData? {
     return jsonStringCompactRepresentation(any).dataUsingEncoding(NSUTF8StringEncoding)
 }
