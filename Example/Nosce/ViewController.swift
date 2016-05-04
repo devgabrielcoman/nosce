@@ -45,6 +45,17 @@ class ViewController: UIViewController {
 //        print(displayStyle(xoxo))
         
 //        let bbb: Format = Format.XML
+//        
+//        let mimi = Mirror(reflecting: bbb)
+//        print(mimi)
+        
+//        let modelClass = getClassNameAsString(bbb)
+//        let modelClassName = NSClassFromString("\(modelClass)")
+//        print(modelClassName)
+//        if let modelClassName = NSClassFromString("\(modelClass)") as? Format.Type {
+//            print(modelClassName)
+//        }
+        
 //        let p: Process = Process.Indirect
 //        
 //        if let p = p.rawValue as? AnyObject {

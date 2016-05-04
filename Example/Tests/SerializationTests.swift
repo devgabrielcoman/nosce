@@ -379,8 +379,8 @@ class SerializationTests: XCTestCase {
         
         //
         // then
-        guard let result1 = serialize(given1, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 1 failed"); return; }
-        guard let result2 = serialize(given2, format: .toDictionary) as? NSArray else { XCTFail("NSArray test 1 failed"); return; }
+        guard let result1 = serialize(given1, format: .toDictionary) as? NSArray else { XCTFail("Tuple test 1 failed"); return; }
+        guard let result2 = serialize(given2, format: .toDictionary) as? NSArray else { XCTFail("Tuple test 2 failed"); return; }
         XCTAssertEqual(result1, expected1)
         XCTAssertEqual(result2, expected2)
     }
