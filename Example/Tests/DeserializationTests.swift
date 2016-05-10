@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nosce
 
 class DeserializationTests: XCTestCase {
 
@@ -18,5 +19,39 @@ class DeserializationTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testModel1() {
+        //
+        // given
+        let given = ["height":180,"width":380,"name":"mf.mp4"]
+        
+        //
+        // expected
+        let expected = ["height":180,"width":380,"name":"mf.mp4"]
+        
+        //
+        // then
+        let model = MediaFile()
+        let modelResult = deserialize(model, json: given)
+        guard let result = serialize(modelResult, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testModel2() {
+        //
+        // given
+        let given = "{\"height\":180, \"width\":380, \"name\":\"mp3.mp4\"}"
+        
+        //
+        // expected
+        let expected = ["height":180,"width":380,"name":"mp3.mp4"]
+        
+        //
+        // then
+        let model = MediaFile()
+        let modelResult = deserialize(model, jsonString: given)
+        guard let result = serialize(modelResult, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
+        XCTAssertEqual(result, expected)
     }
 }

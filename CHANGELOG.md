@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.1.8
+ - Added serialization from JSON String and NSData
+
 0.1.7
  - Ready for deploy
 

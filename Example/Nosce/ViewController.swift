@@ -15,66 +15,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let f1: Format = .XML
-////        let f2: Format = .Json
-////        let f3: Format = .CSV
-////        print("\(f1) - \(f2) - \(f3)")
-////        print("\(f1.hashValue) - \(f2.hashValue) - \(f3.hashValue)")
-////        let f5: Format = Format(rawValue: 2)!
-////        print(f5)
+//        let mf1 = ["height":180,"width":380,"name":"mf.mp4"]
+//        let mf2 = "{\"height\":180, \"width\":380, \"name\":\"mp3.mp4\"}"
 //        
-//        let p:Process = .Direct
-////        print(p)
-////        print(p.rawValue)
-////        let pp = Process(rawValue: "Indirect")!
-////        print(pp)
 //        
-//        printEnum(f1)
-//        printEnum(p)
-//        
-//        let m: MediaFile = MediaFile()
-//        let x: Int = 32
-//        let y: String = "abc"
-//        let ubu = ["abc", "def"]
-//        let xoxo = [0:"abc", 1:"ref"]
-//        print(displayStyle(f1))
-//        print(displayStyle(m))
-//        print(displayStyle(x))
-//        print(displayStyle(y))
-//        print(displayStyle(ubu))
-//        print(displayStyle(xoxo))
-        
-//        let bbb: Format = Format.XML
-//        
-//        let mimi = Mirror(reflecting: bbb)
-//        print(mimi)
-        
-//        let modelClass = getClassNameAsString(bbb)
-//        let modelClassName = NSClassFromString("\(modelClass)")
-//        print(modelClassName)
-//        if let modelClassName = NSClassFromString("\(modelClass)") as? Format.Type {
-//            print(modelClassName)
-//        }
-        
-//        let p: Process = Process.Indirect
-//        
-//        if let p = p.rawValue as? AnyObject {
-//            
-//        }
-//        
-//        for f in iterateEnum(p.dynamicType) {
-//            print(f.rawValue)
-//            
-//            if f == p {
-//                print("Found it!")
-//            }
-//        }
-//        
-//        let t = Process.Indirect
-//        let u = t.dynamicType
-//        for f in iterateEnum(u) {
-//            print(f.rawValue)
-//        }
+//        let model = MediaFile()
+//        let result1 = deserialize(model, json: mf1)
+//        let result2 = deserialize(model, jsonString: mf2)
+//        print(result1)
+//        print(result2)
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,16 +12,58 @@
 
 import UIKit
 
+/**
+ Deserialize from a JSON string
+ 
+ - parameter model:      the base model to try to serialize
+ - parameter jsonString: valid json source string
+ 
+ - returns: a deserialized model
+ */
+public func deserialize<A>(model: A, jsonString: String) -> AnyObject {
+    if let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
+        return deserialize(model, jsonData: jsonData)
+    }
+    return 0
+}
+
+/**
+ Deserialize from a JSON NSData object
+ 
+ - parameter model:    the base model to try to serialize
+ - parameter jsonData: a valid json NSData source
+ 
+ - returns: a deserialized model
+ */
+public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject {
+    do {
+        let dict = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+        return deserialize(model, json: dict)
+    } catch let error as NSError {
+        print(error)
+    }
+    return 0
+}
+
+/**
+ Deserialize from a generic dictionary or array
+ 
+ - parameter model: the base model to try to serialize
+ - parameter json:  a generic json dictionary or array of dictionaries
+ 
+ - returns: a deserialized model
+ */
 public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     
     let modelType = getDisplayType(model)
     let modelClass = getClassNameAsString(model)
+    let appName = getCleanAppName()
     
     //
     // Handled Case #1:
     //  - "model" is a NSObject
     //  - "json" is a NSDictionary
-    if let modelClassName = NSClassFromString("Nosce_Example.\(modelClass)") as? NSObject.Type,
+    if let modelClassName = NSClassFromString("\(appName).\(modelClass)") as? NSObject.Type,
         let json = json as? NSDictionary where modelType == .Class
     {
         // init a new instance
@@ -49,7 +91,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
         var newArray = [].mutableCopy()
         
         // the array is of other types of classes
-        if let elementClassName = NSClassFromString("Nosce_Example.\(elementClass)") as? NSObject.Type {
+        if let elementClassName = NSClassFromString("\(appName).\(elementClass)") as? NSObject.Type {
             
             for var item in array {
                 let instance = elementClassName.init()
@@ -93,4 +135,22 @@ private func getArrayContentType(type: String) -> String {
         return type.substringWithRange(Range(start: r1.endIndex, end: r2.startIndex))
     }
     return type
+}
+
+/**
+ Get the clean app name
+ Taken from https://github.com/evermeer/EVReflection/blob/master/EVReflection/pod/EVReflection.swift
+ 
+ - returns: A string with the app name
+ */
+private func getCleanAppName() -> String {
+    var bundle = NSBundle.mainBundle()
+    var appName = bundle.infoDictionary?["CFBundleName"] as? String ?? ""
+    if appName == "" {
+        appName = (bundle.bundleIdentifier!).characters.split(isSeparator: {$0 == "."}).map({ String($0) }).last ?? ""
+    }
+    let cleanAppName = appName
+        .stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        .stringByReplacingOccurrencesOfString("-", withString: "_", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+    return cleanAppName
 }
