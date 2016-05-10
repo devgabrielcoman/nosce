@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.1.7
+ - Ready for deploy
+
 0.1.6
  - Updated to real object-to-JSON parsing model
 
