@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.2.0
+ - Fixed a bug with app-name in Pods
+
 0.1.9
  - Fixed a bug with Float80 type
 

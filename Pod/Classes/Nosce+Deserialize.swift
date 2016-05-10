@@ -57,7 +57,10 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     
     let modelType = getDisplayType(model)
     let modelClass = getClassNameAsString(model)
-    let appName = getCleanAppName()
+    var appName = getCleanAppName()
+    if let model = model as? NSObject where modelType == .Class {
+        appName = getCleanAppName(model)
+    }
     
     //
     // Handled Case #1:
@@ -137,20 +140,3 @@ private func getArrayContentType(type: String) -> String {
     return type
 }
 
-/**
- Get the clean app name
- Taken from https://github.com/evermeer/EVReflection/blob/master/EVReflection/pod/EVReflection.swift
- 
- - returns: A string with the app name
- */
-private func getCleanAppName() -> String {
-    var bundle = NSBundle.mainBundle()
-    var appName = bundle.infoDictionary?["CFBundleName"] as? String ?? ""
-    if appName == "" {
-        appName = (bundle.bundleIdentifier!).characters.split(isSeparator: {$0 == "."}).map({ String($0) }).last ?? ""
-    }
-    let cleanAppName = appName
-        .stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-        .stringByReplacingOccurrencesOfString("-", withString: "_", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-    return cleanAppName
-}

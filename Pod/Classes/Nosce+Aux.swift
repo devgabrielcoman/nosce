@@ -22,6 +22,28 @@ public func getClassNameAsString(any: Any) -> String {
 }
 
 /**
+ Get the clean app name
+ Taken from https://github.com/evermeer/EVReflection/blob/master/EVReflection/pod/EVReflection.swift
+ 
+ - returns: A string with the app name
+ */
+public func getCleanAppName(forObject: NSObject? = nil) -> String {
+    var bundle = NSBundle.mainBundle()
+    if forObject != nil {
+        bundle = NSBundle(forClass: forObject!.dynamicType)
+    }
+    
+    var appName = bundle.infoDictionary?["CFBundleName"] as? String ?? ""
+    if appName == "" {
+        appName = (bundle.bundleIdentifier!).characters.split(isSeparator: {$0 == "."}).map({ String($0) }).last ?? ""
+    }
+    let cleanAppName = appName
+        .stringByReplacingOccurrencesOfString(" ", withString: "_", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        .stringByReplacingOccurrencesOfString("-", withString: "_", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+    return cleanAppName
+}
+
+/**
  Function that forcibly unwraps an array of optionals
  
  - parameter any: an "Any" object that's going to be handled like an array

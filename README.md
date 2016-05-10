@@ -1,12 +1,6 @@
 Nosce
 =====
 
-Nosce is a Swift utility library that takes all types of objects:
+Nosce is a JSON serialization / deserialization library that tries to automagically transform complex objects and arrays of objects into valid JSON and back.
 
-* arrays
-* dictionaries
-* custom model objects
-
-and can transform them into JSON
-
-Current version is 0.1.9 (Beta)
+Current version is 0.2.0 (Beta)
