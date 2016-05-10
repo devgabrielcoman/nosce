@@ -121,7 +121,7 @@ public func isIntType<T>(any: T) -> Bool {
  - returns: true or false
  */
 public func isFloatType<T>(any: T) -> Bool {
-    return any is Float || any is Float32 || any is Float64 || any is Float80
+    return any is Float || any is Float32 || any is Float64
 }
 
 /**

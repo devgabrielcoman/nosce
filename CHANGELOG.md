@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.1.9
+ - Fixed a bug with Float80 type
+
 0.1.8
  - Added serialization from JSON String and NSData
 
