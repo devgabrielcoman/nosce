@@ -14,23 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let model = MediaFile()
-        let modelClass = getClassNameAsString(model)
-        let appName = getCleanAppName()
-        print(modelClass)
-        print(appName)
-        print(NSClassFromString("\(appName).\(modelClass)"))
-        
-//        let mf1 = ["height":180,"width":380,"name":"mf.mp4"]
-//        let mf2 = "{\"height\":180, \"width\":380, \"name\":\"mp3.mp4\"}"
-//        
-//        
-//        let model = MediaFile()
-//        let result1 = deserialize(model, json: mf1)
-//        let result2 = deserialize(model, jsonString: mf2)
-//        print(result1)
-//        print(result2)
     }
 
     override func didReceiveMemoryWarning() {

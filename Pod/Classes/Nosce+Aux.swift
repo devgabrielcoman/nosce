@@ -76,16 +76,22 @@ public func unwrapArray(any: Any) -> [Any] {
  */
 public func unwrap(any:Any) -> Any {
     
-    if let mi = Mirror(reflecting: any) as? Mirror {
-        if mi.displayStyle != .Optional {
-            return any
-        }
-        
-        if mi.children.count == 0 { return NSNull() }
-        let (_, some) = mi.children.first!
-        return some
+    // get mirror
+    let mirror = Mirror(reflecting: any)
+    
+    // do unwrapping
+    if mirror.displayStyle != .Optional {
+        return any
     }
-    return NSNull()
+    
+    if mirror.children.count == 0 { return NSNull() }
+    let (_, some) = mirror.children.first!
+    return some
+    
+//    if let mi = Mirror(reflecting: any) as? Mirror {
+//        
+//    }
+//    return NSNull()
 }
 
 /**
@@ -107,6 +113,7 @@ func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
     var i = 0
     return AnyGenerator {
         let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
-        return next.hashValue == i++ ? next : nil
+        i = i + 1
+        return next.hashValue == i ? next : nil
     }
 }

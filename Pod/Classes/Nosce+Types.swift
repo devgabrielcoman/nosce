@@ -56,36 +56,36 @@ public enum DisplayType: Int {
  */
 public func getDisplayType<T>(any: T) -> DisplayType {
     
-    if let mirror = Mirror(reflecting: any) as? Mirror {
-        
-        // if I can get the mirror's display type safely
-        // then do something with that
-        if let style: Mirror.DisplayStyle = mirror.displayStyle {
-            switch style {
-            case .Struct: return .Struct
-            case .Enum: return .Enum
-            case .Tuple: return .Tuple
-            case .Collection: return .Array
-            case .Dictionary: return .Dictionary
-            case .Set: return .Set
-            case .Optional: return .Optional
-            case .Class:
-                if isNSNullType(any) { return .NSNull }
-                if isNSValueType(any) { return .NSValue }
-                return .Class
-            }
-        }
-        // else it's probably a base type (int, bool, etc) and have to
-        // use my custom functions to do it
-        else {
-            if isBoolType(any) { return .Bool }
-            if isIntType(any) { return .Int }
-            if isDoubleType(any) { return .Double }
-            if isFloatType(any) { return .Float }
-            if isStringType(any) { return .String }
+    // get the mirror
+    let mirror = Mirror(reflecting: any)
+    
+    // if I can get the mirror's display type safely
+    // then do something with that
+    if let style: Mirror.DisplayStyle = mirror.displayStyle {
+        switch style {
+        case .Struct: return .Struct
+        case .Enum: return .Enum
+        case .Tuple: return .Tuple
+        case .Collection: return .Array
+        case .Dictionary: return .Dictionary
+        case .Set: return .Set
+        case .Optional: return .Optional
+        case .Class:
             if isNSNullType(any) { return .NSNull }
             if isNSValueType(any) { return .NSValue }
+            return .Class
         }
+    }
+        // else it's probably a base type (int, bool, etc) and have to
+        // use my custom functions to do it
+    else {
+        if isBoolType(any) { return .Bool }
+        if isIntType(any) { return .Int }
+        if isDoubleType(any) { return .Double }
+        if isFloatType(any) { return .Float }
+        if isStringType(any) { return .String }
+        if isNSNullType(any) { return .NSNull }
+        if isNSValueType(any) { return .NSValue }
     }
     
     return .Unknown

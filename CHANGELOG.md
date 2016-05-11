@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.2.2
+ - Fixed some warnings
+
 0.2.1
  - Fixed a bug with deserializing to NSNull
 

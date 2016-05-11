@@ -75,11 +75,11 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
         
         for (_, attribute) in mirror.children.enumerate() {
             let label = attribute.label! as String!
-            let value = attribute.value
+            let value = unwrap(attribute.value)
             let dictValue = unwrap(json.objectForKey(label))
             let result = deserialize(value, json: dictValue)
-            if let result = result as? NSNull {
-                // instance.setValue(NSNull(), forKey: label)
+            if result is NSNull {
+                // do nothing
             } else {
                 instance.setValue(result, forKey: label)
             }
@@ -100,7 +100,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
         // the array is of other types of classes
         if let elementClassName = NSClassFromString("\(appName).\(elementClass)") as? NSObject.Type {
             
-            for var item in array {
+            for item in array {
                 let instance = elementClassName.init()
                 if let item = item as? NSDictionary {
                     let result = deserialize(instance, json: item)
@@ -139,7 +139,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
  */
 private func getArrayContentType(type: String) -> String {
     if let r1 = type.rangeOfString("<"), let r2 = type.rangeOfString(">") where r1.endIndex < r2.startIndex {
-        return type.substringWithRange(Range(start: r1.endIndex, end: r2.startIndex))
+        return type.substringWithRange(Range(r1.endIndex..<r2.startIndex))
     }
     return type
 }

@@ -123,7 +123,7 @@ func jsonDictionaryRepresentation<T>(any: T) -> Any {
         
         for (_, attr) in mirroredAny.children.enumerate() {
             
-            if let label = attr.label as? String! {
+            if let label = attr.label {
                 let value = unwrap(attr.value)
                 if let result = jsonDictionaryRepresentation(value) as? AnyObject {
                     dictionary.setValue(result, forKey: label)
