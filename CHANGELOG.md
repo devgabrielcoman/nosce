@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.2.1
+ - Fixed a bug with deserializing to NSNull
+
 0.2.0
  - Fixed a bug with app-name in Pods
 

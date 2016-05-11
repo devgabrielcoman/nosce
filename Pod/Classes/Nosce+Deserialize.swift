@@ -78,7 +78,11 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
             let value = attribute.value
             let dictValue = unwrap(json.objectForKey(label))
             let result = deserialize(value, json: dictValue)
-            instance.setValue(result, forKey: label)
+            if let result = result as? NSNull {
+                // instance.setValue(NSNull(), forKey: label)
+            } else {
+                instance.setValue(result, forKey: label)
+            }
         }
         
         // final return
