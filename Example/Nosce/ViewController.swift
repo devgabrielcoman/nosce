@@ -15,10 +15,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let format = Format.Json;
-//        
-//        let m = Mirror(reflecting: format)
+        let mi = Process.Direct;
+        let mi2 = Mirror(reflecting: mi)
+        print(mi2)
+        print(mi2.subjectType)
+        for (_, atr) in mi2.children.enumerate() {
+            print(atr)
+        }
         
+        let t = Temp()
+        let mi3 = Mirror(reflecting: t)
+        t.self.dynamicType.init()
+        print(mi3.subjectType)
     }
 
     override func didReceiveMemoryWarning() {
