@@ -20,6 +20,15 @@ You will need to modify your **Podfile** to add the library.
 	  pod 'Nosce'
 	end
 
+Include
+^^^^^^^
+
+You can include the library into any file by adding the following line at the top of your .swift file:
+
+.. code-block:: swift
+
+	import Nosce
+
 Usage: Object to JSON
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -92,3 +101,29 @@ And the result will be:
 		}
 	  ]
 	}
+
+Usage: JSON to Object
+^^^^^^^^^^^^^^^^^^^^^
+
+The reverse can be done as well:
+
+Assuming you have the following JSON String:
+
+.. code-block:: swift
+
+	let json = "{\"name\":\"Example Ltd.\", \"employees\":[{\"name\":\"John\", \"age\": 23, \"salary\": 23000},{\"name\":\"Jane\", \"age\":30, \"salary\": 30000}]}"
+
+You can transform to a model object like so:
+
+.. code-block:: swift
+
+	let company = deserialize(Company(), jsonString: json) as? Company
+	print(company.name)
+	print(company.employees.length)
+
+And the result will be:
+
+.. code-block:: shell
+
+	Example Ltd.
+	2
