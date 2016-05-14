@@ -55,9 +55,10 @@ public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject {
  */
 public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     
+    var appName = getCleanAppName()
     let modelType = getDisplayType(model)
     let modelClass = getClassNameAsString(model)
-    var appName = getCleanAppName()
+    let modelClassName = NSClassFromString("\(appName).\(modelClass)")
     if let model = model as? NSObject where modelType == .Class {
         appName = getCleanAppName(model)
     }
@@ -66,9 +67,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
     // Handled Case #1:
     //  - "model" is a NSObject
     //  - "json" is a NSDictionary
-    if let modelClassName = NSClassFromString("\(appName).\(modelClass)") as? NSObject.Type,
-        let json = json as? NSDictionary where modelType == .Class
-    {
+    if let modelClassName = modelClassName as? NSObject.Type, let json = json as? NSDictionary where modelType == .Class {
         // init a new instance
         let instance = modelClassName.init()
         let mirror = Mirror(reflecting: instance)
@@ -89,7 +88,14 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
         return instance
     }
     //
-    // Handled Case #2:
+    // Handled Case #2
+    //  - Not really working for Structs :(
+    else if let json = json as? NSDictionary where modelType == .Struct {
+        // will not work
+        return json as! AnyObject
+    }
+    //
+    // Handled Case #3:
     //  - "model" is an Array Type
     //  - "json" is a NSArray
     else if let array = json as? NSArray where modelType == .Array {
@@ -118,7 +124,7 @@ public func deserialize<A, B>(model:A, json: B) -> AnyObject {
         return newArray
     }
     // 
-    // Handled Case #3:
+    // Handled Case #4:
     //  - "model" is an Int, Float, etc, Type
     //  - "json" doesn't really matter
     else if (modelType == .Bool || modelType == .Int || modelType == .Float || modelType == .Double || modelType == .String || modelType == .NSNull || modelType == .NSValue) {
