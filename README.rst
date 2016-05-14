@@ -17,5 +17,5 @@ You will need to modify your **Podfile** to add the library.
 	use_frameworks!
 
 	target 'MyProject' do
-		pod 'Nosce'
+	  pod 'Nosce'
 	end
