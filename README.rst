@@ -160,7 +160,7 @@ a set of specific guidelines:
 	var names:[String] = []
 	var dict: [Int : Employee] = [:]
 
-to
+instead of
 
 .. code-block:: swift
 
