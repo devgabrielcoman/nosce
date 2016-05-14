@@ -8,8 +8,14 @@ Current version is 0.2.2 (Beta)
 Install
 ^^^^^^^
 
-Installing the library is done via **CocoaPods** :
+Installing the library is done via `CocoaPods <http://cocoapods.org/>`_:
+
+You will need to modify your **Podfile** to add the library.
 
 .. code-block:: shell
 
-	pod 'Nosce'
+	use_frameworks!
+
+	target 'MyProject' do
+		pod 'Nosce'
+	end
