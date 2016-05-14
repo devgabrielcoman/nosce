@@ -154,12 +154,13 @@ a set of specific guidelines:
  * avoid enums or structs
  * try to be explicit about arrays or dictionaries. Prefer:
 
+
 .. code-block:: swift
 
 	var names:[String] = []
 	var dict: [Int : Employee] = [:]
 
- to
+to
 
 .. code-block:: swift
 
