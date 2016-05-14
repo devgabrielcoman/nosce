@@ -34,7 +34,7 @@ public class Creative: NSObject {
     var order: Int = 0
     var mediaFiles: [MediaFile] = []
     
-    required override public  init(){
+    required override public init(){
         super.init()
     }
     
