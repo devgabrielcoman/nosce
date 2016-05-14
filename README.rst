@@ -77,9 +77,16 @@ Then, using Nosce you can turn this model space into a valid JSON (or NSDictiona
 
 .. code-block:: swift
 
+	// returns a NSDictionary
 	let dictionary = serialize(company, format: .toDictionary)
-	let preetyJSON = serialize(company, format: .toPreetyJSON)
+
+	// returns a Strin
+	let prettyJSON = serialize(company, format: .toPrettyJSON)
+
+	// also returns a String
 	let compactJSON = serialize(company, format: .toCompactJSON)
+
+	// returns a NSData object
 	let dataJSON = serialize(company, format: .toNSData)
 
 And the result will be:
@@ -101,6 +108,15 @@ And the result will be:
 		}
 	  ]
 	}
+
+Limitations: Object to JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The serialization function will try to obtain the best valid JSON it can.
+It will work with complex objects, containing classes, structs, tuples, enum values, arrays or dictionaries.
+Base object you can try on can descend from AnyObject, NSObject or no class at all.
+Enum values will be saved as strings in the JSON.
+
 
 Usage: JSON to Object
 ^^^^^^^^^^^^^^^^^^^^^
@@ -127,3 +143,26 @@ And the result will be:
 
 	Example Ltd.
 	2
+
+Limitations
+^^^^^^^^^^^
+
+The deserialization function is a little more limited than the serialization one, and you should follow
+a set of specific guidelines:
+
+ * all your classes must descend from NSObject
+ * avoid enums or structs
+ * try to be explicit about arrays or dictionaries. Prefer:
+
+.. code-block:: swift
+
+	var names:[String] = []
+	var dict: [Int : Employee] = [:]
+
+ to
+
+.. code-block:: swift
+
+	var names: NSMutableArray
+	let dict: NSDictionary
+	let dict2: [Int : AnyObject]

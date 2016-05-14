@@ -175,3 +175,12 @@ public class TextFormatter: NSObject {
         self.format = format
     }
 }
+
+public class NonNSObject {
+    var name: String?
+    
+    // init function
+    required public init() {
+        
+    }
+}

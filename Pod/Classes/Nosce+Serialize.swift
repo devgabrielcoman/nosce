@@ -29,7 +29,7 @@ import UIKit
 public enum SerializationFormat {
     case toDictionary
     case toCompactJSON
-    case toPreetyJSON
+    case toPrettyJSON
     case toNSData
 }
 
@@ -45,7 +45,7 @@ public func serialize<T>(any: T, format: SerializationFormat) -> Any {
     switch format {
     case .toDictionary: return jsonDictionaryRepresentation(any)
     case .toCompactJSON: return jsonStringCompactRepresentation(any)
-    case .toPreetyJSON: return jsonStringPrettyRepresentation(any)
+    case .toPrettyJSON: return jsonStringPrettyRepresentation(any)
     case .toNSData: return jsonDataRepresentation(any)
     }
 }

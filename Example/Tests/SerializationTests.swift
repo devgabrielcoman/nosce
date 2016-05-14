@@ -366,6 +366,22 @@ class SerializationTests: XCTestCase {
         XCTAssertEqual(result, expected)
     }
     
+    func testModel6() {
+        //
+        // given
+        let given = NonNSObject()
+        given.name = "John"
+        
+        //
+        // when
+        let expected = ["name":"John"]
+        
+        //
+        // then
+        guard let result = serialize(given, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return }
+        XCTAssertEqual(result, expected)
+    }
+    
     func testTuple() {
         //
         // given

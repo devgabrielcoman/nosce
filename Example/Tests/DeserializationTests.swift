@@ -54,4 +54,19 @@ class DeserializationTests: XCTestCase {
         guard let result = serialize(modelResult, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
         XCTAssertEqual(result, expected)
     }
+    
+    func testModel3() {
+        //
+        // given
+        let given = "{\"name\":\"John\"}"
+        
+        //
+        // expected
+        let expected = ["name":"John"]
+        
+        //
+        // then
+        let modelResult = deserialize(NonNSObject(), jsonString: given)
+        print(modelResult)
+    }
 }
