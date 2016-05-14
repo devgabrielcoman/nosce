@@ -3,6 +3,8 @@ Nosce
 
 .. image:: https://img.shields.io/cocoapods/v/Nosce.svg?style=flat
 .. image:: https://img.shields.io/badge/language-swift2-f48041.svg?style=flat
+.. image:: https://img.shields.io/badge/platform-ios-lightgrey.svg
+.. image:: https://img.shields.io/badge/license-GNU-blue.svg
 
 
 Nosce is a JSON serialization / deserialization library that tries to automagically transform complex objects (or arrays of objects) into valid JSON and back.
