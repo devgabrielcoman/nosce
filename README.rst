@@ -72,3 +72,23 @@ Then, using Nosce you can turn this model space into a valid JSON (or NSDictiona
 	let preetyJSON = serialize(company, format: .toPreetyJSON)
 	let compactJSON = serialize(company, format: .toCompactJSON)
 	let dataJSON = serialize(company, format: .toNSData)
+
+And the result will be:
+
+.. code-block:: json
+
+	{
+	  "name": "Example Ltd.",
+	  "employees": [
+	  	{
+		  "name": "John",
+		  "age": 23,
+		  "salary": 23000
+		},
+		{
+		  "name": "Jane",
+		  "age": 30,
+		  "salary": 40000
+		}
+	  ]
+	}
