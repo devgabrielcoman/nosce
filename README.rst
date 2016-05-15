@@ -202,13 +202,20 @@ Enum values will be saved as strings in the JSON.
 Usage: JSON to Object
 ^^^^^^^^^^^^^^^^^^^^^
 
-The reverse can be done as well, using the **deserialize** function:
+The reverse can be done as well, using the **deserialize** functions:
 
 .. code-block:: swift
 
-	
+	public func deserialize<A>(model: A, jsonString: String) -> AnyObject
+	public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject
+	public func deserialize<A>(model: A, jsonDict: NSDictionary) -> AnyObject
 
-Assuming you have the following JSON String:
+The first parameter is always *an instance* of the class you want to deserialize.
+
+The second parameter can either be a JSON String, a NSData containing a JSON string or even a valid NSDictionary object, that's
+going to be used to try and fill the models fields.
+
+Now, assuming you have the following JSON String:
 
 .. code-block:: swift
 
@@ -235,7 +242,7 @@ You can transform to a model object like so:
 	print(employee.name)
 	print(employee.period.startYear)
 
-And the result will be:
+And printing the result will be:
 
 .. code-block:: shell
 
@@ -248,9 +255,9 @@ Limitations
 The deserialization function is a little more limited than the serialization one, and you should follow
 a set of specific guidelines:
 
- * all your classes must descend from NSObject
- * avoid enums or structs
- * try to be explicit about arrays or dictionaries. Prefer:
+* all your classes must descend from NSObject
+* avoid enums or structs
+* try to be explicit about arrays or dictionaries. Prefer:
 
 
 .. code-block:: swift
