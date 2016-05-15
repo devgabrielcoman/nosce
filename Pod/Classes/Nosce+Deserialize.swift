@@ -38,11 +38,25 @@ public func deserialize<A>(model: A, jsonString: String) -> AnyObject {
 public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject {
     do {
         let dict = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
-        return deserialize(model, json: dict)
+        if let dict = dict as? NSDictionary {
+            return deserialize(model, jsonDict: dict)
+        }
     } catch let error as NSError {
         print(error)
     }
     return 0
+}
+
+/**
+ Deserialize from a JSON NSDictionary object
+ 
+ - parameter model:    the base model to try to serialize
+ - parameter jsonDict: a valid NSDictionary object
+ 
+ - returns: a deserialized model
+ */
+public func deserialize<A>(model: A, jsonDict: NSDictionary) -> AnyObject {
+    return deserialize(model, json: jsonDict)
 }
 
 /**
@@ -53,7 +67,7 @@ public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject {
  
  - returns: a deserialized model
  */
-public func deserialize<A, B>(model:A, json: B) -> AnyObject {
+func deserialize<A, B>(model:A, json: B) -> AnyObject {
     
     var appName = getCleanAppName()
     let modelType = getDisplayType(model)

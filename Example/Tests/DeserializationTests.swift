@@ -33,7 +33,7 @@ class DeserializationTests: XCTestCase {
         //
         // then
         let model = MediaFile()
-        let modelResult = deserialize(model, json: given)
+        let modelResult = deserialize(model, jsonDict: given)
         guard let result = serialize(modelResult, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
         XCTAssertEqual(result, expected)
     }

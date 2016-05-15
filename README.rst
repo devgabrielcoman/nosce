@@ -202,7 +202,11 @@ Enum values will be saved as strings in the JSON.
 Usage: JSON to Object
 ^^^^^^^^^^^^^^^^^^^^^
 
-The reverse can be done as well:
+The reverse can be done as well, using the **deserialize** function:
+
+.. code-block:: swift
+
+	
 
 Assuming you have the following JSON String:
 
@@ -227,7 +231,7 @@ You can transform to a model object like so:
 
 .. code-block:: swift
 
-	let employee = deserialize(Employee(), jsonString: json) as? Company
+	let employee = deserialize(Employee(), jsonString: json) as? Employee
 	print(employee.name)
 	print(employee.period.startYear)
 
@@ -235,7 +239,7 @@ And the result will be:
 
 .. code-block:: shell
 
-	"John".
+	"John"
 	2013
 
 Limitations
