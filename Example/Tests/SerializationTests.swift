@@ -181,18 +181,23 @@ class SerializationTests: XCTestCase {
     func testStruct1() {
         //
         // given
-        let given = Temp(name: "Jimmy", startDate: 2016, willBePerm: true)
+        let given = Temp(name: "Jimmy", startDate: 2016, willBePerm: true, benefits: [("medical", true), ("health", false)])
         
         // when
         let expected = [
             "name": "Jimmy",
             "startDate": 2016,
-            "willBePerm": true
+            "willBePerm": true,
+            "benefits": [
+                ["medical", true],
+                ["health", false]
+            ]
         ]
         
         //
         // then
         guard let result = serialize(given, format: .toDictionary) as? NSDictionary else { XCTFail("Struct test failed"); return; }
+        print(result)
         XCTAssertEqual(result, expected)
     }
     

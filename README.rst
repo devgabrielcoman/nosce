@@ -47,6 +47,8 @@ The simplest use case is when you want to transform a single object into the equ
 	}
 
 	let model = Model(name: "John", age: 23)
+
+	// returns a pretty JSON string
 	let json = serialize(model, format: .toPrettyJSON)
 
 The result will be:
@@ -71,6 +73,7 @@ The function will also try to work with value based struct values or enums. It w
 is no value, it will replace it with a NSNull object.
 
 **format** is an enum with the following values:
+
  * toDictionary - returns a NSDictionary representation of the complex model
  * toCompactJSON - returns a compact JSON string representation of the complex model
  * toPrettyJSON - returns a pretty printed JSON string representation
@@ -80,10 +83,18 @@ A more thorough example follows:
 
 .. code-block:: swift
 
+    struct Period {
+	  var startYear: Int = 0
+	  var endYear: Int?
+	  var isActive: Bool = true
+	}
+
 	class Employee: NSObject {
 	  var name: String?
 	  var age: Int = 0
 	  var salary: Int?
+	  var benefits: [(name: String, val: Bool)]?
+	  var period: Period?
 	}
 
 	class Company: NSObject {
@@ -95,8 +106,30 @@ And you initialize your model space with some data:
 
 .. code-block:: swift
 
-	let emp1 = Employee(name: "John", age: 23, salary: 23000)
-	let emp2 = Employee(name: "Jane", age: 30, salary: 40000)
+	let emp1 = Employee()
+	emp1.name = "John"
+	emp1.age = 23
+	emp1.salary = 23000
+	emp1.benefits = [
+		(name: "medical", value: true),
+		(name: "daycare", value: false)
+	]
+	emp1.period = Period()
+	emp1.period.startYear = 2013
+
+	let emp2 = Employee()
+	emp2.name = "Jane"
+	emp2.age = 30
+	emp2.salary = 45000
+	emp2.benefits = [
+		(name: "medical", value: true),
+		(name: "daycare", value: true)
+	]
+	emp2.period = Period()
+	emp2.period.startYear = 2010
+	emp2.period.endYear = 2015
+	emp2.period.isActive = false
+
 	let company = Company(name: "Example Ltd.", employees: [emp1, emp2])
 
 Applying the **serialize** function you can transform the **company** object into the
@@ -126,12 +159,30 @@ And the result will be:
 	  	{
 		  "name": "John",
 		  "age": 23,
-		  "salary": 23000
+		  "salary": 23000,
+		  "benefits": [
+		  	["medical", true],
+			["daycare", false]
+		  ],
+		  "period": {
+		  	"startYear": 2013,
+			"endYear": "<null>",
+			"isActive": true
+		  }
 		},
 		{
 		  "name": "Jane",
 		  "age": 30,
-		  "salary": 40000
+		  "salary": 40000,
+		  "benefits": [
+		  	["medical", true],
+			["daycare", true]
+		  ],
+		  "period": {
+		  	"startYear": 2010,
+			"endYear": 2015,
+			"isActive": false
+		  }
 		}
 	  ]
 	}

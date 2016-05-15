@@ -175,7 +175,7 @@ class TypeTests: XCTestCase {
     func testStruct() {
         //
         // given
-        let given: Temp = Temp(name: "Jimmy", startDate: 2015, willBePerm: true)
+        let given: Temp = Temp(name: "Jimmy", startDate: 2015, willBePerm: true, benefits: [("medical", true),("helth", false)])
         
         //
         // then

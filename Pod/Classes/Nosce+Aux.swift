@@ -55,7 +55,7 @@ public func unwrapArray(any: Any) -> [Any] {
     var array:[Any] = []
     for (_, attr) in mi.children.enumerate() {
         
-        if let result = unwrap(attr.value) as? AnyObject {
+        if let result = unwrap(attr.value) as? Any {
             array.append(result)
         }
     }
@@ -87,11 +87,6 @@ public func unwrap(any:Any) -> Any {
     if mirror.children.count == 0 { return NSNull() }
     let (_, some) = mirror.children.first!
     return some
-    
-//    if let mi = Mirror(reflecting: any) as? Mirror {
-//        
-//    }
-//    return NSNull()
 }
 
 /**

@@ -12,6 +12,7 @@ public struct Temp {
     var name: String?
     var startDate: Int?
     var willBePerm: Bool = false
+    var benefits: [(name: String, value: Bool)]?
 }
 
 public class AdUnit: NSObject {
