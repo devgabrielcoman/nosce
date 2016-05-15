@@ -208,22 +208,35 @@ Assuming you have the following JSON String:
 
 .. code-block:: swift
 
-	let json = "{\"name\":\"Example Ltd.\", \"employees\":[{\"name\":\"John\", \"age\": 23, \"salary\": 23000},{\"name\":\"Jane\", \"age\":30, \"salary\": 30000}]}"
+	let json = "{" +
+	  "\"name\": \"John\", " +
+	  "\"age\": 23, " +
+	  "\"salary\": 23000, " +
+	  "\"benefits\": [ " +
+		"[\"medical\", true], " +
+		"[\"daycare\", false] " +
+	  "], " +
+	  "\"period\": { " +
+		"\"startYear\": 2013, " +
+		"\"endYear\": \"<null>\", " +
+		"\"isActive\": true " +
+	  "}" +
+	"}"
 
 You can transform to a model object like so:
 
 .. code-block:: swift
 
-	let company = deserialize(Company(), jsonString: json) as? Company
-	print(company.name)
-	print(company.employees.length)
+	let employee = deserialize(Employee(), jsonString: json) as? Company
+	print(employee.name)
+	print(employee.period.startYear)
 
 And the result will be:
 
 .. code-block:: shell
 
-	Example Ltd.
-	2
+	"John".
+	2013
 
 Limitations
 ^^^^^^^^^^^
