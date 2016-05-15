@@ -63,7 +63,7 @@ The serialize function has the following definition:
 .. code-block:: swift
 
 	public func serialize<T>(model: T, format: SerializationFormat) -> Any
-	
+
 
  * **model** can be any type supported by swift. Usual candidates are complex objects or arrays of objects. These can have
  member variables of type Int, Float, String, etc., but also tuples, enums, dictionaries, other complex objects or arrays of different kinds.
