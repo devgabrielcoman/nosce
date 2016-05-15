@@ -74,10 +74,10 @@ is no value, it will replace it with a NSNull object.
 
 **format** is an enum with the following values:
 
- * toDictionary - returns a NSDictionary representation of the complex model
- * toCompactJSON - returns a compact JSON string representation of the complex model
- * toPrettyJSON - returns a pretty printed JSON string representation
- * toNSData - returns a NSData object representation
+* toDictionary - returns a NSDictionary representation of the complex model
+* toCompactJSON - returns a compact JSON string representation of the complex model
+* toPrettyJSON - returns a pretty printed JSON string representation
+* toNSData - returns a NSData object representation
 
 If you have a more complex object hierarchy:
 
