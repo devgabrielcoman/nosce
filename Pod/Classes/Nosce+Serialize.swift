@@ -41,12 +41,12 @@ public enum SerializationFormat {
  
  - returns: a dictionary or string or whatnot
  */
-public func serialize<T>(any: T, format: SerializationFormat) -> Any {
+public func serialize<T>(model: T, format: SerializationFormat) -> Any {
     switch format {
-    case .toDictionary: return jsonDictionaryRepresentation(any)
-    case .toCompactJSON: return jsonStringCompactRepresentation(any)
-    case .toPrettyJSON: return jsonStringPrettyRepresentation(any)
-    case .toNSData: return jsonDataRepresentation(any)
+    case .toDictionary: return jsonDictionaryRepresentation(model)
+    case .toCompactJSON: return jsonStringCompactRepresentation(model)
+    case .toPrettyJSON: return jsonStringPrettyRepresentation(model)
+    case .toNSData: return jsonDataRepresentation(model)
     }
 }
 

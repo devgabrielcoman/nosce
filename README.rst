@@ -7,14 +7,15 @@ Nosce
 .. image:: https://img.shields.io/badge/license-GNU-blue.svg
 
 
-Nosce is a JSON serialization / deserialization library that tries to automagically transform complex objects (or arrays of objects) into valid JSON and back.
+Nosce is a library created to automate as much as possible the process of serialization and deserialization of
+complex model objects (or arrays of model objects) into and from NSDictionary, JSON String objects and NSData objects.
 
 Install
 ^^^^^^^
 
-Installing the library is done via `CocoaPods <http://cocoapods.org/>`_:
+You can install the library via `CocoaPods <http://cocoapods.org/>`_:
 
-You will need to modify your **Podfile** to add the library.
+You'll need to modify your **Podfile** to add it:
 
 .. code-block:: shell
 
@@ -24,8 +25,8 @@ You will need to modify your **Podfile** to add the library.
 	  pod 'Nosce'
 	end
 
-Include
-^^^^^^^
+Import
+^^^^^^
 
 You can include the library into any file by adding the following line at the top of your .swift file:
 
@@ -33,10 +34,47 @@ You can include the library into any file by adding the following line at the to
 
 	import Nosce
 
-Usage: Object to JSON
-^^^^^^^^^^^^^^^^^^^^^
+Usage: Object to JSON serialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Assume you have a hierarchy of objects as in the following example:
+The simplest use case is when you want to transform a single object into the equivalent JSON model.
+
+.. code-block:: swift
+
+	class Model {
+	  var name: String?
+	  var age: Int = 0
+	}
+
+	let model = Model(name: "John", age: 23)
+	let json = serialize(model, format: .toPrettyJSON)
+
+The result will be:
+
+.. code-block:: json
+
+	{
+		"name": "John",
+		"age": 23
+	}
+
+The serialize function has the following definition:
+
+.. code-block:: swift
+
+	public func serialize<T>(model: T, format: SerializationFormat) -> Any
+
+ * **model** can be any type supported by swift. Usual candidates are complex objects or arrays of objects. These can have
+ member variables of type Int, Float, String, etc., but also tuples, enums, dictionaries, other complex objects or arrays of different kinds.
+ The function will also try to work with value based struct values or enums. It will also try to unwrap any optionals encountered. When there
+ is no value, it will replace it with a NSNull object.
+ * **format** is an enum with the following values:
+  * toDictionary - returns a NSDictionary representation of the complex model
+  * toCompactJSON - returns a compact JSON string representation of the complex model
+  * toPrettyJSON - returns a pretty printed JSON string representation
+  * toNSData - returns a NSData object representation
+
+A more thorough example follows:
 
 .. code-block:: swift
 
@@ -44,40 +82,23 @@ Assume you have a hierarchy of objects as in the following example:
 	  var name: String?
 	  var age: Int = 0
 	  var salary: Int?
-
-	  override public init() {
-	    super.init()
-	  }
 	}
 
 	class Company: NSObject {
 	  var name: String?
 	  var employees: [Employee] = []
-
-	  override public init() {
-	    super.init()
-	  }
 	}
 
 And you initialize your model space with some data:
 
 .. code-block:: swift
 
-	let employee1 = Employee()
-	employee1.name = "John"
-	employee1.age = 23
-	employee1.salary = 23000
+	let emp1 = Employee(name: "John", age: 23, salary: 23000)
+	let emp2 = Employee(name: "Jane", age: 30, salary: 40000)
+	let company = Company(name: "Example Ltd.", employees: [emp1, emp2])
 
-	let employee2 = Employee()
-	employee2.name = "Jane"
-	employee2.age = 30
-	employee2.salary = 40000
-
-	let company = Company()
-	company.name = "Example Ltd."
-	company.employees = [employee1, employee2]
-
-Then, using Nosce you can turn this model space into a valid JSON (or NSDictionary):
+Applying the **serialize** function you can transform the **company** object into the
+equivalent desired representation:
 
 .. code-block:: swift
 
