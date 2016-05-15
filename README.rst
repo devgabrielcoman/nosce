@@ -79,7 +79,7 @@ is no value, it will replace it with a NSNull object.
  * toPrettyJSON - returns a pretty printed JSON string representation
  * toNSData - returns a NSData object representation
 
-A more thorough example follows:
+If you have a more complex object hierarchy:
 
 .. code-block:: swift
 
@@ -112,8 +112,8 @@ And you initialize your model space with some data:
 	employee1.age = 23
 	employee1.salary = 23000
 	employee1.benefits = [
-		(name: "medical", value: true),
-		(name: "daycare", value: false)
+	  (name: "medical", value: true),
+	  (name: "daycare", value: false)
 	]
 	employee1.period = Period()
 	employee1.period.startYear = 2013
@@ -124,8 +124,8 @@ And you initialize your model space with some data:
 	employee2.age = 30
 	employee2.salary = 45000
 	employee2.benefits = [
-		(name: "medical", value: true),
-		(name: "daycare", value: true)
+	  (name: "medical", value: true),
+	  (name: "daycare", value: true)
 	]
 	employee2.period = Period()
 	employee2.period.startYear = 2010
