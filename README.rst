@@ -106,30 +106,33 @@ And you initialize your model space with some data:
 
 .. code-block:: swift
 
-	let emp1 = Employee()
-	emp1.name = "John"
-	emp1.age = 23
-	emp1.salary = 23000
-	emp1.benefits = [
+	// populate first employee
+	let employee1 = Employee()
+	employee1.name = "John"
+	employee1.age = 23
+	employee1.salary = 23000
+	employee1.benefits = [
 		(name: "medical", value: true),
 		(name: "daycare", value: false)
 	]
-	emp1.period = Period()
-	emp1.period.startYear = 2013
+	employee1.period = Period()
+	employee1.period.startYear = 2013
 
-	let emp2 = Employee()
-	emp2.name = "Jane"
-	emp2.age = 30
-	emp2.salary = 45000
-	emp2.benefits = [
+	// populate second employee
+	let employee2 = Employee()
+	employee2.name = "Jane"
+	employee2.age = 30
+	employee2.salary = 45000
+	employee2.benefits = [
 		(name: "medical", value: true),
 		(name: "daycare", value: true)
 	]
-	emp2.period = Period()
-	emp2.period.startYear = 2010
-	emp2.period.endYear = 2015
-	emp2.period.isActive = false
+	employee2.period = Period()
+	employee2.period.startYear = 2010
+	employee2.period.endYear = 2015
+	employee2.period.isActive = false
 
+	// now add employees to the company
 	let company = Company(name: "Example Ltd.", employees: [emp1, emp2])
 
 Applying the **serialize** function you can transform the **company** object into the
