@@ -143,7 +143,7 @@ equivalent desired representation:
 	// returns a NSDictionary
 	let dictionary = serialize(company, format: .toDictionary)
 
-	// returns a Strin
+	// returns a String
 	let prettyJSON = serialize(company, format: .toPrettyJSON)
 
 	// also returns a String
