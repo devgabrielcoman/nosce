@@ -83,7 +83,7 @@ A more thorough example follows:
 
 .. code-block:: swift
 
-    struct Period {
+	struct Period {
 	  var startYear: Int = 0
 	  var endYear: Int?
 	  var isActive: Bool = true
