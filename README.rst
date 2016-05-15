@@ -65,15 +65,16 @@ The serialize function has the following definition:
 	public func serialize<T>(model: T, format: SerializationFormat) -> Any
 
 
- * **model** can be any type supported by swift. Usual candidates are complex objects or arrays of objects. These can have
- member variables of type Int, Float, String, etc., but also tuples, enums, dictionaries, other complex objects or arrays of different kinds.
- The function will also try to work with value based struct values or enums. It will also try to unwrap any optionals encountered. When there
- is no value, it will replace it with a NSNull object.
- * **format** is an enum with the following values:
-  * toDictionary - returns a NSDictionary representation of the complex model
-  * toCompactJSON - returns a compact JSON string representation of the complex model
-  * toPrettyJSON - returns a pretty printed JSON string representation
-  * toNSData - returns a NSData object representation
+**model** can be any type supported by swift. Usual candidates are complex objects or arrays of objects. These can have
+member variables of type Int, Float, String, etc., but also tuples, enums, dictionaries, other complex objects or arrays of different kinds.
+The function will also try to work with value based struct values or enums. It will also try to unwrap any optionals encountered. When there
+is no value, it will replace it with a NSNull object.
+
+**format** is an enum with the following values:
+ * toDictionary - returns a NSDictionary representation of the complex model
+ * toCompactJSON - returns a compact JSON string representation of the complex model
+ * toPrettyJSON - returns a pretty printed JSON string representation
+ * toNSData - returns a NSData object representation
 
 A more thorough example follows:
 
