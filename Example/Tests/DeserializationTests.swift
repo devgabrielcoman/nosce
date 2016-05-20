@@ -32,8 +32,7 @@ class DeserializationTests: XCTestCase {
         
         //
         // then
-        let model = MediaFile()
-        let modelResult = deserialize(model, jsonDict: given)
+        let modelResult = deserialize(MediaFile(), jsonDict: given)
         guard let result = serialize(modelResult, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
         XCTAssertEqual(result, expected)
     }
@@ -49,24 +48,28 @@ class DeserializationTests: XCTestCase {
         
         //
         // then
-        let model = MediaFile()
-        let modelResult = deserialize(model, jsonString: given)
+        let modelResult = deserialize(MediaFile(), jsonString: given)
         guard let result = serialize(modelResult, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return; }
         XCTAssertEqual(result, expected)
     }
     
-    func testModel3() {
-        //
-        // given
-        let given = "{\"name\":\"John\"}"
+    func testModel3 () {
+//        //
+//        // given
+//        let given = "{\"id\":3, \"message\": \"invalid\"}"
+//        
+//        //
+//        // expected
+//        let expected = [
+//            "id": 3,
+//            "message": "invalid"
+//        ]
+//        
+//        //
+//        // then
+//        let modelResult = deserialize(Error(), jsonString: given) as? Error
+//        
+//        print(serialize(modelResult, format: .toPrettyJSON))
         
-        //
-        // expected
-        let expected = ["name":"John"]
-        
-        //
-        // then
-        let modelResult = deserialize(NonNSObject(), jsonString: given)
-        print(modelResult)
     }
 }

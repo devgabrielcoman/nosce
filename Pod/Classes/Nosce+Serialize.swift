@@ -180,12 +180,12 @@ func jsonStringRepresentation<T>(any: T, options: NSJSONWritingOptions) -> Strin
         }
         // error case 2: could not parse because of some serialization error
         catch {
-            print("[Nosce :: Error] Variable given not dictionary or array")
+            print("[Nosce] :: Error => Variable given not dictionary or array")
         }
     }
     // error case 1: could not parse because json is not valid
     else {
-        print("[Nosce :: Error] Variable given not dictionary or array")
+        print("[Nosce] :: Error => Variable given not dictionary or array")
     }
     
     // return value as String

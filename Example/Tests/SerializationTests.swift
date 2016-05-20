@@ -308,7 +308,7 @@ class SerializationTests: XCTestCase {
         XCTAssertEqual(result2, expected2)
     }
     
-    func testModel4()  {
+    func testModels4()  {
         //
         // given
         let given1 = Employment(name: "Startup Ltd.", address: nil)
@@ -356,7 +356,7 @@ class SerializationTests: XCTestCase {
         XCTAssertEqual(result, expected)
     }
     
-    func testModel5() {
+    func testModels5() {
         //
         // given
         let given = TextFormatter(format: .XML)
@@ -371,7 +371,7 @@ class SerializationTests: XCTestCase {
         XCTAssertEqual(result, expected)
     }
     
-    func testModel6() {
+    func testModels6() {
         //
         // given
         let given = NonNSObject()
@@ -385,6 +385,38 @@ class SerializationTests: XCTestCase {
         // then
         guard let result = serialize(given, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return }
         XCTAssertEqual(result, expected)
+    }
+    
+    func testModels7() {
+//        //
+//        // given
+//        let given = Error()
+//        given.id = 1
+//        given.message = "invalid"
+//        let innerError = Error()
+//        innerError.id = 7
+//        innerError.message = "No parent email"
+//        given.invalid = Invalid()
+//        given.invalid.parentEmail = innerError
+//        
+//        //
+//        // when
+//        let expected = [
+//            "id": 1,
+//            "message": "invalid",
+//            "invalid":[
+//                "parentEmail": [
+//                    "id":7,
+//                    "message": "No parent email",
+//                    "invalid": NSNull()
+//                ]
+//            ]
+//        ]
+//        
+//        //
+//        // then
+//        guard let result = serialize(given, format: .toDictionary) as? NSDictionary else { XCTFail("Model test failed"); return }
+//        XCTAssertEqual(result, expected)
     }
     
     func testTuple() {

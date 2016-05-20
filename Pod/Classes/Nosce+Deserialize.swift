@@ -42,7 +42,7 @@ public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject {
             return deserialize(model, jsonDict: dict)
         }
     } catch let error as NSError {
-        print(error)
+        print("[Nosce] :: Error => Serialization error \(error)")
     }
     return 0
 }
@@ -72,10 +72,10 @@ func deserialize<A, B>(model:A, json: B) -> AnyObject {
     var appName = getCleanAppName()
     let modelType = getDisplayType(model)
     let modelClass = getClassNameAsString(model)
-    let modelClassName = NSClassFromString("\(appName).\(modelClass)")
     if let model = model as? NSObject where modelType == .Class {
         appName = getCleanAppName(model)
     }
+    let modelClassName = NSClassFromString("\(appName).\(modelClass)")
     
     //
     // Handled Case #1:

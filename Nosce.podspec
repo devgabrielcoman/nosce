@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Nosce"
-  s.version          = "0.2.3"
+  s.version          = "0.2.4"
   s.summary          = "Nosce - print your models"
   s.description      = <<-DESC
                        Nosce is a swift utility library that prints out the insides of model type objects
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = { :type => "GPL v3", :file => "LICENSE" }
   s.author           = { "Gabriel Coman" => "dev.gabriel.coman@gmail.com" }
-  s.source           = { :git => "https://github.com/devgabrielcoman/nosce.git", :branch => "master", :tag => "0.2.3" }
+  s.source           = { :git => "https://github.com/devgabrielcoman/nosce.git", :branch => "master", :tag => "0.2.4" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'Pod/Classes/*'

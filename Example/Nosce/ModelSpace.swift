@@ -185,3 +185,13 @@ public class NonNSObject {
         
     }
 }
+
+//public class Invalid: NSObject {
+//    var parentEmail:Error = Error()
+//}
+//
+//public class Error: NSObject {
+//    var id: Int = 0
+//    var message: String = ""
+//    var invalid:Invalid = Invalid()
+//}
