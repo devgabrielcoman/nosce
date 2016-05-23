@@ -14,6 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let location = Location(lat: 32.25, lng: 127.9)
+        var locat: Location?
+        print(location)
+        
+        print(locat.dynamicType)
+        
     }
 
     override func didReceiveMemoryWarning() {
