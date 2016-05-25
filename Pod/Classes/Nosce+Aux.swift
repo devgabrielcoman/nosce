@@ -17,6 +17,7 @@ import UIKit
  
  - returns: a class name as string
  */
+
 public func getClassNameAsString(any: Any) -> String {
     return String(any.dynamicType).componentsSeparatedByString("__").last!
 }
