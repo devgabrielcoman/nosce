@@ -14,41 +14,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        let j1 = "{\"name\":\"John\", \"age\":32, \"isActive\": 1}"
+        let j2 = "{\"name\": \"Carry\", \"age\":18, \"isActive\": 1}"
+        let j3 = "{\"name\":\"John&Carry Ltd.\", \"employees\":["+j1+","+j2+"]}"
         
-        let location = Location(lat: 32.25, lng: 127.9)
-        var locat: Location?
-        print(location)
+        let e1 = Employee(jsonString: j1)
+        let e2 = Employee(jsonString: j2)
+        let com = Company(jsonString: j3)
         
-        print(locat.dynamicType)
-        
+        print(e1.dictionaryRepresentation())
+        print(e2.dictionaryRepresentation())
+        print(com.dictionaryRepresentation())
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func test<E>(any: E) -> Void {
-        print(any as! Int)
-    }
-    
-    func createEnum<E: RawRepresentable>(rawValue: E.RawValue) -> E? {
-        return E(rawValue: rawValue)
-    }
-    
-    func printEnum<E: RawRepresentable>(value: E) -> AnyObject {
-        if let result = value.rawValue as? AnyObject {
-            return result
-        }
-        return NSNull()
-    }
-    
-    func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
-        var i = 0
-        return AnyGenerator {
-            let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
-            return next.hashValue == i++ ? next : nil
-        }
     }
 }
 
