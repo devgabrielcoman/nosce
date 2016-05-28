@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         print(e1.dictionaryRepresentation())
         print(e2.dictionaryRepresentation())
         print(com.dictionaryRepresentation())
+    
+        
     }
 
     override func didReceiveMemoryWarning() {

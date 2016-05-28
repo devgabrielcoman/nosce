@@ -12,13 +12,7 @@ import Nosce
 class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
     var name: String?
     var age: Int?
-    var isActive: Bool?
-    
-    init(name: String, age: Int, isActive: Bool) {
-        self.name = name
-        self.age = age
-        self.isActive = isActive
-    }
+    var isActive: Bool = false
     
     required init(jsonDictionary: NSDictionary) {
         name <- jsonDictionary["name"]
@@ -28,25 +22,16 @@ class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
     
     func dictionaryRepresentation() -> NSDictionary {
         return [
-            "name": name!,
-            "age": age!,
-            "isActive": isActive!
+            "name": name ?? NSNull(),
+            "age": age ?? NSNull(),
+            "isActive": isActive
         ];
-    }
-    
-    func isValid() -> Bool {
-        return true
     }
 }
 
 class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
     var name: String?
     var employees: [Employee] = []
-    
-    init(name: String, employees: [Employee]) {
-        self.name = name
-        self.employees = employees
-    }
     
     required init(jsonDictionary: NSDictionary) {
         name <- jsonDictionary["name"]
@@ -55,13 +40,9 @@ class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
         }
     }
     
-    func isValid() -> Bool {
-        return true
-    }
-    
     func dictionaryRepresentation() -> NSDictionary {
         return [
-            "name": name!,
+            "name": name ?? NSNull(),
             "employees": employees => { (employee: Employee) -> NSDictionary in
                 return employee.dictionaryRepresentation ()
             }

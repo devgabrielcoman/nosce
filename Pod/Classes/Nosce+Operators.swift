@@ -10,23 +10,7 @@ import UIKit
 
 infix operator => { associativity right precedence 100 }
 
-public func => <A, T> (left: AnyObject?, right: (A) -> T? ) -> [T] {
-    
-    if let object = left as? [AnyObject] {
-        var array: [T] = []
-        
-        for item in object {
-            if let item = item as? A, let result = right(item) {
-                array.append(result)
-            }
-        }
-        
-        return array
-    }
-    return []
-}
-
-public func => <A, B, C> (left: [A], right: (B)->C) -> NSArray {
+public func => <A, B, C> (left: [A], right: (B) -> C) -> NSArray {
     let array = NSMutableArray()
     for item in left {
         if let item = item as? B, let result = right(item) as? AnyObject {
@@ -34,6 +18,21 @@ public func => <A, B, C> (left: [A], right: (B)->C) -> NSArray {
         }
     }
     return array
+}
+
+public func => <A, B, C> (left: A?, right: (B) -> C? ) -> [C] {
+    if let object = left as? [A] {
+        var array: [C] = []
+        
+        for item in object {
+            if let item = item as? B, let result = right(item) {
+                array.append(result)
+            }
+        }
+        
+        return array
+    }
+    return []
 }
 
 infix operator <- { associativity right precedence 100 }
