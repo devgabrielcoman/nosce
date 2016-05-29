@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
         let j1 = "{\"name\":\"John\", \"age\":32, \"isActive\": 1}"
         let j2 = "{\"name\": \"Carry\", \"age\":18, \"isActive\": 1}"
-        let j3 = "{\"name\":\"John&Carry Ltd.\", \"employees\":["+j1+","+j2+"]}"
+        let j3 = "{\"name\":\"John&Carry Ltd.\", \"employees\":["+j1+","+j2+"], \"seniors\": [\"David Roth\", \"Sam Smith\"]}"
         
         let e1 = Employee(jsonString: j1)
         let e2 = Employee(jsonString: j2)

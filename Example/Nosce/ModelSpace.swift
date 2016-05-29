@@ -32,20 +32,27 @@ class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
 class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
     var name: String?
     var employees: [Employee] = []
+    var seniors: [String] = []
     
     required init(jsonDictionary: NSDictionary) {
         name <- jsonDictionary["name"]
         employees <- jsonDictionary["employees"] => { (dict: NSDictionary) -> Employee in
             return Employee(jsonDictionary: dict)
         }
+        seniors <- jsonDictionary["seniors"] => { (name: String) -> String in
+            return name
+        }
     }
     
     func dictionaryRepresentation() -> NSDictionary {
         return [
-            "name": name ?? NSNull(),
-            "employees": employees => { (employee: Employee) -> NSDictionary in
-                return employee.dictionaryRepresentation ()
+            "name": unwrap(name),
+            "employees": employees.dictionaryRepresentation(),
+            "seniors": seniors => { (name: String) -> String in
+                return name
             }
+            // optional
+            // "seniors": seniors.dictionaryRepresentation()
         ]
     }
 }
