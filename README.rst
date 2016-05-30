@@ -156,7 +156,7 @@ When you have a more complex example, involving two nested models:
 
 .. code-block:: swift
 
-struct Positon : NosceSerializationProtocol, NosceDeserializationProtocol {
+	struct Positon : NosceSerializationProtocol, NosceDeserializationProtocol {
       var name: String?
       var salary: Int?
       var isTemp: Bool = false
