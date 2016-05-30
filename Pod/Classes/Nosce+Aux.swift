@@ -4,10 +4,17 @@
 //
 //  Created by Gabriel Coman on 29/05/2016.
 //
-//
+//  Module that defines an unwrap function for optional
 
 import UIKit
 
+/**
+ Unwrap function for optionals
+ 
+ - parameter any: any type in swift
+ 
+ - returns: Either the value or the unwrapped optional or NSNull()
+ */
 public func unwrap (any: Any) -> AnyObject {
     
     // get mirror

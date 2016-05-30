@@ -13,18 +13,25 @@ class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
     var name: String?
     var age: Int?
     var isActive: Bool = false
+    var trusted: Bool?
+    
+    init() {
+        // nothing
+    }
     
     required init(jsonDictionary: NSDictionary) {
         name <- jsonDictionary["name"]
         age <- jsonDictionary["age"]
         isActive <- jsonDictionary["isActive"]
+        trusted <- jsonDictionary["trusted"]
     }
     
     func dictionaryRepresentation() -> NSDictionary {
         return [
             "name": name ?? NSNull(),
             "age": age ?? NSNull(),
-            "isActive": isActive
+            "isActive": isActive,
+            "trusted": trusted ?? NSNull()
         ];
     }
 }
@@ -33,6 +40,10 @@ class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
     var name: String?
     var employees: [Employee] = []
     var seniors: [String] = []
+    
+    init () {
+        // nothing
+    }
     
     required init(jsonDictionary: NSDictionary) {
         name <- jsonDictionary["name"]
