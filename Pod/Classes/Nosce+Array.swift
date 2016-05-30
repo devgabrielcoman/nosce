@@ -25,7 +25,7 @@ public extension Array {
         var array = NSMutableArray()
         
         for item in self {
-            if let item = item as? NosceSerializationProtocol {
+            if let item = item as? NosceSerializationProtocol where !(item is NSNull) {
                 array.addObject(item.dictionaryRepresentation())
             }
         }

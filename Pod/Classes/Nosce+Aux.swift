@@ -8,24 +8,15 @@
 
 import UIKit
 
-/**
- Unwrap function for optionals
- 
- - parameter any: any type in swift
- 
- - returns: Either the value or the unwrapped optional or NSNull()
- */
-public func unwrap (any: Any) -> AnyObject {
-    
-    // get mirror
-    let mirror = Mirror(reflecting: any)
-    
-    // do unwrapping
-    if mirror.displayStyle != .Optional {
-        return any as! AnyObject
+extension NSNull: NosceSerializationProtocol {
+    public func dictionaryRepresentation() -> NSDictionary {
+        return NSDictionary()
     }
-    
-    if mirror.children.count == 0 { return NSNull() }
-    let (_, some) = mirror.children.first!
-    return some as! AnyObject
+}
+
+public func safe <T>(any: T?) -> NosceSerializationProtocol {
+    if let any = any as? NosceSerializationProtocol {
+        return any
+    }
+    return NSNull()
 }

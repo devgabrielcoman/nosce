@@ -23,7 +23,19 @@ class SerializationTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSerializationSimple () {
+    func testSerializationSimpleStruct () {
+        // given
+        let given = Position(name: "Manager", salary: 32000)
+        
+        // when
+        let expected = ["name": "Manager", "salary": 32000]
+        
+        // then
+        let result = given.dictionaryRepresentation()
+        XCTAssertTrue(result.isEqualToDictionary(expected))
+    }
+    
+    func testSerializationSimpleModel () {
         // given
         let given = Employee()
         given.name = "John"
@@ -44,7 +56,7 @@ class SerializationTests: XCTestCase {
         XCTAssertTrue(result.isEqualToDictionary(expected))
     }
     
-    func testSerializationComplex () {
+    func testSerializationComplexModel1 () {
         // given
         let given1 = Employee()
         given1.name = "John"
@@ -84,5 +96,57 @@ class SerializationTests: XCTestCase {
         // then
         let result = given.dictionaryRepresentation()
         XCTAssertTrue(result.isEqualToDictionary(expected))
+    }
+    
+    func testSerializationComplexModel2 () {
+        // given
+        let given1 = Position(name: "CEO", salary: 100000)
+        let given = Person()
+        given.name = "John Smith"
+        given.position = given1
+        
+        // when
+        let expected = [
+            "name": "John Smith",
+            "position": [
+                "name": "CEO",
+                "salary": 100000
+            ]
+        ]
+        
+        // then
+        let result = given.dictionaryRepresentation()
+        XCTAssertTrue(result.isEqualToDictionary(expected))
+    }
+    
+    func testSimpleArray () {
+        // given
+        let given = [1, "nosce", NSNull(), "fourth"]
+        
+        // when
+        let expected = [1, "nosce", NSNull(), "fourth"]
+        
+        // then
+        let result = given.dictionaryRepresentation()
+        XCTAssertTrue(result.isEqualToArray(expected))
+    }
+    
+    func testComplexArray () {
+        // given
+        let given1 = Position(name: "CEO", salary: 100000)
+        let given2 = Position(name: "Engineer", salary: 35000)
+        let given3 = Position(name: "Accountant", salary: 28000)
+        let given = [given1, given2,  given3]
+        
+        // when
+        let expected = [
+            ["name": "CEO", "salary": 100000],
+            ["name": "Engineer", "salary": 35000],
+            ["name": "Accountant", "salary": 28000]
+        ]
+        
+        // then
+        let result = given.dictionaryRepresentation()
+        XCTAssertTrue(result.isEqualToArray(expected))
     }
 }

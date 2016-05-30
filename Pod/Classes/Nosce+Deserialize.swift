@@ -14,6 +14,16 @@ import UIKit
  */
 public protocol NosceDeserializationProtocol {
     /**
+     Init an object through a json dictionary object; does not have
+     a default implementation
+     
+     - parameter jsonDictionary: a json dictionary object
+     
+     - returns: the object
+     */
+    init(jsonDictionary: NSDictionary)
+    
+    /**
      Init an object through a json String; has a default implementation
      
      - parameter jsonString: valid json string
@@ -30,16 +40,6 @@ public protocol NosceDeserializationProtocol {
      - returns: returns the object
      */
     init(jsonData: NSData)
-    
-    /**
-     Init an object through a json dictionary object; does not have 
-     a default implementation
-     
-     - parameter jsonDictionary: a json dictionary object
-     
-     - returns: the object
-     */
-    init(jsonDictionary: NSDictionary)
     
     /**
      If overriden, determines the minimum ammount of conditions needed for the

@@ -7,8 +7,8 @@ Nosce
 .. image:: https://img.shields.io/badge/license-GNU-blue.svg
 
 
-Nosce is a library created to automate as much as possible the process of serialization and deserialization of
-complex model objects (or arrays of model objects) into and from NSDictionary, JSON String objects and NSData objects.
+Nosce is a library created to help you streamline as much as possible the process of serialization and deserialization
+of complex models or arrays of models into and from NSDictionary, JSON String objects and NSData objects.
 
 Install
 ^^^^^^^
@@ -34,241 +34,224 @@ You can include the library into any file by adding the following line at the to
 
 	import Nosce
 
-Usage: Object to JSON serialization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Serialization
+^^^^^^^^^^^^^
 
-The simplest use case is when you want to transform a single object into the equivalent JSON model.
-
-.. code-block:: swift
-
-	class Model {
-	  var name: String?
-	  var age: Int = 0
-	}
-
-	let model = Model(name: "John", age: 23)
-
-	// returns a pretty JSON string
-	let json = serialize(model, format: .toPrettyJSON)
-
-The result will be:
-
-.. code-block:: json
-
-	{
-		"name": "John",
-		"age": 23
-	}
-
-The serialize function has the following definition:
-
-.. code-block:: swift
-
-	public func serialize<T>(model: T, format: SerializationFormat) -> Any
-
-
-**model** can be any type supported by swift. Usual candidates are complex objects or arrays of objects. These can have
-member variables of type Int, Float, String, etc., but also tuples, enums, dictionaries, other complex objects or arrays of different kinds.
-The function will also try to work with value based struct values or enums. It will also try to unwrap any optionals encountered. When there
-is no value, it will replace it with a NSNull object.
-
-**format** is an enum with the following values:
-
-* toDictionary - returns a NSDictionary representation of the complex model
-* toCompactJSON - returns a compact JSON string representation of the complex model
-* toPrettyJSON - returns a pretty printed JSON string representation
-* toNSData - returns a NSData object representation
-
-If you have a more complex object hierarchy:
-
-.. code-block:: swift
-
-	struct Period {
-	  var startYear: Int = 0
-	  var endYear: Int?
-	  var isActive: Bool = true
-	}
-
-	class Employee: NSObject {
-	  var name: String?
-	  var age: Int = 0
-	  var salary: Int?
-	  var benefits: [(name: String, val: Bool)]?
-	  var period: Period?
-	}
-
-	class Company: NSObject {
-	  var name: String?
-	  var employees: [Employee] = []
-	}
-
-And you initialize your model space with some data:
-
-.. code-block:: swift
-
-	// populate first employee
-	let employee1 = Employee()
-	employee1.name = "John"
-	employee1.age = 23
-	employee1.salary = 23000
-	employee1.benefits = [
-	  (name: "medical", value: true),
-	  (name: "daycare", value: false)
-	]
-	employee1.period = Period()
-	employee1.period.startYear = 2013
-
-	// populate second employee
-	let employee2 = Employee()
-	employee2.name = "Jane"
-	employee2.age = 30
-	employee2.salary = 45000
-	employee2.benefits = [
-	  (name: "medical", value: true),
-	  (name: "daycare", value: true)
-	]
-	employee2.period = Period()
-	employee2.period.startYear = 2010
-	employee2.period.endYear = 2015
-	employee2.period.isActive = false
-
-	// now add employees to the company
-	let company = Company(name: "Example Ltd.", employees: [emp1, emp2])
-
-Applying the **serialize** function you can transform the **company** object into the
-equivalent desired representation:
-
-.. code-block:: swift
-
-	// returns a NSDictionary
-	let dictionary = serialize(company, format: .toDictionary)
-
-	// returns a String
-	let prettyJSON = serialize(company, format: .toPrettyJSON)
-
-	// also returns a String
-	let compactJSON = serialize(company, format: .toCompactJSON)
-
-	// returns a NSData object
-	let dataJSON = serialize(company, format: .toNSData)
-
-And the result will be:
-
-.. code-block:: json
-
-	{
-	  "name": "Example Ltd.",
-	  "employees": [
-	  	{
-		  "name": "John",
-		  "age": 23,
-		  "salary": 23000,
-		  "benefits": [
-		  	["medical", true],
-			["daycare", false]
-		  ],
-		  "period": {
-		  	"startYear": 2013,
-			"endYear": "<null>",
-			"isActive": true
-		  }
-		},
-		{
-		  "name": "Jane",
-		  "age": 30,
-		  "salary": 40000,
-		  "benefits": [
-		  	["medical", true],
-			["daycare", true]
-		  ],
-		  "period": {
-		  	"startYear": 2010,
-			"endYear": 2015,
-			"isActive": false
-		  }
-		}
-	  ]
-	}
-
-Limitations: Object to JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The serialization function will try to obtain the best valid JSON it can.
-It will work with complex objects, containing classes, structs, tuples, enum values, arrays or dictionaries.
-Base object you can try on can descend from AnyObject, NSObject or no class at all.
-Enum values will be saved as strings in the JSON.
-
-
-Usage: JSON to Object
-^^^^^^^^^^^^^^^^^^^^^
-
-The reverse can be done as well, using the **deserialize** functions:
-
-.. code-block:: swift
-
-	public func deserialize<A>(model: A, jsonString: String) -> AnyObject
-	public func deserialize<A>(model: A, jsonData: NSData) -> AnyObject
-	public func deserialize<A>(model: A, jsonDict: NSDictionary) -> AnyObject
-
-The first parameter is always *an instance* of the class you want to deserialize.
-
-The second parameter can either be a JSON String, a NSData containing a JSON string or even a valid NSDictionary object, that's
-going to be used to try and fill the models fields.
-
-Now, assuming you have the following JSON String:
-
-.. code-block:: swift
-
-	let json = "{" +
-	  "\"name\": \"John\", " +
-	  "\"age\": 23, " +
-	  "\"salary\": 23000, " +
-	  "\"benefits\": [ " +
-		"[\"medical\", true], " +
-		"[\"daycare\", false] " +
-	  "], " +
-	  "\"period\": { " +
-		"\"startYear\": 2013, " +
-		"\"endYear\": \"<null>\", " +
-		"\"isActive\": true " +
-	  "}" +
-	"}"
-
-You can transform to a model object like so:
-
-.. code-block:: swift
-
-	let employee = deserialize(Employee(), jsonString: json) as? Employee
-	print(employee.name)
-	print(employee.period.startYear)
-
-And printing the result will be:
-
-.. code-block:: shell
-
-	"John"
-	2013
-
-Limitations
-^^^^^^^^^^^
-
-The deserialization function is a little more limited than the serialization one, and you should follow
-a set of specific guidelines:
-
-* all your classes must descend from NSObject
-* avoid enums or structs
-* try to be explicit about arrays or dictionaries. Prefer:
+Nosce defines the following protocol to handle serialization:
 
 
 .. code-block:: swift
 
-	var names:[String] = []
-	var dict: [Int : Employee] = [:]
+    public protocol NosceSerializationProtocol {
+      // must be implemented by user
+      func dictionaryRepresentation () -> NSDictionary
 
-instead of
+      // have default implementation
+      func jsonPrettyStringRepresentation () -> String?
+      func jsonCompactStringRepresentation () -> String?
+      func jsonDataRepresentation () -> NSData?
+    }
+
+The **NosceSerializationProtocol** can be applied to any class or struct, whether it descends from NSObject or not.
+It defines four important functions, but users will generally need to implement only **dictionaryRepresentation**.
+The other three functions are also available , butNosce provides a default implementation,
+one that usually uses **dictionaryRepresentation** to create
+a valid JSON dictionary, and then convert it into a String or a NSData object using Cocoa Serialization APIs.
+
+Deserialization
+^^^^^^^^^^^^^^^
+
+Nosce defines the following protocol to handle deserialization:
 
 .. code-block:: swift
 
-	var names: NSMutableArray
-	let dict: NSDictionary
-	let dict2: [Int : AnyObject]
+    public protocol NosceDeserializationProtocol {
+      // must be implemented by user
+      init(jsonDictionary: NSDictionary)
+
+      // have default implementation
+      init(jsonString: String)
+      init(jsonData: NSData)
+      func isValid() -> Bool
+    }
+
+The **NosceDeserializationProtocol** can also be applied to any class or struct, whether it descends from NSObject or not.
+It defines three custom constructors, that each take either a NSDictionary, a String or a NSData object as only parameter.
+Users will only need to implement the NSDictionary constructor. The other two constructors are also available, but will
+use the NSDictionary constructor as base.
+
+Lastly, there is an *isValid* functions used to validate what has already been deserialized. This should be used in scenarios where
+the model being parsed from JSON must have a certain number of fields correctly populated for it to be considered valid.
+
+Simple example
+^^^^^^^^^^^^^^
+
+The simplest use case is when you want to transform a single object into the equivalent JSON model and back:
+
+.. code-block:: swift
+
+    class Model {
+      var name: String?
+      var age: Int = 0
+      var hasClearance: Bool?
+      var isTrusted: Bool = false
+    }
+
+This model must implement the two protocols mentioned above, and implement the JSON Dictionary functions:
+
+.. code-block:: swift
+
+    class Model : NosceSerializationProtocol, NosceDeserializationProtocol {
+      var name: String?
+      var age: Int = 0
+      var hasClearance: Bool?
+      var isTrusted: Bool = false
+
+      init(jsonDictionary: NSDictionary) {
+        name <- jsonDictionary["name"]
+        age <- jsonDictionary["age"]
+        hasClearance <- jsonDictionary["hasClearance"]
+        isTrusted <- jsonDictionary["isTrusted"]
+      }
+
+      func dictionaryRepresentation () -> NSDictionary {
+        return [
+          "name": name ?? NSNull(),
+          "age": age,
+          "hasClearance": hasClearance ?? NSNull(),
+          "isTrusted": isTrusted
+        ]
+      }
+    }
+
+The first thing you'll notice is the **<-** operator. This is a shorthand Nosce operator that is equivalent to the following
+swift line of code:
+
+.. code-block:: swift
+
+    if let name = jsonDictionary["name"] {
+      self.name = name
+    }
+
+The **<-** operator takes care of matching types and handling optionals, so you'll get a much nices and concise syntax.
+
+You can however do the actual parsing from the dictionary any way you see fit, as long as it's valid.
+
+Another thing to notice is that **dictionaryRepresentation** returns a NSDictionary object. This means it can't hold optional
+values whatsoever.
+
+If your model contains swift optionals, then an elegant way of handling this is as seen above:
+
+.. code-block:: swift
+
+    "name": name ?? NSNull()
+
+Also, please make sure you don't explicitly unwrap optionals by using the **!** operator, since you'll end up causing an error
+somewhere down the line, if a NULL value ever happens to be set in a NSDictionary.
+
+Advanced example
+^^^^^^^^^^^^^^^^
+
+When you have a more complex example, involving two nested models:
+
+.. code-block:: swift
+
+struct Positon : NosceSerializationProtocol, NosceDeserializationProtocol {
+      var name: String?
+      var salary: Int?
+      var isTemp: Bool = false
+
+      init(jsonDictionary: NSDictionary) {
+        name <- jsonDictionary["name"]
+        salary <- jsonDictionary["salary"]
+        isTemp <- jsonDictionary["isTemp"]
+      }
+
+      dictionaryRepresentation() -> NSDictionary {
+        return [
+          "name": name ?? NSNull()
+          "salary": salary ?? NSNull(),
+          "isTemp": isTemp
+        ]
+      }
+    }
+
+    class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
+      var name: String?
+      var position: Position?
+
+      init(jsonDictionary: NSDictionary) {
+        name <- jsonDictionary["name"]
+        if let dict = jsonDictionary["postion"] as? NSDictionary {
+          position = Position(jsonDictionary: dict)
+        }
+      }
+
+      dictionaryRepresentation() -> NSDictionary {
+        return [
+          "name": name ?? NSNull(),
+          "position": safe(position).dictionaryRepresentation ()
+        ]
+      }
+    }
+
+Please note the **safe** function, applied to the **position** optional struct instance.
+This is so that you avoid having to do:
+
+.. code-block:: swift
+
+    "position": position!.dictionaryRepresentation ()
+
+and risk trying to assign an unitialized optional as a value to the dictionary.
+
+Arrays
+^^^^^^
+
+For the moment, Nosce support array serialization (not deserialization):
+
+.. code-block:: swift
+
+    // data set
+    let position1 = Position(name: "CEO", salary: 100000)
+    let position2 = Position(name: "Engineer", salary: 35000)
+    let position3 = Position(name: "Accountant", salary: 28000)
+    let positions = [position1, position2,  position3]
+
+    // serialization
+    let arrayDictionary = positions.dictionaryRepresentation ()
+    let arrayString = positions.jsonPreetyStringRepresentation ()
+
+If you have a complex model containing arrays, you can implement it's **dictionaryRepresentation** function by also
+taking advantage of the array's own **dictionaryRepresentation** function to array at a convenient, readable syntax:
+
+.. code-block:: swift
+
+    class Person : NosceSerializationProtocol {
+      var name: String?
+      var positions: [Position] = []
+
+      func dictionaryRepresentation () -> NSDictionary {
+        return [
+          "name": name ?? NSNull(),
+          "positions": positions.dictionaryRepresentation ()
+        ]
+      }
+    }
+
+The above will work for arrays of complex objects like **Position**, in this case, or for simple arrays containing integers, strings, etc.
+
+On the other hand, if you would like to deserialize, an array, Nosce comes with a built-in operator to help you do that:
+
+.. code-block:: swift
+
+    class Person: NosceDeserializationProtocol {
+      var name: String?
+      var positions: [Position] = []
+
+      init(jsonDictionary: NSDictionary) {
+        name <- jsonDictionary["name"]
+        positions <- jsonDictionary["positions"] => { (dict: NSDictionary) -> Position in
+          return Position(jsonDictionary: dict)
+        }
+      }
+    }

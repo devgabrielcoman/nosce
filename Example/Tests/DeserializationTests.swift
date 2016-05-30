@@ -21,7 +21,19 @@ class DeserializationTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDeserializationSimple () {
+    func testDeserializationSimpleStruct () {
+        // given
+        let given = "{ \"name\": \"Manager\", \"salary\": 32000 }"
+   
+        // when
+        let expected = ["name":"Manager", "salary": 32000]
+        
+        // then
+        let result = Position(jsonString: given)
+        XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
+    }
+    
+    func testDeserializationSimpleModel () {
         // given
         let given = "{\"name\":\"John\", \"age\":28, \"isActive\": true, \"trusted\": false}"
         
@@ -38,7 +50,7 @@ class DeserializationTests: XCTestCase {
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
-    func testDeserializationComplex () {
+    func testDeserializationComplexModel1 () {
         // given
         let given1 = "{ \"name\": \"John\", \"age\": 32, \"isActive\": true, \"trusted\": false }"
         let given2 = "{ \"name\": \"Anne\", \"age\": 18, \"isActive\": false, \"trusted\": null }"
@@ -57,6 +69,25 @@ class DeserializationTests: XCTestCase {
         
         // then
         let result = Company(jsonString: given)
+        XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
+    }
+    
+    func testDeserializationComplexModel2 () {
+        // given
+        let given1 = "{ \"name\": \"CEO\", \"salary\": 100000 }"
+        let given = "{ \"name\": \"John Smith\", \"position\": \(given1) }"
+        
+        // expected
+        let expected = [
+            "name": "John Smith",
+            "position": [
+                "name": "CEO",
+                "salary": 100000
+            ]
+        ]
+        
+        // then
+        let result = Person(jsonString: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
 }

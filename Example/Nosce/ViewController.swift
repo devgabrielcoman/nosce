@@ -14,20 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-//        let j1 = "{\"name\":\"John\", \"age\":32, \"isActive\": 1}"
-//        let j2 = "{\"name\": \"Carry\", \"age\":18, \"isActive\": 1}"
-//        let j3 = "{\"name\":\"John&Carry Ltd.\", \"employees\":["+j1+","+j2+"], \"seniors\": [\"David Roth\", \"Sam Smith\"]}"
-//        
-//        let e1 = Employee(jsonString: j1)
-//        let e2 = Employee(jsonString: j2)
-//        let com = Company(jsonString: j3)
-//        
-//        print(e1.dictionaryRepresentation())
-//        print(e2.dictionaryRepresentation())
-//        print(com.dictionaryRepresentation())
-    
         
+        let xoxo = Array<Employee>(jsonDictionary: [0:"xoxox"])
     }
 
     override func didReceiveMemoryWarning() {

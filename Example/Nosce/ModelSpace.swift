@@ -9,6 +9,51 @@
 import UIKit
 import Nosce
 
+struct Position : NosceSerializationProtocol, NosceDeserializationProtocol {
+    var salary: Int?
+    var name: String?
+    
+    init(name: String, salary: Int){
+        self.name = name
+        self.salary = salary
+    }
+    
+    init(jsonDictionary: NSDictionary) {
+        salary <- jsonDictionary["salary"]
+        name <- jsonDictionary["name"]
+    }
+    
+    func dictionaryRepresentation() -> NSDictionary {
+        return [
+            "name": name ?? NSNull(),
+            "salary": salary ?? NSNull()
+        ]
+    }
+}
+
+class Person: NosceDeserializationProtocol, NosceSerializationProtocol {
+    var name: String?
+    var position: Position?
+    
+    init () {
+        // 
+    }
+    
+    required init(jsonDictionary: NSDictionary) {
+        name <- jsonDictionary["name"]
+        if let dict = jsonDictionary["position"] as? NSDictionary {
+            position = Position(jsonDictionary: dict)
+        }
+    }
+    
+    func dictionaryRepresentation() -> NSDictionary {
+        return [
+            "name": name ?? NSNull(),
+            "position": safe(position).dictionaryRepresentation()
+        ]
+    }
+}
+
 class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
     var name: String?
     var age: Int?
@@ -57,7 +102,7 @@ class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
     
     func dictionaryRepresentation() -> NSDictionary {
         return [
-            "name": unwrap(name),
+            "name": name ?? NSNull(),
             "employees": employees.dictionaryRepresentation(),
             "seniors": seniors => { (name: String) -> String in
                 return name
