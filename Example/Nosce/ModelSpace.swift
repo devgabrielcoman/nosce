@@ -18,9 +18,9 @@ struct Position : NosceSerializationProtocol, NosceDeserializationProtocol {
         self.salary = salary
     }
     
-    init(jsonDictionary: NSDictionary) {
-        salary <- jsonDictionary["salary"]
-        name <- jsonDictionary["name"]
+    init(json: NSDictionary) {
+        salary <- json["salary"]
+        name <- json["name"]
     }
     
     func dictionaryRepresentation() -> NSDictionary {
@@ -39,10 +39,10 @@ class Person: NosceDeserializationProtocol, NosceSerializationProtocol {
         // 
     }
     
-    required init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        if let dict = jsonDictionary["position"] as? NSDictionary {
-            position = Position(jsonDictionary: dict)
+    required init(json: NSDictionary) {
+        name <- json["name"]
+        if let dict = json["position"] as? NSDictionary {
+            position <- Position(json: dict)
         }
     }
     
@@ -64,11 +64,11 @@ class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
         // nothing
     }
     
-    required init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        age <- jsonDictionary["age"]
-        isActive <- jsonDictionary["isActive"]
-        trusted <- jsonDictionary["trusted"]
+    required init(json: NSDictionary) {
+        name <- json["name"]
+        age <- json["age"]
+        isActive <- json["isActive"]
+        trusted <- json["trusted"]
     }
     
     func dictionaryRepresentation() -> NSDictionary {
@@ -90,12 +90,12 @@ class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
         // nothing
     }
     
-    required init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        employees <- jsonDictionary["employees"] => { (dict: NSDictionary) -> Employee in
-            return Employee(jsonDictionary: dict)
+    required init(json: NSDictionary) {
+        name <- json["name"]
+        employees <- Array<Employee>(json: json["employees"]) { (dict: NSDictionary) -> Employee in
+            return Employee(json: dict)
         }
-        seniors <- jsonDictionary["seniors"] => { (name: String) -> String in
+        seniors <- Array<String>(json: json["seniors"]) { (name: String) -> String in
             return name
         }
     }
@@ -104,11 +104,7 @@ class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
         return [
             "name": name ?? NSNull(),
             "employees": employees.dictionaryRepresentation(),
-            "seniors": seniors => { (name: String) -> String in
-                return name
-            }
-            // optional
-            // "seniors": seniors.dictionaryRepresentation()
+            "seniors": seniors.dictionaryRepresentation()
         ]
     }
 }

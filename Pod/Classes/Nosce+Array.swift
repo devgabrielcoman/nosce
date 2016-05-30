@@ -95,5 +95,70 @@ public extension Array {
         }
         return nil
     }
+    
+    /**
+     Init function for array from a Json Array containing values or dictionaries
+     
+     - parameter jsonArray: valid JSON array
+     - parameter callback:  callback to work with
+     
+     - returns: a new array
+     */
+    public init <A>(json: AnyObject?, callback: (A) -> Element) {
+        self.init ()
+        
+        if let jsonArray = json as? [AnyObject] {
+            
+            for item in jsonArray {
+                if let item = item as? A {
+                    let result = callback(item)
+                    self.append(result)
+                }
+            }
+        }
+    }
+    
+    /**
+     Init function for array from a Json Data object
+     
+     - parameter jsonData: NSData object containing valid array data
+     - parameter callback: callback to work with
+     
+     - returns: a new array
+     */
+    public init <A> (jsonData: NSData, callback: (A) -> Element) {
+        self.init()
+        
+        do {
+            let array = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+            if let jsonArray = array as? [AnyObject] {
+                for item in jsonArray {
+                    if let item = item as? A {
+                        let result = callback(item)
+                        self.append(result)
+                    }
+                }
+            }
+        } catch {
+            // do nothing
+        }
+    }
+    
+    /**
+     Init function for array from a JSON string object
+     
+     - parameter jsonString: valid json string
+     - parameter callback:   callback to work with
+     
+     - returns: a new array
+     */
+    public init <A> (jsonString: String, callback: (A) -> Element) {
+        let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+        if let jsonData = jsonData {
+            self.init(jsonData: jsonData, callback: callback)
+        } else {
+            self.init()
+        }
+    }
 }
 

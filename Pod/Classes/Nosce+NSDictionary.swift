@@ -17,9 +17,9 @@ public extension NSDictionary {
      
      - returns: a valid NSDictionary object
      */
-    static func dictionaryWithJsonData(jsonData: NSData) -> NSDictionary {
+    static func dictionaryWithJsonData(json: NSData) -> NSDictionary {
         do {
-            let dict = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+            let dict = try NSJSONSerialization.JSONObjectWithData(json, options: [])
             if let dict = dict as? NSDictionary {
                 return dict
             }
@@ -36,8 +36,8 @@ public extension NSDictionary {
      
      - returns: the valid NSDictionary object
      */
-    static func dictionaryWithJsonString(jsonString: String) -> NSDictionary {
-        let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+    static func dictionaryWithJsonString(json: String) -> NSDictionary {
+        let jsonData = json.dataUsingEncoding(NSUTF8StringEncoding)
         if let jsonData = jsonData {
             return dictionaryWithJsonData(jsonData)
         }

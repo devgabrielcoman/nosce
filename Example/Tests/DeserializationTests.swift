@@ -29,7 +29,7 @@ class DeserializationTests: XCTestCase {
         let expected = ["name":"Manager", "salary": 32000]
         
         // then
-        let result = Position(jsonString: given)
+        let result = Position(json: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -46,7 +46,7 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Employee(jsonString: given)
+        let result = Employee(json: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -68,7 +68,7 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Company(jsonString: given)
+        let result = Company(json: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -87,7 +87,40 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Person(jsonString: given)
+        let result = Person(json: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
+    }
+    
+    func testSimpleArray () {
+        // given
+        let given = "[1, 32, 89, 12]"
+        
+        // expected
+        let expected = [1, 32, 89, 12]
+        
+        // then
+        let result = Array<Int>(jsonString: given) { (value: Int) -> Int in
+            return value
+        }
+        XCTAssertTrue(result.dictionaryRepresentation().isEqualToArray(expected))
+    }
+    
+    func testComplexArray () {
+        // given
+        let given1 = "{ \"name\": \"CEO\", \"salary\": 100000 }"
+        let given2 = "{ \"name\": \"Engineer\", \"salary\": 35000 } "
+        let given = "[\(given1), \(given2)]"
+        
+        // expected
+        let expected = [
+            ["name": "CEO", "salary": 100000],
+            ["name": "Engineer", "salary": 35000]
+        ]
+        
+        // then
+        let result = Array<Position>(jsonString: given) { (dict: NSDictionary) -> Position in
+            return Position(json: dict)
+        }
+        XCTAssertTrue(result.dictionaryRepresentation().isEqualToArray(expected))
     }
 }

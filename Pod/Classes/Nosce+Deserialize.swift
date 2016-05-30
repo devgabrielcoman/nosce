@@ -21,7 +21,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: the object
      */
-    init(jsonDictionary: NSDictionary)
+    init(json: NSDictionary)
     
     /**
      Init an object through a json String; has a default implementation
@@ -30,7 +30,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: return the object
      */
-    init(jsonString: String)
+    init(json: String)
     
     /**
      Init an object through a json data object; has a default implementation
@@ -39,7 +39,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: returns the object
      */
-    init(jsonData: NSData)
+    init(json: NSData)
     
     /**
      If overriden, determines the minimum ammount of conditions needed for the
@@ -57,15 +57,15 @@ public protocol NosceDeserializationProtocol {
 public extension NosceDeserializationProtocol {
     
     // default implementation
-    init(jsonString: String) {
-        let jsonDictionary = NSDictionary.dictionaryWithJsonString(jsonString)
-        self.init(jsonDictionary: jsonDictionary)
+    init(json: String) {
+        let jsonDictionary = NSDictionary.dictionaryWithJsonString(json)
+        self.init(json: jsonDictionary)
     }
     
     // default implementation
-    init(jsonData: NSData) {
-        let jsonDictionary = NSDictionary.dictionaryWithJsonData(jsonData)
-        self.init(jsonDictionary: jsonDictionary)
+    init(json: NSData) {
+        let jsonDictionary = NSDictionary.dictionaryWithJsonData(json)
+        self.init(json: jsonDictionary)
     }
     
     // default implementation

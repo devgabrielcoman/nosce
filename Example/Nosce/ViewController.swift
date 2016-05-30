@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let xoxo = Array<Employee>(jsonDictionary: [0:"xoxox"])
     }
 
     override func didReceiveMemoryWarning() {

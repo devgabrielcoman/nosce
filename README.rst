@@ -67,11 +67,11 @@ Nosce defines the following protocol to handle deserialization:
 
     public protocol NosceDeserializationProtocol {
       // must be implemented by user
-      init(jsonDictionary: NSDictionary)
+      init(json: NSDictionary)
 
       // have default implementation
-      init(jsonString: String)
-      init(jsonData: NSData)
+      init(json: String)
+      init(json: NSData)
       func isValid() -> Bool
     }
 
@@ -107,11 +107,11 @@ This model must implement the two protocols mentioned above, and implement the J
       var hasClearance: Bool?
       var isTrusted: Bool = false
 
-      init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        age <- jsonDictionary["age"]
-        hasClearance <- jsonDictionary["hasClearance"]
-        isTrusted <- jsonDictionary["isTrusted"]
+      init(json: NSDictionary) {
+        name <- json["name"]
+        age <- json["age"]
+        hasClearance <- json["hasClearance"]
+        isTrusted <- json["isTrusted"]
       }
 
       func dictionaryRepresentation () -> NSDictionary {
@@ -124,23 +124,30 @@ This model must implement the two protocols mentioned above, and implement the J
       }
     }
 
-The first thing you'll notice is the **<-** operator. This is a shorthand Nosce operator that is equivalent to the following
+The first thing you'll notice is the ** <- ** operator. This is a shorthand Nosce operator that is equivalent to the following
 swift line of code:
 
 .. code-block:: swift
 
-    if let name = jsonDictionary["name"] {
+    if let name = json["name"] {
       self.name = name
     }
 
-The **<-** operator takes care of matching types and handling optionals, so you'll get a much nices and concise syntax.
+The ** <- ** operator takes care of matching types and handling optionals, so you'll get a much nicer and concise syntax.
 
-You can however do the actual parsing from the dictionary any way you see fit, as long as it's valid.
+The ** <- ** operator can also be substituted for the ** = ** operator in a lot of scenarios.
+Thus, if you'd like to keep a uniform syntax you could:
+
+.. code-block:: swift
+
+	name <- json["name"]
+	someValue <- false
+	someObject <- Object()
 
 Another thing to notice is that **dictionaryRepresentation** returns a NSDictionary object. This means it can't hold optional
 values whatsoever.
 
-If your model contains swift optionals, then an elegant way of handling this is as seen above:
+Also, if your model contains swift optionals, then an elegant way of handling this is as seen above:
 
 .. code-block:: swift
 
@@ -161,10 +168,10 @@ When you have a more complex example, involving two nested models:
       var salary: Int?
       var isTemp: Bool = false
 
-      init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        salary <- jsonDictionary["salary"]
-        isTemp <- jsonDictionary["isTemp"]
+      init(json: NSDictionary) {
+        name <- json["name"]
+        salary <- json["salary"]
+        isTemp <- json["isTemp"]
       }
 
       dictionaryRepresentation() -> NSDictionary {
@@ -180,10 +187,10 @@ When you have a more complex example, involving two nested models:
       var name: String?
       var position: Position?
 
-      init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        if let dict = jsonDictionary["postion"] as? NSDictionary {
-          position = Position(jsonDictionary: dict)
+      init(json: NSDictionary) {
+        name <- json["name"]
+        if let dict = json["postion"] as? NSDictionary {
+          position <- Position(json: dict)
         }
       }
 
@@ -202,56 +209,140 @@ This is so that you avoid having to do:
 
     "position": position!.dictionaryRepresentation ()
 
-and risk trying to assign an unitialized optional as a value to the dictionary.
+and risk trying to assign an uninitialized optional as a value to the dictionary.
 
 Arrays
 ^^^^^^
 
-For the moment, Nosce support array serialization (not deserialization):
+Nosce support serialization and deserialization for arrays, in a number of scenarios, using the same type of
+functions as for complex objects.
+
+An array can be serialized using the following functions:
 
 .. code-block:: swift
 
-    // data set
-    let position1 = Position(name: "CEO", salary: 100000)
-    let position2 = Position(name: "Engineer", salary: 35000)
-    let position3 = Position(name: "Accountant", salary: 28000)
-    let positions = [position1, position2,  position3]
+	let array = [13, 12, 189, 33]
 
-    // serialization
-    let arrayDictionary = positions.dictionaryRepresentation ()
-    let arrayString = positions.jsonPreetyStringRepresentation ()
+	let dict = array.dictionaryRepresentation ()
+	let json1 = array.jsonPrettyStringRepresentation ()
+	let json2 = array.jsonCompactStringRepresentation ()
+	let data = array.jsonDataRepresentation ()
 
-If you have a complex model containing arrays, you can implement it's **dictionaryRepresentation** function by also
-taking advantage of the array's own **dictionaryRepresentation** function to array at a convenient, readable syntax:
+This works just as well for simple arrays, containing Ints or Strings, as well as for arrays comprising complex objects.
+The only general rule is that those objects conform and implement the **NosceSerializationProtocol**.
 
 .. code-block:: swift
 
-    class Person : NosceSerializationProtocol {
-      var name: String?
-      var positions: [Position] = []
+	struct Position : NosceSerializationProtocol {
+	  var name: String?
+	  var salary: Int?
 
-      func dictionaryRepresentation () -> NSDictionary {
-        return [
-          "name": name ?? NSNull(),
-          "positions": positions.dictionaryRepresentation ()
-        ]
-      }
-    }
+	  init(name: String, salary: Int) {
+	  	self.name = name
+		self.position = position
+	  }
 
-The above will work for arrays of complex objects like **Position**, in this case, or for simple arrays containing integers, strings, etc.
+	  init(json: NSDictionary) {
+	  	name <- json["name"]
+		salary <- json["salary"]
+	  }
+	}
 
-On the other hand, if you would like to deserialize, an array, Nosce comes with a built-in operator to help you do that:
+	let p1 = Position(name: "CEO", salary: 100000)
+	let p2 = Position(name: "Engineer", salary: 35000)
+	let array = [p1, p2]
+
+	let jsonArray = array.dictionaryRepresentation ()
+	let jsonString = array.jsonPreetyStringRepresentation ()
+
+When it comes to deserialization, Nosce provides the same three types of initializer as for normal objects:
 
 .. code-block:: swift
 
-    class Person: NosceDeserializationProtocol {
-      var name: String?
-      var positions: [Position] = []
+	Array<Element>(json: NSArray)
+	Array<Element>(json: String)
+	Array<Element>(json: NSData)
 
-      init(jsonDictionary: NSDictionary) {
-        name <- jsonDictionary["name"]
-        positions <- jsonDictionary["positions"] => { (dict: NSDictionary) -> Position in
-          return Position(jsonDictionary: dict)
-        }
-      }
-    }
+so you can have the following valid syntax:
+
+.. code-block:: swift
+
+	let p1 = "{ \"name\": \"CEO\", \"salary\": 100000 }"
+	let p2 = "{ \"name\": \"Engineer\", \"salary\": 35000 }"
+	let p = "[\(p1), \(p2)]"
+
+	let array = Array<Position>(json: p) { (dict: NSDictionary) -> Position in
+	  return Position(json: dict)
+	}
+
+which will generate an array of valid Position objects.
+
+Putting it all together
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, a more complex example, gathering everything the library does so far:
+
+.. code-block:: swift
+
+	struct Position : NosceSerializationProtocol, NosceDeserializationProtocol {
+	  var name: String?
+	  var salary: Int?
+
+	  init(json: NSDictionary) {
+		name <- json["name"]
+		salary <- json["salary"]
+	  }
+
+	  func dictionaryRepresentation () -> NSDictionary {
+		return [
+		  "name": name ?? NSNull(),
+		  "salary": salary ?? NSNull()
+		]
+	  }
+	}
+
+	class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
+	  var name: String?
+	  var permanent: Bool = true
+	  var current: Position?
+	  var positions: [Position] = []
+
+	  init(json: NSDictionary) {
+		name <- json["name"]
+		permanent <- json["permanent"]
+		if let dict = json["current"] as? NSDictionary {
+		  current <- Position(json: dict)
+		}
+		positions <- Array<Position>(json["positions"]) { (dict: NSDictionary) -> Position in
+		  return Position(json: dict)
+		}
+	  }
+
+	  func dictionaryRepresentation () -> NSDictionary {
+	    return [
+		  "name": name ?? NSNull(),
+		  "permanent": permanent,
+		  "current": safe(current).dictionaryRepresentation (),
+		  "positions": positions.dictionaryRepresentation ()
+		]
+	  }
+	}
+
+	class Company : NosceSerializationProtocol, NosceDeserializationProtocol {
+	  var name: String?
+	  var employees: [Employee] = []
+
+	  init(json: NSDictionary) {
+	    name <- json["name"]
+		employees <- Array<Employee>(json["employees"]) { (dict: NSDictionary) -> Employee in
+		  return Employee(json: dict)
+		}
+	  }
+
+	  func dictionaryRepresentation () -> NSDictionary {
+	    return [
+		  "name": name ?? NSNull(),
+		  "employees": employees.dictionaryRepresentation ()
+		]
+	  }
+	}
