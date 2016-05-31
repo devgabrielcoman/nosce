@@ -126,11 +126,11 @@ public extension Array {
      
      - returns: a new array
      */
-    public init <A> (jsonData: NSData, callback: (A) -> Element) {
+    public init <A> (json: NSData, callback: (A) -> Element) {
         self.init()
         
         do {
-            let array = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+            let array = try NSJSONSerialization.JSONObjectWithData(json, options: [])
             if let jsonArray = array as? [AnyObject] {
                 for item in jsonArray {
                     if let item = item as? A {
@@ -152,10 +152,10 @@ public extension Array {
      
      - returns: a new array
      */
-    public init <A> (jsonString: String, callback: (A) -> Element) {
-        let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+    public init <A> (json: String, callback: (A) -> Element) {
+        let jsonData = json.dataUsingEncoding(NSUTF8StringEncoding)
         if let jsonData = jsonData {
-            self.init(jsonData: jsonData, callback: callback)
+            self.init(json: jsonData, callback: callback)
         } else {
             self.init()
         }

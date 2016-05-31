@@ -99,7 +99,7 @@ class DeserializationTests: XCTestCase {
         let expected = [1, 32, 89, 12]
         
         // then
-        let result = Array<Int>(jsonString: given) { (value: Int) -> Int in
+        let result = Array<Int>(json: given) { (value: Int) -> Int in
             return value
         }
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToArray(expected))
@@ -118,7 +118,7 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Array<Position>(jsonString: given) { (dict: NSDictionary) -> Position in
+        let result = Array<Position>(json: given) { (dict: NSDictionary) -> Position in
             return Position(json: dict)
         }
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToArray(expected))
