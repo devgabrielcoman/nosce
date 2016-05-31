@@ -41,9 +41,7 @@ class Person: NosceDeserializationProtocol, NosceSerializationProtocol {
     
     required init(json: NSDictionary) {
         name <- json["name"]
-        if let dict = json["position"] as? NSDictionary {
-            position <- Position(json: dict)
-        }
+        position <- Position(json: json["position"])
     }
     
     func dictionaryRepresentation() -> NSDictionary {

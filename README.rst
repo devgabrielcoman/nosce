@@ -189,9 +189,7 @@ When you have a more complex example, involving two nested models:
 
       init(json: NSDictionary) {
         name <- json["name"]
-        if let dict = json["postion"] as? NSDictionary {
-          position <- Position(json: dict)
-        }
+		position <- Position(json: json["position"])
       }
 
       dictionaryRepresentation() -> NSDictionary {
@@ -310,9 +308,7 @@ Finally, a more complex example, gathering everything the library does so far:
 	  init(json: NSDictionary) {
 		name <- json["name"]
 		permanent <- json["permanent"]
-		if let dict = json["current"] as? NSDictionary {
-		  current <- Position(json: dict)
-		}
+		current <- Position(json: json["current"])
 		positions <- Array<Position>(json["positions"]) { (dict: NSDictionary) -> Position in
 		  return Position(json: dict)
 		}

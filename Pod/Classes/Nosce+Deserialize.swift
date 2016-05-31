@@ -42,6 +42,16 @@ public protocol NosceDeserializationProtocol {
     init(json: NSData)
     
     /**
+     Init an object through a json any object, that technically must! be a dictionary
+     This is absically a shorthand for optionals in dictionaries
+     
+     - parameter json: a json any object
+     
+     - returns: returns the object
+     */
+    init(json: AnyObject?)
+    
+    /**
      If overriden, determines the minimum ammount of conditions needed for the
      deserialization to be valid (e.g. how many fields were there OK);
      has a default implementation
@@ -66,6 +76,16 @@ public extension NosceDeserializationProtocol {
     init(json: NSData) {
         let jsonDictionary = NSDictionary.dictionaryWithJsonData(json)
         self.init(json: jsonDictionary)
+    }
+    
+    // default implementation
+    init(json: AnyObject?) {
+        if let json = json as? NSDictionary {
+            self.init(json: json)
+        }
+        else {
+            self.init(json: NSDictionary())
+        }
     }
     
     // default implementation
