@@ -50,48 +50,32 @@ public protocol NosceSerializationProtocol {
 // implementations for most of the functions
 public extension NosceSerializationProtocol {
     
-    // default implementation
-    func jsonPrettyStringRepresentation () -> String? {
+    private func jsonData(options: NSJSONWritingOptions) -> NSData? {
         let dictionary = dictionaryRepresentation()
         if NSJSONSerialization.isValidJSONObject(dictionary) {
             do {
-                let json = try NSJSONSerialization.dataWithJSONObject(dictionary, options: .PrettyPrinted)
-                return String(data: json, encoding: NSUTF8StringEncoding)
+                return try NSJSONSerialization.dataWithJSONObject(dictionary, options: options)
             } catch {
                 return nil
             }
-            
         }
         return nil
+    }
+    
+    // default implementation
+    func jsonPrettyStringRepresentation () -> String? {
+        guard let json = jsonData(.PrettyPrinted) else { return nil }
+        return String(data: json, encoding: NSUTF8StringEncoding)
     }
     
     // default implementation
     func jsonCompactStringRepresentation () -> String? {
-        let dictionary = dictionaryRepresentation()
-        if NSJSONSerialization.isValidJSONObject(dictionary) {
-            do {
-                let json = try NSJSONSerialization.dataWithJSONObject(dictionary, options: NSJSONWritingOptions(rawValue: 0))
-                return String(data: json, encoding: NSUTF8StringEncoding)
-            } catch {
-                return nil
-            }
-            
-        }
-        return nil
+        guard let json = jsonData(NSJSONWritingOptions(rawValue: 0)) else { return nil }
+        return String(data: json, encoding: NSUTF8StringEncoding)
     }
     
     // default implementation
     func jsonDataRepresentation () -> NSData? {
-        let dictionary = dictionaryRepresentation()
-        if NSJSONSerialization.isValidJSONObject(dictionary) {
-            do {
-                let json = try NSJSONSerialization.dataWithJSONObject(dictionary, options: NSJSONWritingOptions(rawValue: 0))
-                return json
-            } catch {
-                return nil
-            }
-            
-        }
-        return nil
+        return jsonData(NSJSONWritingOptions(rawValue: 0))
     }
 }

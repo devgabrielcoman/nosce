@@ -29,7 +29,7 @@ class DeserializationTests: XCTestCase {
         let expected = ["name":"Manager", "salary": 32000]
         
         // then
-        let result = Position(json: given)
+        let result = Position(jsonString: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -46,7 +46,7 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Employee(json: given)
+        let result = Employee(jsonString: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -68,7 +68,7 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Company(json: given)
+        let result = Company(jsonString: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -87,7 +87,7 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Person(json: given)
+        let result = Person(jsonString: given)
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
     
@@ -99,7 +99,7 @@ class DeserializationTests: XCTestCase {
         let expected = [1, 32, 89, 12]
         
         // then
-        let result = Array<Int>(json: given) { (value: Int) -> Int in
+        let result = Array<Int>(jsonString: given) { (value: Int) -> Int in
             return value
         }
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToArray(expected))
@@ -118,9 +118,39 @@ class DeserializationTests: XCTestCase {
         ]
         
         // then
-        let result = Array<Position>(json: given) { (dict: NSDictionary) -> Position in
-            return Position(json: dict)
+        let result = Array<Position>(jsonString: given) { (dict: NSDictionary) -> Position in
+            return Position(jsonDictionary: dict)
         }
         XCTAssertTrue(result.dictionaryRepresentation().isEqualToArray(expected))
+    }
+    
+    func testNullDict () {
+        // given
+        let given = NSNull()
+        
+        // expected
+        let expected = [
+            "name": NSNull(),
+            "salary": NSNull()
+        ]
+        
+        // then
+        let result = Position(jsonObject: given)
+        XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
+    }
+    
+    func testMissingValues () {
+        // given
+        let given = "{ \"name\" : \"CEO\" }"
+        
+        // expected
+        let expected = [
+            "name": "CEO",
+            "salary": NSNull()
+        ]
+        
+        // then
+        let result = Position(jsonString: given)
+        XCTAssertTrue(result.dictionaryRepresentation().isEqualToDictionary(expected))
     }
 }

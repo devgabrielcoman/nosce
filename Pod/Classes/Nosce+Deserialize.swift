@@ -21,7 +21,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: the object
      */
-    init(json: NSDictionary)
+    init(jsonDictionary: NSDictionary)
     
     /**
      Init an object through a json String; has a default implementation
@@ -30,7 +30,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: return the object
      */
-    init(json: String)
+    init(jsonString: String)
     
     /**
      Init an object through a json data object; has a default implementation
@@ -39,7 +39,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: returns the object
      */
-    init(json: NSData)
+    init(jsonData: NSData)
     
     /**
      Init an object through a json any object, that technically must! be a dictionary
@@ -49,7 +49,7 @@ public protocol NosceDeserializationProtocol {
      
      - returns: returns the object
      */
-    init(json: AnyObject?)
+    init(jsonObject: AnyObject?)
     
     /**
      If overriden, determines the minimum ammount of conditions needed for the
@@ -67,24 +67,24 @@ public protocol NosceDeserializationProtocol {
 public extension NosceDeserializationProtocol {
     
     // default implementation
-    init(json: String) {
-        let jsonDictionary = NSDictionary.dictionaryWithJsonString(json)
-        self.init(json: jsonDictionary)
+    init(jsonString: String) {
+        let jsonDictionary = NSDictionary(jsonString: jsonString)
+        self.init(jsonDictionary: jsonDictionary)
     }
     
     // default implementation
-    init(json: NSData) {
-        let jsonDictionary = NSDictionary.dictionaryWithJsonData(json)
-        self.init(json: jsonDictionary)
+    init(jsonData: NSData) {
+        let jsonDictionary = NSDictionary(jsonData: jsonData)
+        self.init(jsonDictionary: jsonDictionary)
     }
     
     // default implementation
-    init(json: AnyObject?) {
-        if let json = json as? NSDictionary {
-            self.init(json: json)
+    init(jsonObject: AnyObject?) {
+        if let json = jsonObject as? NSDictionary {
+            self.init(jsonDictionary: json)
         }
         else {
-            self.init(json: NSDictionary())
+            self.init(jsonDictionary: NSDictionary())
         }
     }
     

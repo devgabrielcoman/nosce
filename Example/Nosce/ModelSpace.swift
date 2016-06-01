@@ -18,7 +18,7 @@ struct Position : NosceSerializationProtocol, NosceDeserializationProtocol {
         self.salary = salary
     }
     
-    init(json: NSDictionary) {
+    init(jsonDictionary json: NSDictionary) {
         salary <- json["salary"]
         name <- json["name"]
     }
@@ -39,9 +39,9 @@ class Person: NosceDeserializationProtocol, NosceSerializationProtocol {
         // 
     }
     
-    required init(json: NSDictionary) {
+    required init(jsonDictionary json: NSDictionary) {
         name <- json["name"]
-        position <- Position(json: json["position"])
+        position <- Position(jsonObject: json["position"])
     }
     
     func dictionaryRepresentation() -> NSDictionary {
@@ -62,7 +62,7 @@ class Employee : NosceSerializationProtocol, NosceDeserializationProtocol {
         // nothing
     }
     
-    required init(json: NSDictionary) {
+    required init(jsonDictionary json: NSDictionary) {
         name <- json["name"]
         age <- json["age"]
         isActive <- json["isActive"]
@@ -88,12 +88,12 @@ class Company : NosceDeserializationProtocol, NosceSerializationProtocol {
         // nothing
     }
     
-    required init(json: NSDictionary) {
+    required init(jsonDictionary json: NSDictionary) {
         name <- json["name"]
-        employees <- Array<Employee>(json: json["employees"]) { (dict: NSDictionary) -> Employee in
-            return Employee(json: dict)
+        employees <- Array<Employee>(jsonArray: json["employees"]) { (dict: NSDictionary) -> Employee in
+            return Employee(jsonDictionary: dict)
         }
-        seniors <- Array<String>(json: json["seniors"]) { (name: String) -> String in
+        seniors <- Array<String>(jsonArray: json["seniors"]) { (name: String) -> String in
             return name
         }
     }

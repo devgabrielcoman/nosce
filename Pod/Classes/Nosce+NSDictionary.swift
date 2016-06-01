@@ -11,36 +11,104 @@ import UIKit
 public extension NSDictionary {
     
     /**
-     Factory function that inits a dictionary from a NSData json object
+     Public init with a nsdictionary
      
-     - parameter jsonData: a dictionary as NSData
+     - parameter jsonDictionary: a json dictionary
      
-     - returns: a valid NSDictionary object
+     - returns: self
      */
-    static func dictionaryWithJsonData(json: NSData) -> NSDictionary {
-        do {
-            let dict = try NSJSONSerialization.JSONObjectWithData(json, options: [])
-            if let dict = dict as? NSDictionary {
-                return dict
-            }
-        } catch let error as NSError {
-            
-        }
-        return NSDictionary()
+    public convenience init(jsonDictionary: NSDictionary){
+        self.init(dictionary: jsonDictionary)
     }
     
     /**
-     Factory function that inits a dictionary from a String json object
+     Init from JSON data
      
-     - parameter jsonString: the json string
+     - parameter jsonData: json data object
      
-     - returns: the valid NSDictionary object
+     - returns: self
      */
-    static func dictionaryWithJsonString(json: String) -> NSDictionary {
-        let jsonData = json.dataUsingEncoding(NSUTF8StringEncoding)
-        if let jsonData = jsonData {
-            return dictionaryWithJsonData(jsonData)
+    public convenience init(jsonData: NSData) {
+        do {
+            if let dictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.init(rawValue: 0)) as? NSDictionary {
+                self.init(dictionary: dictionary)
+            }
+            else {
+                self.init()
+            }
+        } catch {
+            self.init()
         }
-        return NSDictionary()
+    }
+    
+    /**
+     Init from JSON string
+     
+     - parameter jsonString: a valid json string
+     
+     - returns: self
+     */
+    public convenience init(jsonString: String) {
+        if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
+            self.init(jsonData: data)
+        } else {
+            self.init()
+        }
+    }
+    
+    /**
+     Private function to take raw data and transform it into a dictionary
+     
+     - parameter options: writing type
+     
+     - returns: json data object
+     */
+    private func jsonData (options: NSJSONWritingOptions) -> NSData? {
+        if NSJSONSerialization.isValidJSONObject(self) {
+            do {
+                return try NSJSONSerialization.dataWithJSONObject(self, options: options)
+            } catch {
+                return nil
+            }
+        }
+        return nil
+    }
+    
+    /**
+     Just return self
+     
+     - returns: the same dictionary
+     */
+    public func dictionaryRepresentation () -> NSDictionary {
+        return self
+    }
+    
+    /**
+     Transform a dictionary into a json string
+     
+     - returns: a json string optional (preety)
+     */
+    public func jsonPreetyStringRepresentation () -> String? {
+        guard let json = jsonData(.PrettyPrinted) else { return nil }
+        return String(data: json, encoding: NSUTF8StringEncoding)
+    }
+    
+    /**
+     Transform a dictionary into a json string
+     
+     - returns: a json string optional (compact)
+     */
+    public func jsonCompactStringRepresentation () -> String? {
+        guard let json = jsonData(NSJSONWritingOptions(rawValue: 0)) else { return nil }
+        return String(data: json, encoding: NSUTF8StringEncoding)
+    }
+    
+    /**
+     Transform a dictionary into a json nsdata value
+     
+     - returns: json data
+     */
+    public func jsonDataRepresentation () -> NSData? {
+        return jsonData(NSJSONWritingOptions(rawValue: 0))
     }
 }
